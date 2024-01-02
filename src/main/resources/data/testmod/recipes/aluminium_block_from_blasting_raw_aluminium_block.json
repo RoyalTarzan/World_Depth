@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 2.1,
+  "group": "aluminium_block",
+  "ingredient": {
+    "item": "testmod:raw_aluminium_block"
+  },
+  "result": "testmod:aluminium_block"
+}

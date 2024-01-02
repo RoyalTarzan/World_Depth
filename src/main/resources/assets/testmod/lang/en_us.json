@@ -1,0 +1,15 @@
+{
+  "item.testmod.aluminium": "Aluminium",
+  "item.testmod.raw_aluminium": "Raw Aluminium",
+  "item.testmod.titanium": "Titanium",
+  "item.testmod.raw_titanium": "Raw Titanium",
+  "item.testmod.charged_redstone": "Charged Redstone",
+  "block.testmod.aluminium_block": "Block of Aluminium",
+  "block.testmod.raw_aluminium_block": "Block of Raw Aluminium",
+  "block.testmod.titanium_block": "Block of Titanium",
+  "block.testmod.raw_titanium_block": "Block of Raw Titanium",
+  "block.testmod.aluminium_ore": "Aluminium Ore",
+  "block.testmod.deepslate_aluminium_ore": "Deepslate Aluminium Ore",
+
+  "creativetab.test_tab": "World depth"
+}
