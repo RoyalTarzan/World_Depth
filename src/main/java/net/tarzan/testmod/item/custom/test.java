@@ -2,6 +2,7 @@ package net.tarzan.testmod.item.custom;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -15,7 +16,8 @@ public class test extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        
-        return InteractionResultHolder.success();
+        pPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP));
+
+        return InteractionResultHolder.consume(pPlayer.getItemInHand(pUsedHand));
     }
 }
