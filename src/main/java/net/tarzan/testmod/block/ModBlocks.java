@@ -31,6 +31,10 @@ public class ModBlocks {
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3,6)));
     public static final RegistryObject<Block> DEEPSLATE_ALUMINIUM_ORE=registerBlock("deepslate_aluminium_ore",
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3f).requiresCorrectToolForDrops(), UniformInt.of(4,8)));
+    public static final RegistryObject<Block> FERYL_STONE=registerBlock("feryl_stone",
+            ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
+    public static final RegistryObject<Block> SOAP_STONE=registerBlock("soap_stone",
+            ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,4.0f)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn=BLOCKS.register(name, block);

@@ -10,7 +10,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.testmod.TestMod1;
 import net.tarzan.testmod.block.ModBlocks;
 
-import java.util.function.DoubleUnaryOperator;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS=
@@ -24,13 +23,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TITANIUM.get());
                         output.accept(ModItems.RAW_TITANIUM.get());
                         output.accept(ModItems.CHARGED_REDSTONE.get());
-                        output.accept(ModItems.CHARGED_REDSTONEP.get());
                         output.accept(ModBlocks.ALUMINIUM_BLOCK.get());
                         output.accept(ModBlocks.RAW_ALUMINIUM_BLOCK.get());
                         output.accept(ModBlocks.TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.RAW_TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.ALUMINIUM_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get());
+                        output.accept(ModBlocks.FERYL_STONE.get());
+                        output.accept(ModBlocks.SOAP_STONE.get());
 
                     })
                     .build());

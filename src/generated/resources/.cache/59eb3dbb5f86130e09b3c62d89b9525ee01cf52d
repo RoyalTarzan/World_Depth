@@ -1,0 +1,9 @@
+// 1.20.1	2024-01-11T19:55:34.4457465	Loot Tables
+45ececf25a82fbab3a341d6556e2dc6fd2651add data/testmod/loot_tables/blocks/aluminium_block.json
+595186a4686a305e137ad8bb653be2111604636e data/testmod/loot_tables/blocks/aluminium_ore.json
+7149ea38ebcbea8710a1f2651dd789dfe574890d data/testmod/loot_tables/blocks/deepslate_aluminium_ore.json
+27b5f903017cc20f91c93e643c75203484cb10a7 data/testmod/loot_tables/blocks/feryl_stone.json
+b7ea57bb78857c7caf481b2b99f0f4fa53150f8b data/testmod/loot_tables/blocks/raw_aluminium_block.json
+e7ffd606c6259f87b3926f0c949a67aacd08d293 data/testmod/loot_tables/blocks/raw_titanium_block.json
+a47750a49da97a86307867409f522d8cbb93e71d data/testmod/loot_tables/blocks/soap_stone.json
+a075f810cb03dda0256f868f4ddc4becd6461203 data/testmod/loot_tables/blocks/titanium_block.json

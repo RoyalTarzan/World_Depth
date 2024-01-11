@@ -10,6 +10,8 @@
   "block.testmod.raw_titanium_block": "Block of Raw Titanium",
   "block.testmod.aluminium_ore": "Aluminium Ore",
   "block.testmod.deepslate_aluminium_ore": "Deepslate Aluminium Ore",
+  "block.testmod.feryl_stone": "Feryl",
+  "block.testmod.soap_stone": "Soap Stone",
 
   "creativetab.test_tab": "World depth"
 }

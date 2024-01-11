@@ -1,0 +1,5 @@
+// 1.20.1	2024-01-11T19:55:34.4447467	Tags for minecraft:block mod id testmod
+17c19aedb30cab471453d88d1d707b10c436e839 data/minecraft/tags/blocks/mineable/pickaxe.json
+0905a6260b0056df58768acd09da067ab89d46ae data/minecraft/tags/blocks/needs_diamond_tool.json
+5b425acc1f3c033e55823dae4e5c0236998b2d37 data/minecraft/tags/blocks/needs_iron_tool.json
+561cfa748df70c76da7d2d6c62d868827daf5b83 data/testmod/tags/blocks/added_ores.json
