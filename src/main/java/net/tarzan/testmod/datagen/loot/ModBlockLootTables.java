@@ -30,11 +30,24 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropOther(ModBlocks.FERYL_STONE.get(), ModBlocks.FERYL_STONE.get());
         this.dropOther(ModBlocks.SOAP_STONE.get(), ModBlocks.SOAP_STONE.get());
 
+        this.dropSelf(ModBlocks.FERYL_WALL.get());
+        this.dropSelf(ModBlocks.FERYL_BUTTON.get());
+        this.dropSelf(ModBlocks.FERYL_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.FERYL_STAIRS.get());
+        this.add(ModBlocks.FERYL_SLAB.get(), block -> createSlabItemTable(ModBlocks.FERYL_SLAB.get()));
+        this.dropSelf(ModBlocks.SOAP_STONE_WALL.get());
+        this.dropSelf(ModBlocks.SOAP_STONE_BUTTON.get());
+        this.dropSelf(ModBlocks.SOAP_STONE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.SOAP_STONE_STAIRS.get());
+        this.add(ModBlocks.SOAP_STONE_SLAB.get(), block -> createSlabItemTable(ModBlocks.SOAP_STONE_SLAB.get()));
 
         this.add(ModBlocks.ALUMINIUM_ORE.get(),
                 block -> createAlumiuniumOreDrops(ModBlocks.ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
         this.add(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(),
                 block -> createDeepslateAlumiuniumOreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
+        this.add(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
+        this.add(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(),
+                block -> createDeepslateAlumiuniumOreDrops(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
     }
     protected LootTable.Builder createAlumiuniumOreDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,

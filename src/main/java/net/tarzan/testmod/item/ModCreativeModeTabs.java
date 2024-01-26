@@ -28,9 +28,20 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.RAW_TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.ALUMINIUM_ORE.get());
+                        output.accept(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get());
                         output.accept(ModBlocks.FERYL_STONE.get());
                         output.accept(ModBlocks.SOAP_STONE.get());
+                        output.accept(ModBlocks.FERYL_STAIRS.get());
+                        output.accept(ModBlocks.FERYL_SLAB.get());
+                        output.accept(ModBlocks.FERYL_BUTTON.get());
+                        output.accept(ModBlocks.FERYL_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.FERYL_WALL.get());
+                        output.accept(ModBlocks.SOAP_STONE_STAIRS.get());
+                        output.accept(ModBlocks.SOAP_STONE_SLAB.get());
+                        output.accept(ModBlocks.SOAP_STONE_BUTTON.get());
+                        output.accept(ModBlocks.SOAP_STONE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.SOAP_STONE_WALL.get());
 
                     })
                     .build());

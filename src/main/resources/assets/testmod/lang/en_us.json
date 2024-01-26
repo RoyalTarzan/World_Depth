@@ -12,6 +12,17 @@
   "block.testmod.deepslate_aluminium_ore": "Deepslate Aluminium Ore",
   "block.testmod.feryl_stone": "Feryl",
   "block.testmod.soap_stone": "Soap Stone",
+  "block.testmod.soap_stone_aluminium_ore": "Soap Stone Aluminium Ore",
+  "block.testmod.feryl_stairs": "Feryl Stairs",
+  "block.testmod.feryl_slab": "Feryl Slab",
+  "block.testmod.feryl_button": "Feryl Button",
+  "block.testmod.feryl_pressure_plate": "Feryl Pressure Plate",
+  "block.testmod.feryl_wall": "Feryl Wall",
+  "block.testmod.soap_stone_stairs": "Soap Stone Stairs",
+  "block.testmod.soap_stone_slab": "Soap Stone Slab",
+  "block.testmod.soap_stone_button": "Soap Stone Button",
+  "block.testmod.soap_stone_pressure_plate": "Soap Stone Pressure Plate",
+  "block.testmod.soap_stone_wall": "Soap Stone Wall",
 
   "creativetab.test_tab": "World depth"
 }

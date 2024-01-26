@@ -3,6 +3,7 @@
     "testmod:aluminium_block",
     "testmod:raw_aluminium_block",
     "testmod:aluminium_ore",
-    "testmod:deepslate_aluminium_ore"
+    "testmod:deepslate_aluminium_ore",
+    "testmod:soap_stone_aluminium_ore"
   ]
 }

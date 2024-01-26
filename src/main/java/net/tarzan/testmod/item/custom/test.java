@@ -25,7 +25,9 @@ public class test extends Item {
         pPlayer.addEffect(new MobEffectInstance(MobEffects.SATURATION,1200,12));
         pPlayer.addEffect(new MobEffectInstance(MobEffects.GLOWING,1200,23));
         pPlayer.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING,1200,23));
-        pPlayer.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,1200,23));
+        pPlayer.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,1200,100));
+        pPlayer.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING,20,3));
+        pPlayer.resetFallDistance();
 
         return InteractionResultHolder.consume(pPlayer.getItemInHand(pUsedHand));
     }
