@@ -42,6 +42,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SOAP_STONE_BUTTON.get());
                         output.accept(ModBlocks.SOAP_STONE_PRESSURE_PLATE.get());
                         output.accept(ModBlocks.SOAP_STONE_WALL.get());
+                        output.accept(ModBlocks.ANDESITE_COAL_ORE.get());
+                        output.accept(ModBlocks.DIORITE_COAL_ORE.get());
+                        output.accept(ModBlocks.GRANITE_COAL_ORE.get());
+                        output.accept(ModBlocks.TUFF_COAL_ORE.get());
+                        output.accept(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get());
 
                     })
                     .build());

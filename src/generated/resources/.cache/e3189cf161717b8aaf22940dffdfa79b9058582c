@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-24T21:06:58.613529	Block States: testmod
+// 1.20.1	2024-01-26T19:27:10.7673422	Block States: testmod
 8457fb07551751cbd89d0ea0d5ced1bb9da1155b assets/testmod/blockstates/aluminium_block.json
 475c1b80c2dc5ca886cc5a5abfd45f27ab494296 assets/testmod/blockstates/aluminium_ore.json
 2e2f7ffc5bf016b2cdc98903facb756ab81a7fd7 assets/testmod/blockstates/deepslate_aluminium_ore.json
@@ -9,6 +9,7 @@ c39b13f33a5f9801ff07975719c9a71ca708ffe4 assets/testmod/blockstates/feryl_slab.j
 e5e8c44abd9b03639e0b460dd176c316ae637246 assets/testmod/blockstates/feryl_stone.json
 6fbbdc96762d578f1c241dc5f7b548751377ea58 assets/testmod/blockstates/feryl_stone_aluminium_ore.json
 9c40fe1f1d9776be564fd6f774cee7b0fa3e5699 assets/testmod/blockstates/feryl_wall.json
+05413616941fd603a57e7841b0e51abfb5efcef1 assets/testmod/blockstates/granite_coal_ore.json
 c359aba39bd91900429aa76ddc6072c93145c9ca assets/testmod/blockstates/raw_aluminium_block.json
 f9ec15f425b3dc6c1c29a5caf200baaf1125a032 assets/testmod/blockstates/raw_titanium_block.json
 20de8b11bfe3a2169edc50b7208c0456852598bf assets/testmod/blockstates/soap_stone.json
@@ -36,6 +37,7 @@ e2730ce55eecda7a72b8e296d2b08e9c708e50ea assets/testmod/models/block/feryl_stone
 82532587521703dd969bff3aa99d22fea7abbc14 assets/testmod/models/block/feryl_wall_post.json
 e8a89f9f74cf9b86c74b7d4c563e8c656a584a4d assets/testmod/models/block/feryl_wall_side.json
 dbf8548d98fbc93c84fcb909184fec777e0c5fc1 assets/testmod/models/block/feryl_wall_side_tall.json
+c9410871393ca2ea67aa298aaa35eb54eaaf0867 assets/testmod/models/block/granite_coal_ore.json
 17b9767fc55969583984a8e74887c19db0f2b7ee assets/testmod/models/block/raw_aluminium_block.json
 2ef02d233f63dca8d81f657b8059ec34d08fd1cc assets/testmod/models/block/raw_titanium_block.json
 f9b6068fbaba78cc5f3ba42a0b8806aec7a43c37 assets/testmod/models/block/soap_stone.json
@@ -58,6 +60,7 @@ b4e49111af1e8367db49768347dc9517291c0201 assets/testmod/models/item/aluminium_bl
 15af4476264888f2d949a271b67e92e72190514a assets/testmod/models/item/deepslate_aluminium_ore.json
 82d0a7f8d9a441def484974dbc07b9c174e90fe0 assets/testmod/models/item/feryl_stone.json
 80de5dacdf19ab977416e6432036ebb24e0887ab assets/testmod/models/item/feryl_stone_aluminium_ore.json
+60c05acd68eee77f3ad97a9adedc7737d2f9f2f0 assets/testmod/models/item/granite_coal_ore.json
 a9c47953fa8d8adbbb1ef42edbc3cf5b83305a7f assets/testmod/models/item/raw_aluminium_block.json
 2499a740eec459d426946c94e1afb972fc0fd898 assets/testmod/models/item/raw_titanium_block.json
 453548022ca0f02a67fa879bcf743617aea6ed4c assets/testmod/models/item/soap_stone.json

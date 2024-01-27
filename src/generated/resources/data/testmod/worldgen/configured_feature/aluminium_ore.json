@@ -18,7 +18,7 @@
           "Name": "testmod:deepslate_aluminium_ore"
         },
         "target": {
-          "block": "minecraft:stone",
+          "block": "minecraft:deepslate",
           "predicate_type": "minecraft:block_match"
         }
       },
@@ -27,7 +27,7 @@
           "Name": "testmod:soap_stone_aluminium_ore"
         },
         "target": {
-          "block": "minecraft:stone",
+          "block": "testmod:soap_stone",
           "predicate_type": "minecraft:block_match"
         }
       },
@@ -36,7 +36,7 @@
           "Name": "testmod:feryl_stone_aluminium_ore"
         },
         "target": {
-          "block": "minecraft:stone",
+          "block": "testmod:feryl_stone",
           "predicate_type": "minecraft:block_match"
         }
       }

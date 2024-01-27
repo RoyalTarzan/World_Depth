@@ -3,6 +3,7 @@ package net.tarzan.testmod.datagen.loot;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -44,10 +45,18 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.ALUMINIUM_ORE.get(),
                 block -> createAlumiuniumOreDrops(ModBlocks.ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
         this.add(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(),
-                block -> createDeepslateAlumiuniumOreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
+                block -> createAlumiuniumOreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
         this.add(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
         this.add(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(),
-                block -> createDeepslateAlumiuniumOreDrops(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
+                block -> createAlumiuniumOreDrops(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), ModItems.RAW_ALUMINIUM.get()));
+        this.add(ModBlocks.GRANITE_COAL_ORE.get(),
+                block -> createOreDrop(ModBlocks.GRANITE_COAL_ORE.get(), Items.COAL));
+        this.add(ModBlocks.DIORITE_COAL_ORE.get(),
+                block -> createOreDrop(ModBlocks.DIORITE_COAL_ORE.get(), Items.COAL));
+        this.add(ModBlocks.TUFF_COAL_ORE.get(),
+                block -> createOreDrop(ModBlocks.TUFF_COAL_ORE.get(), Items.COAL));
+        this.add(ModBlocks.ANDESITE_COAL_ORE.get(),
+                block -> createOreDrop(ModBlocks.ANDESITE_COAL_ORE.get(), Items.COAL));
     }
     protected LootTable.Builder createAlumiuniumOreDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,
@@ -56,13 +65,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
-    protected LootTable.Builder createDeepslateAlumiuniumOreDrops(Block pBlock, Item item) {
-        return createSilkTouchDispatchTable(pBlock,
-                this.applyExplosionDecay(pBlock,
-                        LootItem.lootTableItem(item)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 10.0F)))
-                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
-    }
+
     @Override
     protected Iterable<Block> getKnownBlocks(){
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;

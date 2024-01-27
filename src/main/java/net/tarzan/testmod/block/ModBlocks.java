@@ -29,16 +29,23 @@ public class ModBlocks {
     public static final RegistryObject<Block> ALUMINIUM_ORE=registerBlock("aluminium_ore",
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3,6)));
     public static final RegistryObject<Block> DEEPSLATE_ALUMINIUM_ORE=registerBlock("deepslate_aluminium_ore",
-            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(3f).requiresCorrectToolForDrops(), UniformInt.of(4,8)));
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3,6)));
     public static final RegistryObject<Block> FERYL_STONE=registerBlock("feryl_stone",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
     public static final RegistryObject<Block> SOAP_STONE=registerBlock("soap_stone",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,4.0f)));
     public static final RegistryObject<Block> SOAP_STONE_ALUMINIUM_ORE=registerBlock("soap_stone_aluminium_ore",
-            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(2.0f,8.0f).requiresCorrectToolForDrops(), UniformInt.of(1,3)));
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3,6)));
     public static final RegistryObject<Block> FERYL_STONE_ALUMINIUM_ORE=registerBlock("feryl_stone_aluminium_ore",
-            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(3.4f,14).requiresCorrectToolForDrops(), UniformInt.of(4,7)));
-
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3,6)));
+    public static final RegistryObject<Block> GRANITE_COAL_ORE=registerBlock("granite_coal_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GRANITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
+    public static final RegistryObject<Block> DIORITE_COAL_ORE=registerBlock("diorite_coal_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIORITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
+    public static final RegistryObject<Block> TUFF_COAL_ORE=registerBlock("tuff_coal_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
+    public static final RegistryObject<Block> ANDESITE_COAL_ORE=registerBlock("andesite_coal_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
 
     public static final RegistryObject<Block> FERYL_STAIRS=registerBlock("feryl_stairs",
             ()->new StairBlock(()->ModBlocks.FERYL_STONE.get().defaultBlockState(),

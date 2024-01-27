@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-24T21:06:58.612529	Loot Tables
+// 1.20.1	2024-01-26T19:27:10.766341	Loot Tables
 45ececf25a82fbab3a341d6556e2dc6fd2651add data/testmod/loot_tables/blocks/aluminium_block.json
 595186a4686a305e137ad8bb653be2111604636e data/testmod/loot_tables/blocks/aluminium_ore.json
 7149ea38ebcbea8710a1f2651dd789dfe574890d data/testmod/loot_tables/blocks/deepslate_aluminium_ore.json
@@ -9,6 +9,7 @@
 27b5f903017cc20f91c93e643c75203484cb10a7 data/testmod/loot_tables/blocks/feryl_stone.json
 4a13286c45d848579bfece57332a3814e48f6126 data/testmod/loot_tables/blocks/feryl_stone_aluminium_ore.json
 6cbe9e974c6404a525d142c238726c0f04493ab2 data/testmod/loot_tables/blocks/feryl_wall.json
+bff1bbfb2608686038e38658aa64b185a7e5e644 data/testmod/loot_tables/blocks/granite_coal_ore.json
 b7ea57bb78857c7caf481b2b99f0f4fa53150f8b data/testmod/loot_tables/blocks/raw_aluminium_block.json
 e7ffd606c6259f87b3926f0c949a67aacd08d293 data/testmod/loot_tables/blocks/raw_titanium_block.json
 a47750a49da97a86307867409f522d8cbb93e71d data/testmod/loot_tables/blocks/soap_stone.json

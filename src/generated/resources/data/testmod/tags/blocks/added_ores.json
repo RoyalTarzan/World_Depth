@@ -3,6 +3,10 @@
     "testmod:aluminium_ore",
     "testmod:deepslate_aluminium_ore",
     "testmod:soap_stone_aluminium_ore",
-    "testmod:feryl_stone_aluminium_ore"
+    "testmod:feryl_stone_aluminium_ore",
+    "testmod:granite_coal_ore",
+    "testmod:diorite_coal_ore",
+    "testmod:tuff_coal_ore",
+    "testmod:andesite_coal_ore"
   ]
 }
