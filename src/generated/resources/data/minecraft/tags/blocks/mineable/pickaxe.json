@@ -1,17 +1,21 @@
 {
   "values": [
-    "testmod:aluminium_ore",
     "testmod:aluminium_block",
     "testmod:raw_aluminium_block",
-    "testmod:deepslate_aluminium_ore",
     "testmod:raw_titanium_block",
     "testmod:titanium_block",
     "testmod:feryl_stone",
     "testmod:soap_stone",
-    "testmod:soap_stone_aluminium_ore",
-    "testmod:granite_coal_ore",
-    "testmod:diorite_coal_ore",
-    "testmod:tuff_coal_ore",
-    "testmod:andesite_coal_ore"
+    "testmod:soap_stone_button",
+    "testmod:soap_stone_slab",
+    "testmod:soap_stone_wall",
+    "testmod:soap_stone_pressure_plate",
+    "testmod:soap_stone_stairs",
+    "testmod:feryl_button",
+    "testmod:feryl_slab",
+    "testmod:feryl_wall",
+    "testmod:feryl_pressure_plate",
+    "testmod:feryl_stairs",
+    "#testmod:added_ores"
   ]
 }

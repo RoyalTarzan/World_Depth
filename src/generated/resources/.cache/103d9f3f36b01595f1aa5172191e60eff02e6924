@@ -1,0 +1,4 @@
+// 1.20.1	2024-01-26T19:30:24.0450736	Registries
+a0cc642aa40415165e9df555329a907f229c76dc data/testmod/forge/biome_modifier/add_aluminium_ore.json
+138119bfa71a4d6bf6e7829a23e79c9b56aeeef0 data/testmod/worldgen/configured_feature/aluminium_ore.json
+51f1e6e06155c3c01f48a3996ae5ce32679ba77e data/testmod/worldgen/placed_feature/aluminium_ore_placed.json

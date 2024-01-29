@@ -45,35 +45,35 @@ public class ModBlocks {
     public static final RegistryObject<Block> TUFF_COAL_ORE=registerBlock("tuff_coal_ore",
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
     public static final RegistryObject<Block> ANDESITE_COAL_ORE=registerBlock("andesite_coal_ore",
-            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(0,2)));
 
     public static final RegistryObject<Block> FERYL_STAIRS=registerBlock("feryl_stairs",
             ()->new StairBlock(()->ModBlocks.FERYL_STONE.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
     public static final RegistryObject<Block> FERYL_SLAB=registerBlock("feryl_slab",
-            ()->new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
+            ()->new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(1.7f,7f)));
 
     public static final RegistryObject<Block> FERYL_BUTTON=registerBlock("feryl_button",
             ()->new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE,10,true));
     public static final RegistryObject<Block> FERYL_PRESSURE_PLATE=registerBlock("feryl_pressure_plate",
-            ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS,BlockBehaviour.Properties.copy(Blocks.STONE), BlockSetType.STONE));
+            ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS,BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()), BlockSetType.STONE));
 
     public static final RegistryObject<Block> FERYL_WALL=registerBlock("feryl_wall",
-            ()->new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
+            ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(1.7f,7f)));
 
     public static final RegistryObject<Block> SOAP_STONE_STAIRS=registerBlock("soap_stone_stairs",
             ()->new StairBlock(()->ModBlocks.SOAP_STONE.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,7f)));
     public static final RegistryObject<Block> SOAP_STONE_SLAB=registerBlock("soap_stone_slab",
-            ()->new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,7f)));
+            ()->new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(1.0f,7f)));
 
     public static final RegistryObject<Block> SOAP_STONE_BUTTON=registerBlock("soap_stone_button",
             ()->new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.GOLD,5,true));
     public static final RegistryObject<Block> SOAP_STONE_PRESSURE_PLATE=registerBlock("soap_stone_pressure_plate",
-            ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS,BlockBehaviour.Properties.copy(Blocks.STONE), BlockSetType.GOLD));
+            ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()), BlockSetType.GOLD));
 
     public static final RegistryObject<Block> SOAP_STONE_WALL=registerBlock("soap_stone_wall",
-            ()->new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,7f)));
+            ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get())));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn=BLOCKS.register(name, block);
