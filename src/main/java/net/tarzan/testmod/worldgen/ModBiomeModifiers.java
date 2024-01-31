@@ -15,6 +15,9 @@ import net.tarzan.testmod.TestMod1;
 public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_ALUMINIUM_ORE=registerKey("add_aluminium_ore");
     public static final ResourceKey<BiomeModifier> ADD_COAL_ORE=registerKey("add_coal_ore");
+    public static final ResourceKey<BiomeModifier> ADD_IRON_ORE=registerKey("add_iron_ore");
+    public static final ResourceKey<BiomeModifier> ADD_GOLD_ORE=registerKey("add_gold_ore");
+    public static final ResourceKey<BiomeModifier> ADD_COPPER_ORE=registerKey("add_copper_ore");
 
 
     public static void bootstrap(BootstapContext<BiomeModifier> context){
@@ -28,6 +31,18 @@ public class ModBiomeModifiers {
         context.register(ADD_COAL_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.COAL_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_IRON_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.IRON_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_GOLD_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GOLD_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_COPPER_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.COPPER_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 

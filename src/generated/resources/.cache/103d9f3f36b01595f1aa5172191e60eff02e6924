@@ -1,4 +1,10 @@
-// 1.20.1	2024-01-26T19:30:24.0450736	Registries
+// 1.20.1	2024-01-31T20:30:48.2648192	Registries
 a0cc642aa40415165e9df555329a907f229c76dc data/testmod/forge/biome_modifier/add_aluminium_ore.json
-138119bfa71a4d6bf6e7829a23e79c9b56aeeef0 data/testmod/worldgen/configured_feature/aluminium_ore.json
+44c60334f49085fbe1e49e904001d30c827adcf7 data/testmod/forge/biome_modifier/add_coal_ore.json
+224b890f7c6a50d3d4af3e5857e5091ff60e8935 data/testmod/forge/biome_modifier/add_iron_ore.json
+25b3aca0370f8626984f578183586da91642076e data/testmod/worldgen/configured_feature/aluminium_ore.json
+86bf89e09dff427194b745edc1fec5b921368977 data/testmod/worldgen/configured_feature/coal_ore.json
+6e16cf0ce50345c8dcb716a9a2f2f38a57719ca4 data/testmod/worldgen/configured_feature/iron_ore.json
 51f1e6e06155c3c01f48a3996ae5ce32679ba77e data/testmod/worldgen/placed_feature/aluminium_ore_placed.json
+f5783d99f47de58a20edd1ea07a8baf430e0cbf0 data/testmod/worldgen/placed_feature/coal_ore_placed.json
+c34e848594734c4a3b22635fba0ae811d28b9112 data/testmod/worldgen/placed_feature/iron_ore_placed.json

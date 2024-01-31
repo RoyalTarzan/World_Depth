@@ -26,6 +26,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get());
                         output.accept(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get());
                         output.accept(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get());
+                        output.accept(ModBlocks.ANDESITE_ALUMINIUM_ORE.get());
+                        output.accept(ModBlocks.TUFF_ALUMINIUM_ORE.get());
+                        output.accept(ModBlocks.GRANITE_ALUMINIUM_ORE.get());
+                        output.accept(ModBlocks.DIORITE_ALUMINIUM_ORE.get());
                         output.accept(ModItems.TITANIUM.get());
                         output.accept(ModItems.RAW_TITANIUM.get());
                         output.accept(ModBlocks.TITANIUM_BLOCK.get());
@@ -47,6 +51,18 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DIORITE_COAL_ORE.get());
                         output.accept(ModBlocks.GRANITE_COAL_ORE.get());
                         output.accept(ModBlocks.TUFF_COAL_ORE.get());
+                        output.accept(ModBlocks.ANDESITE_IRON_ORE.get());
+                        output.accept(ModBlocks.DIORITE_IRON_ORE.get());
+                        output.accept(ModBlocks.GRANITE_IRON_ORE.get());
+                        output.accept(ModBlocks.TUFF_IRON_ORE.get());
+                        output.accept(ModBlocks.ANDESITE_GOLD_ORE.get());
+                        output.accept(ModBlocks.DIORITE_GOLD_ORE.get());
+                        output.accept(ModBlocks.GRANITE_GOLD_ORE.get());
+                        output.accept(ModBlocks.TUFF_GOLD_ORE.get());
+                        output.accept(ModBlocks.ANDESITE_COPPER_ORE.get());
+                        output.accept(ModBlocks.DIORITE_COPPER_ORE.get());
+                        output.accept(ModBlocks.GRANITE_COPPER_ORE.get());
+                        output.accept(ModBlocks.TUFF_COPPER_ORE.get());
 
                     })
                     .build());

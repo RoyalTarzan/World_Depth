@@ -10,6 +10,7 @@ import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.tarzan.testmod.TestMod1;
 import net.tarzan.testmod.block.ModBlocks;
 import net.tarzan.testmod.item.ModItems;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 import java.util.List;
@@ -17,18 +18,21 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
     private static final List<ItemLike> ALUMINIUM_SMELTABLES=List.of(ModItems.RAW_ALUMINIUM.get(),
-            ModBlocks.ALUMINIUM_ORE.get(),ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get());
+            ModBlocks.ALUMINIUM_ORE.get(),ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), ModBlocks.ANDESITE_ALUMINIUM_ORE.get(), ModBlocks.DIORITE_ALUMINIUM_ORE.get(), ModBlocks.GRANITE_ALUMINIUM_ORE.get(), ModBlocks.TUFF_ALUMINIUM_ORE.get());
     private static final List<ItemLike> RAW_ALUMINIUM_BLOCK=List.of(ModBlocks.RAW_ALUMINIUM_BLOCK.get());
+    private static final List<ItemLike> RAW_TITANIUM_BLOCK=List.of(ModBlocks.RAW_TITANIUM_BLOCK.get());
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         oreSmelting(consumer, ALUMINIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINIUM.get(), 0.7f,200,"aluminium");
         oreBlasting(consumer, ALUMINIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINIUM.get(), 0.7f,100,"aluminium");
         oreBlasting(consumer, RAW_ALUMINIUM_BLOCK, RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get(), 2.1f,300,"aluminium");
         oreSmelting(consumer, RAW_ALUMINIUM_BLOCK, RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get(), 2.1f,600,"aluminium");
+        oreBlasting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 2.1f,300,"aluminium");
+        oreSmelting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 2.1f,600,"aluminium");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get())
                 .pattern("SSS")
@@ -37,6 +41,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.ALUMINIUM.get())
                 .unlockedBy(getHasName(ModItems.ALUMINIUM.get()), has(ModItems.ALUMINIUM.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.TITANIUM.get())
+                .unlockedBy(getHasName(ModItems.TITANIUM.get()), has(ModItems.TITANIUM.get()))
+                .save(consumer);
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_ALUMINIUM_BLOCK.get())
                 .pattern("SSS")
                 .pattern("SSS")
@@ -44,25 +55,40 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.RAW_ALUMINIUM.get())
                 .unlockedBy(getHasName(ModItems.RAW_ALUMINIUM.get()), has(ModItems.RAW_ALUMINIUM.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RAW_TITANIUM_BLOCK.get())
+                .pattern("SSS")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.RAW_TITANIUM.get())
+                .unlockedBy(getHasName(ModItems.RAW_TITANIUM.get()), has(ModItems.RAW_TITANIUM.get()))
+                .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALUMINIUM.get(), 9)
                 .requires(ModBlocks.ALUMINIUM_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.ALUMINIUM_BLOCK.get()), has(ModBlocks.ALUMINIUM_BLOCK.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TITANIUM.get(), 9)
+                .requires(ModBlocks.TITANIUM_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.TITANIUM_BLOCK.get()), has(ModBlocks.TITANIUM_BLOCK.get()))
+                .save(consumer);
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_ALUMINIUM.get(), 9)
                 .requires(ModBlocks.RAW_ALUMINIUM_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RAW_ALUMINIUM_BLOCK.get()), has(ModBlocks.RAW_ALUMINIUM_BLOCK.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TITANIUM.get(), 9)
+                .requires(ModBlocks.RAW_TITANIUM_BLOCK.get())
+                .unlockedBy(getHasName(ModBlocks.RAW_TITANIUM_BLOCK.get()), has(ModBlocks.RAW_TITANIUM_BLOCK.get()))
+                .save(consumer);
     }
-    protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
+    protected static void oreSmelting(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTIme, @NotNull String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
 
-    protected static void oreBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
+    protected static void oreBlasting(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTime, @NotNull String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.BLASTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_blasting");
     }
 
-    protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
+    protected static void oreCooking(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer, @NotNull RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTime, @NotNull String pGroup, String pRecipeName) {
         Iterator var9 = pIngredients.iterator();
 
         while(var9.hasNext()) {

@@ -1,6 +1,14 @@
 {
   "values": [
     "testmod:aluminium_block",
+    "testmod:granite_aluminium_ore",
+    "testmod:diorite_aluminium_ore",
+    "testmod:tuff_aluminium_ore",
+    "testmod:andesite_aluminium_ore",
+    "testmod:granite_gold_ore",
+    "testmod:diorite_gold_ore",
+    "testmod:tuff_gold_ore",
+    "testmod:andesite_gold_ore",
     "testmod:raw_aluminium_block",
     "testmod:aluminium_ore",
     "testmod:deepslate_aluminium_ore",

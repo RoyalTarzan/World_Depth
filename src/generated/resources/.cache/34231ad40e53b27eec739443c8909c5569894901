@@ -1,6 +1,7 @@
-// 1.20.1	2024-01-26T19:27:10.765342	Tags for minecraft:block mod id testmod
-9bfe430424ded83c19c41bfc43b5717238f5cf6c data/minecraft/tags/blocks/mineable/pickaxe.json
+// 1.20.1	2024-01-31T20:30:48.2628186	Tags for minecraft:block mod id testmod
+3535571d3910f1e161b1b89b1d5cbb61669ce2be data/minecraft/tags/blocks/mineable/pickaxe.json
 0905a6260b0056df58768acd09da067ab89d46ae data/minecraft/tags/blocks/needs_diamond_tool.json
-93f48453d48f1587db6ffc464c379a3b44c8e8bf data/minecraft/tags/blocks/needs_iron_tool.json
-a915e9f5ffb65232473e156fde5c5961366cef6a data/minecraft/tags/blocks/walls.json
-f4642ed502026815c3a94f23940039e5f3d9106a data/testmod/tags/blocks/added_ores.json
+60613bb29b77796377ce4b110736b85fc35508f5 data/minecraft/tags/blocks/needs_iron_tool.json
+7684c0dc0890c8e8c3e7bac86b03456b96d78393 data/minecraft/tags/blocks/needs_stone_tool.json
+33c66e83ecd5b1b259a27bc0805a191d6ee2a177 data/minecraft/tags/blocks/walls.json
+b8d9c7c81eb9f524b6ae7f810a2f731eac6b30d0 data/testmod/tags/blocks/added_ores.json

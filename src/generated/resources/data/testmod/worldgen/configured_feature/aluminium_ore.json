@@ -2,7 +2,7 @@
   "type": "minecraft:ore",
   "config": {
     "discard_chance_on_air_exposure": 0.0,
-    "size": 9,
+    "size": 15,
     "targets": [
       {
         "state": {
@@ -37,6 +37,42 @@
         },
         "target": {
           "block": "testmod:feryl_stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "testmod:granite_aluminium_ore"
+        },
+        "target": {
+          "block": "minecraft:granite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "testmod:diorite_aluminium_ore"
+        },
+        "target": {
+          "block": "minecraft:diorite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "testmod:tuff_aluminium_ore"
+        },
+        "target": {
+          "block": "minecraft:tuff",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "testmod:andesite_aluminium_ore"
+        },
+        "target": {
+          "block": "minecraft:andesite",
           "predicate_type": "minecraft:block_match"
         }
       }

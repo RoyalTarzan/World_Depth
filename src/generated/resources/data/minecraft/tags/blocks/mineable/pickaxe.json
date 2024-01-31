@@ -8,14 +8,13 @@
     "testmod:soap_stone",
     "testmod:soap_stone_button",
     "testmod:soap_stone_slab",
-    "testmod:soap_stone_wall",
     "testmod:soap_stone_pressure_plate",
     "testmod:soap_stone_stairs",
     "testmod:feryl_button",
     "testmod:feryl_slab",
-    "testmod:feryl_wall",
     "testmod:feryl_pressure_plate",
     "testmod:feryl_stairs",
-    "#testmod:added_ores"
+    "#testmod:added_ores",
+    "#minecraft:walls"
   ]
 }

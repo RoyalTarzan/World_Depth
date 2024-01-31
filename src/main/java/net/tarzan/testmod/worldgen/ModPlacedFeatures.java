@@ -18,6 +18,9 @@ import java.util.List;
 public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ALUMINIUM_ORE_PLACED_KEY=registerKey("aluminium_ore_placed");
     public static final ResourceKey<PlacedFeature> COAL_ORE_PLACED_KEY=registerKey("coal_ore_placed");
+    public static final ResourceKey<PlacedFeature> IRON_ORE_PLACED_KEY=registerKey("iron_ore_placed");
+    public static final ResourceKey<PlacedFeature> GOLD_ORE_PLACED_KEY=registerKey("gold_ore_placed");
+    public static final ResourceKey<PlacedFeature> COPPER_ORE_PLACED_KEY=registerKey("copper_ore_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context){
         HolderGetter<ConfiguredFeature<?,?>> configuredFeatures=context.lookup(Registries.CONFIGURED_FEATURE);
@@ -25,8 +28,13 @@ public class ModPlacedFeatures {
         register(context, ALUMINIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ALUMINIUM_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(20, HeightRangePlacement.triangle(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(100))));
         register(context, COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.COAL_ORE_KEY),
-                ModOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(100))));
-
+                ModOrePlacement.commonOrePlacement(30, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(100))));
+        register(context, IRON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.IRON_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(70))));
+        register(context, GOLD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.GOLD_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(70))));
+        register(context, IRON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.COPPER_ORE_KEY),
+                ModOrePlacement.commonOrePlacement(30, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(70))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {
