@@ -18,6 +18,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_IRON_ORE=registerKey("add_iron_ore");
     public static final ResourceKey<BiomeModifier> ADD_GOLD_ORE=registerKey("add_gold_ore");
     public static final ResourceKey<BiomeModifier> ADD_COPPER_ORE=registerKey("add_copper_ore");
+    public static final ResourceKey<BiomeModifier> ADD_DIAMOND_ORE=registerKey("add_diamond_ore");
 
 
     public static void bootstrap(BootstapContext<BiomeModifier> context){
@@ -43,6 +44,10 @@ public class ModBiomeModifiers {
         context.register(ADD_COPPER_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.COPPER_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_DIAMOND_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.DIAMOND_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 

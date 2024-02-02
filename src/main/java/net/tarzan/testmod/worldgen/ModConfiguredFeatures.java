@@ -22,6 +22,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> IRON_ORE_KEY=registerKey("iron_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GOLD_ORE_KEY=registerKey("gold_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> COPPER_ORE_KEY=registerKey("copper_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> DIAMOND_ORE_KEY=registerKey("diamond_ore");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>> context){
@@ -63,11 +64,19 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(tuff, ModBlocks.TUFF_COPPER_ORE.get().defaultBlockState()),
                 OreConfiguration.target(andesite, ModBlocks.ANDESITE_COPPER_ORE.get().defaultBlockState()));
 
+        List<OreConfiguration.TargetBlockState> diamondOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(diorite, ModBlocks.DIORITE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(tuff, ModBlocks.TUFF_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_DIAMOND_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_DIAMOND_ORE.get().defaultBlockState()));
+
         register(context, ALUMINIUM_ORE_KEY, Feature.ORE, new OreConfiguration(aluminiumOres, 15));
         register(context, COAL_ORE_KEY, Feature.ORE, new OreConfiguration(coalOres, 10));
         register(context, IRON_ORE_KEY, Feature.ORE, new OreConfiguration(ironOres, 8));
         register(context, GOLD_ORE_KEY, Feature.ORE, new OreConfiguration(goldOres, 6));
         register(context, COPPER_ORE_KEY, Feature.ORE, new OreConfiguration(copperOres, 10));
+        register(context, DIAMOND_ORE_KEY, Feature.ORE, new OreConfiguration(diamondOres, 8));
 
     }
 

@@ -63,6 +63,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DIORITE_COPPER_ORE.get());
                         output.accept(ModBlocks.GRANITE_COPPER_ORE.get());
                         output.accept(ModBlocks.TUFF_COPPER_ORE.get());
+                        output.accept(ModBlocks.ANDESITE_DIAMOND_ORE.get());
+                        output.accept(ModBlocks.DIORITE_DIAMOND_ORE.get());
+                        output.accept(ModBlocks.GRANITE_DIAMOND_ORE.get());
+                        output.accept(ModBlocks.TUFF_DIAMOND_ORE.get());
+                        output.accept(ModBlocks.SOAP_STONE_DIAMOND_ORE.get());
+                        output.accept(ModBlocks.FERYL_STONE_DIAMOND_ORE.get());
 
                     })
                     .build());

@@ -66,6 +66,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.DIORITE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.DIORITE_COPPER_ORE.get()));
         this.add(ModBlocks.TUFF_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.TUFF_COPPER_ORE.get()));
         this.add(ModBlocks.ANDESITE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.ANDESITE_COPPER_ORE.get()));
+        this.add(ModBlocks.GRANITE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_DIAMOND_ORE.get(), Items.DIAMOND));
+        this.add(ModBlocks.DIORITE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_DIAMOND_ORE.get(), Items.DIAMOND));
+        this.add(ModBlocks.TUFF_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.TUFF_DIAMOND_ORE.get(), Items.DIAMOND));
+        this.add(ModBlocks.ANDESITE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.ANDESITE_DIAMOND_ORE.get(), Items.DIAMOND));
+        this.add(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), Items.DIAMOND));
+        this.add(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), Items.DIAMOND));
     }
     protected LootTable.Builder createAlumiuniumOreDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,

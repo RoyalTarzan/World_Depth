@@ -45,7 +45,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.GRANITE_COPPER_ORE.get(),
                         ModBlocks.DIORITE_COPPER_ORE.get(),
                         ModBlocks.TUFF_COPPER_ORE.get(),
-                        ModBlocks.ANDESITE_COPPER_ORE.get());
+                        ModBlocks.ANDESITE_COPPER_ORE.get(),
+                        ModBlocks.GRANITE_DIAMOND_ORE.get(),
+                        ModBlocks.DIORITE_DIAMOND_ORE.get(),
+                        ModBlocks.TUFF_DIAMOND_ORE.get(),
+                        ModBlocks.ANDESITE_DIAMOND_ORE.get(),
+                        ModBlocks.SOAP_STONE_DIAMOND_ORE.get(),
+                        ModBlocks.FERYL_STONE_DIAMOND_ORE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ALUMINIUM_BLOCK.get(),
@@ -99,6 +105,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.RAW_ALUMINIUM_BLOCK.get(),
                         ModBlocks.ALUMINIUM_ORE.get(),
                         ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(),
-                        ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get());
+                        ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(),
+                        ModBlocks.GRANITE_DIAMOND_ORE.get(),
+                        ModBlocks.DIORITE_DIAMOND_ORE.get(),
+                        ModBlocks.TUFF_DIAMOND_ORE.get(),
+                        ModBlocks.ANDESITE_DIAMOND_ORE.get(),
+                        ModBlocks.SOAP_STONE_DIAMOND_ORE.get(),
+                        ModBlocks.FERYL_STONE_DIAMOND_ORE.get());
     }
 }

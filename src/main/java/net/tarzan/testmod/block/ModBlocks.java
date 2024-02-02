@@ -78,6 +78,18 @@ public class ModBlocks {
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(2f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> ANDESITE_COPPER_ORE=registerBlock("andesite_copper_ore",
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE).strength(2f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> GRANITE_DIAMOND_ORE=registerBlock("granite_diamond_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GRANITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> DIORITE_DIAMOND_ORE=registerBlock("diorite_diamond_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIORITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> TUFF_DIAMOND_ORE=registerBlock("tuff_diamond_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> ANDESITE_DIAMOND_ORE=registerBlock("andesite_diamond_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> SOAP_STONE_DIAMOND_ORE=registerBlock("soap_stone_diamond_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> FERYL_STONE_DIAMOND_ORE=registerBlock("feryl_stone_diamond_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 
     public static final RegistryObject<Block> FERYL_STAIRS=registerBlock("feryl_stairs",
             ()->new StairBlock(()->ModBlocks.FERYL_STONE.get().defaultBlockState(),

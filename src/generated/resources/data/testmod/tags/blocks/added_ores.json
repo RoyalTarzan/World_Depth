@@ -23,6 +23,12 @@
     "testmod:granite_copper_ore",
     "testmod:diorite_copper_ore",
     "testmod:tuff_copper_ore",
-    "testmod:andesite_copper_ore"
+    "testmod:andesite_copper_ore",
+    "testmod:granite_diamond_ore",
+    "testmod:diorite_diamond_ore",
+    "testmod:tuff_diamond_ore",
+    "testmod:andesite_diamond_ore",
+    "testmod:soap_stone_diamond_ore",
+    "testmod:feryl_stone_diamond_ore"
   ]
 }
