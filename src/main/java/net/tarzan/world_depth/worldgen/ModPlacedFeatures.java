@@ -25,6 +25,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LAPIS_ORE_PLACED_KEY=registerKey("lapis_ore_placed");
     public static final ResourceKey<PlacedFeature> REDSTONE_ORE_PLACED_KEY=registerKey("redstone_ore_placed");
     public static final ResourceKey<PlacedFeature> EMERALD_ORE_PLACED_KEY=registerKey("emerald_ore_placed");
+    public static final ResourceKey<PlacedFeature> TITANIUM_ORE_PLACED_KEY=registerKey("titanium_ore_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context){
         HolderGetter<ConfiguredFeature<?,?>> configuredFeatures=context.lookup(Registries.CONFIGURED_FEATURE);
@@ -47,6 +48,8 @@ public class ModPlacedFeatures {
                 ModOrePlacement.commonOrePlacement(30, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(70))));
         register(context, EMERALD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.EMERALD_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(70))));
+        register(context, TITANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_KEY),
+                ModOrePlacement.rareOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.absolute(-128), VerticalAnchor.absolute(70))));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

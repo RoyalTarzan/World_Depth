@@ -26,6 +26,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> LAPIS_ORE_KEY=registerKey("lapis_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDSTONE_ORE_KEY=registerKey("redstone_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMERALD_ORE_KEY=registerKey("emerald_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> TITANIUM_ORE_KEY=registerKey("titanium_ore");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>> context){
@@ -89,6 +90,13 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(tuff, ModBlocks.TUFF_EMERALD_ORE.get().defaultBlockState()),
                 OreConfiguration.target(andesite, ModBlocks.ANDESITE_EMERALD_ORE.get().defaultBlockState()));
 
+        List<OreConfiguration.TargetBlockState> titaniumOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(diorite, ModBlocks.DIORITE_TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(tuff, ModBlocks.TUFF_TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_TITANIUM_ORE.get().defaultBlockState()));
+
         register(context, ALUMINIUM_ORE_KEY, Feature.ORE, new OreConfiguration(aluminiumOres, 15));
         register(context, COAL_ORE_KEY, Feature.ORE, new OreConfiguration(coalOres, 10));
         register(context, IRON_ORE_KEY, Feature.ORE, new OreConfiguration(ironOres, 8));
@@ -98,6 +106,7 @@ public class ModConfiguredFeatures {
         register(context, LAPIS_ORE_KEY, Feature.ORE, new OreConfiguration(lapisOres, 8));
         register(context, EMERALD_ORE_KEY, Feature.ORE, new OreConfiguration(emeraldOres, 2));
         register(context, REDSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(redstoneOres, 8));
+        register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(redstoneOres, 8));
 
     }
 

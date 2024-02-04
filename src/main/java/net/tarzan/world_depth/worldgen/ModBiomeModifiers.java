@@ -22,6 +22,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_LAPIS_ORE=registerKey("add_lapis_ore");
     public static final ResourceKey<BiomeModifier> ADD_REDSTONE_ORE=registerKey("add_redstone_ore");
     public static final ResourceKey<BiomeModifier> ADD_EMERALD_ORE=registerKey("add_emerald_ore");
+    public static final ResourceKey<BiomeModifier> ADD_TITANIUM_ORE=registerKey("add_titanium_ore");
 
 
     public static void bootstrap(BootstapContext<BiomeModifier> context){
@@ -63,6 +64,10 @@ public class ModBiomeModifiers {
         context.register(ADD_EMERALD_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_MOUNTAIN),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.EMERALD_ORE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES));
+        context.register(ADD_TITANIUM_ORE,new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.TITANIUM_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 

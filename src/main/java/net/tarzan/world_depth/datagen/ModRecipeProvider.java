@@ -21,6 +21,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
             ModBlocks.ALUMINIUM_ORE.get(),ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), ModBlocks.ANDESITE_ALUMINIUM_ORE.get(), ModBlocks.DIORITE_ALUMINIUM_ORE.get(), ModBlocks.GRANITE_ALUMINIUM_ORE.get(), ModBlocks.TUFF_ALUMINIUM_ORE.get());
     private static final List<ItemLike> RAW_ALUMINIUM_BLOCK=List.of(ModBlocks.RAW_ALUMINIUM_BLOCK.get());
     private static final List<ItemLike> RAW_TITANIUM_BLOCK=List.of(ModBlocks.RAW_TITANIUM_BLOCK.get());
+    private static final List<ItemLike> TITANIUM_SMELTABLES=List.of(ModItems.RAW_TITANIUM.get(),
+        ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), ModBlocks.SOAP_STONE_TITANIUM_ORE.get(), ModBlocks.FERYL_STONE_TITANIUM_ORE.get(), ModBlocks.ANDESITE_TITANIUM_ORE.get(), ModBlocks.DIORITE_TITANIUM_ORE.get(), ModBlocks.GRANITE_TITANIUM_ORE.get(), ModBlocks.TUFF_TITANIUM_ORE.get());
+
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -29,10 +32,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
         oreSmelting(consumer, ALUMINIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINIUM.get(), 0.7f,200,"aluminium");
         oreBlasting(consumer, ALUMINIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINIUM.get(), 0.7f,100,"aluminium");
+        oreSmelting(consumer, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM.get(), 1f,200,"titanium");
+        oreBlasting(consumer, TITANIUM_SMELTABLES, RecipeCategory.MISC, ModItems.TITANIUM.get(), 1f,100,"titanium");
         oreBlasting(consumer, RAW_ALUMINIUM_BLOCK, RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get(), 2.1f,300,"aluminium");
         oreSmelting(consumer, RAW_ALUMINIUM_BLOCK, RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get(), 2.1f,600,"aluminium");
-        oreBlasting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 2.1f,300,"aluminium");
-        oreSmelting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 2.1f,600,"aluminium");
+        oreBlasting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 3f,300,"titanium");
+        oreSmelting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 3f,600,"titanium");
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get())
                 .pattern("SSS")

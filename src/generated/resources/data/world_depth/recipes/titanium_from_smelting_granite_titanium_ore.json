@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "titanium",
+  "ingredient": {
+    "item": "world_depth:granite_titanium_ore"
+  },
+  "result": "world_depth:titanium"
+}

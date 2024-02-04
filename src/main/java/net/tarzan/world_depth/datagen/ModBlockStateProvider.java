@@ -65,6 +65,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIORITE_EMERALD_ORE);
         blockWithItem(ModBlocks.TUFF_EMERALD_ORE);
         blockWithItem(ModBlocks.ANDESITE_EMERALD_ORE);
+        blockWithItem(ModBlocks.GRANITE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.DIORITE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.TUFF_TITANIUM_ORE);
+        blockWithItem(ModBlocks.ANDESITE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_TITANIUM_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_TITANIUM_ORE);
 
         stairsBlock(((StairBlock) ModBlocks.FERYL_STAIRS.get()), blockTexture(ModBlocks.FERYL_STONE.get()));
         slabBlock(((SlabBlock) ModBlocks.FERYL_SLAB.get()), blockTexture(ModBlocks.FERYL_STONE.get()),blockTexture(ModBlocks.FERYL_STONE.get()));

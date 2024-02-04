@@ -81,6 +81,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DIORITE_EMERALD_ORE.get());
                         output.accept(ModBlocks.GRANITE_EMERALD_ORE.get());
                         output.accept(ModBlocks.TUFF_EMERALD_ORE.get());
+                        output.accept(ModBlocks.ANDESITE_TITANIUM_ORE.get());
+                        output.accept(ModBlocks.DIORITE_TITANIUM_ORE.get());
+                        output.accept(ModBlocks.GRANITE_TITANIUM_ORE.get());
+                        output.accept(ModBlocks.TUFF_TITANIUM_ORE.get());
+                        output.accept(ModBlocks.SOAP_STONE_TITANIUM_ORE.get());
+                        output.accept(ModBlocks.FERYL_STONE_TITANIUM_ORE.get());
 
                     })
                     .build());

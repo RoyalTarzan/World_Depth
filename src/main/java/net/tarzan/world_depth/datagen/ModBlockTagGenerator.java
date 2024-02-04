@@ -63,7 +63,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.GRANITE_EMERALD_ORE.get(),
                         ModBlocks.DIORITE_EMERALD_ORE.get(),
                         ModBlocks.TUFF_EMERALD_ORE.get(),
-                        ModBlocks.ANDESITE_EMERALD_ORE.get());
+                        ModBlocks.ANDESITE_EMERALD_ORE.get(),
+                        ModBlocks.GRANITE_TITANIUM_ORE.get(),
+                        ModBlocks.DIORITE_TITANIUM_ORE.get(),
+                        ModBlocks.TUFF_TITANIUM_ORE.get(),
+                        ModBlocks.ANDESITE_TITANIUM_ORE.get(),
+                        ModBlocks.SOAP_STONE_TITANIUM_ORE.get(),
+                        ModBlocks.FERYL_STONE_TITANIUM_ORE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.ALUMINIUM_BLOCK.get(),
@@ -84,8 +90,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .addTag(BlockTags.WALLS);
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.RAW_TITANIUM_BLOCK.get())
-                .add(ModBlocks.TITANIUM_BLOCK.get());
+                .add(ModBlocks.RAW_TITANIUM_BLOCK.get(),
+                        ModBlocks.TITANIUM_BLOCK.get(),
+                        ModBlocks.GRANITE_TITANIUM_ORE.get(),
+                        ModBlocks.DIORITE_TITANIUM_ORE.get(),
+                        ModBlocks.TUFF_TITANIUM_ORE.get(),
+                        ModBlocks.ANDESITE_TITANIUM_ORE.get(),
+                        ModBlocks.SOAP_STONE_TITANIUM_ORE.get(),
+                        ModBlocks.FERYL_STONE_TITANIUM_ORE.get());
 
         this.tag(BlockTags.WALLS)
                 .add(ModBlocks.FERYL_WALL.get(), ModBlocks.SOAP_STONE_WALL.get());

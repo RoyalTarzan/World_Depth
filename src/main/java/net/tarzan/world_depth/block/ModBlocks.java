@@ -114,6 +114,18 @@ public class ModBlocks {
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
     public static final RegistryObject<Block> ANDESITE_EMERALD_ORE=registerBlock("andesite_emerald_ore",
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE).strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> GRANITE_TITANIUM_ORE=registerBlock("granite_titanium_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.GRANITE).strength(2f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> DIORITE_TITANIUM_ORE=registerBlock("diorite_titanium_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIORITE).strength(2f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> TUFF_TITANIUM_ORE=registerBlock("tuff_titanium_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.TUFF).strength(2f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> ANDESITE_TITANIUM_ORE=registerBlock("andesite_titanium_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.ANDESITE).strength(2f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> SOAP_STONE_TITANIUM_ORE=registerBlock("soap_stone_titanium_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(2f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> FERYL_STONE_TITANIUM_ORE=registerBlock("feryl_stone_titanium_ore",
+            ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(2f).requiresCorrectToolForDrops()));
 
 
 

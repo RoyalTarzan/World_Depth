@@ -1,33 +1,33 @@
-[04Feb2024 14:05:30.942] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\royal\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.17, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, world_depth, --all, --output, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\generated\resources, --existing, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\main\resources]
-[04Feb2024 14:05:30.958] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.9 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
-[04Feb2024 14:05:31.254] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[04Feb2024 14:05:31.312] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/royal/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[04Feb2024 14:05:31.678] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.17\4a403a257bf5240c4c8002d15d910fdc8a117ddc\javafmllanguage-1.20.1-47.2.17.jar is missing mods.toml file
-[04Feb2024 14:05:31.681] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.17\94d20fdf4631429052f84a8d75a995a91f7259ab\lowcodelanguage-1.20.1-47.2.17.jar is missing mods.toml file
-[04Feb2024 14:05:31.684] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.17\d546e4c979f6802194438a1a6b87eae9ff358acd\mclanguage-1.20.1-47.2.17.jar is missing mods.toml file
-[04Feb2024 14:05:31.688] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.17\796a3d575471f5171a1adf1db266f1122e3de780\fmlcore-1.20.1-47.2.17.jar is missing mods.toml file
-[04Feb2024 14:05:31.779] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[04Feb2024 14:05:33.425] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\royal\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, world_depth, --all, --output, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\generated\resources, --existing, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\main\resources]
-[04Feb2024 14:05:33.973] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [world_depth]
-[04Feb2024 14:05:37.873] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.17, for MC 1.20.1 with MCP 20230612.114412
-[04Feb2024 14:05:37.874] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.17 Initialized
-[04Feb2024 14:05:38.184] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
-[04Feb2024 14:05:38.191] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.995 ms
-[04Feb2024 14:05:38.545] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/royal/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[04Feb2024 14:05:38.546] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/royal/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[04Feb2024 14:05:38.809] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[04Feb2024 14:05:38.887] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 76 ms
-[04Feb2024 14:05:38.887] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[04Feb2024 14:05:38.993] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 105 ms
-[04Feb2024 14:05:38.993] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: world_depth
-[04Feb2024 14:05:39.191] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: world_depth finished after 197 ms
-[04Feb2024 14:05:39.191] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: world_depth
-[04Feb2024 14:05:39.210] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: world_depth finished after 18 ms
-[04Feb2024 14:05:39.210] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id world_depth
-[04Feb2024 14:05:39.224] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id world_depth finished after 14 ms
-[04Feb2024 14:05:39.224] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id world_depth
-[04Feb2024 14:05:39.224] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id world_depth finished after 0 ms
-[04Feb2024 14:05:39.224] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[04Feb2024 14:05:39.248] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 23 ms
-[04Feb2024 14:05:39.249] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 439 ms
-[04Feb2024 14:05:39.337] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 687, old count: 145, new count: 345, removed stale: 343, written: 344
+[04Feb2024 14:39:22.262] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\royal\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.2.17, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, world_depth, --all, --output, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\generated\resources, --existing, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\main\resources]
+[04Feb2024 14:39:22.271] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.9 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[04Feb2024 14:39:22.458] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[04Feb2024 14:39:22.507] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/royal/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[04Feb2024 14:39:22.836] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.17\4a403a257bf5240c4c8002d15d910fdc8a117ddc\javafmllanguage-1.20.1-47.2.17.jar is missing mods.toml file
+[04Feb2024 14:39:22.838] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.17\94d20fdf4631429052f84a8d75a995a91f7259ab\lowcodelanguage-1.20.1-47.2.17.jar is missing mods.toml file
+[04Feb2024 14:39:22.840] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.17\d546e4c979f6802194438a1a6b87eae9ff358acd\mclanguage-1.20.1-47.2.17.jar is missing mods.toml file
+[04Feb2024 14:39:22.842] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\royal\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.17\796a3d575471f5171a1adf1db266f1122e3de780\fmlcore-1.20.1-47.2.17.jar is missing mods.toml file
+[04Feb2024 14:39:22.916] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[04Feb2024 14:39:24.581] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\royal\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, world_depth, --all, --output, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\generated\resources, --existing, C:\Users\royal\zelf gemaakte mods\forge-test mod\src\main\resources]
+[04Feb2024 14:39:25.098] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [world_depth]
+[04Feb2024 14:39:29.266] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.17, for MC 1.20.1 with MCP 20230612.114412
+[04Feb2024 14:39:29.267] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.17 Initialized
+[04Feb2024 14:39:29.509] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[04Feb2024 14:39:29.516] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 4.439 ms
+[04Feb2024 14:39:29.861] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/royal/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[04Feb2024 14:39:29.862] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/royal/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.2.17_mapped_parchment_2023.09.03-1.20.1.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[04Feb2024 14:39:30.119] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[04Feb2024 14:39:30.196] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 75 ms
+[04Feb2024 14:39:30.196] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[04Feb2024 14:39:30.295] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 99 ms
+[04Feb2024 14:39:30.296] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: world_depth
+[04Feb2024 14:39:30.441] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: world_depth finished after 145 ms
+[04Feb2024 14:39:30.441] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: world_depth
+[04Feb2024 14:39:30.444] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: world_depth finished after 2 ms
+[04Feb2024 14:39:30.444] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id world_depth
+[04Feb2024 14:39:30.479] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id world_depth finished after 34 ms
+[04Feb2024 14:39:30.479] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id world_depth
+[04Feb2024 14:39:30.480] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id world_depth finished after 0 ms
+[04Feb2024 14:39:30.480] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[04Feb2024 14:39:30.510] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 29 ms
+[04Feb2024 14:39:30.510] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 391 ms
+[04Feb2024 14:39:30.536] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 403, old count: 344, new count: 404, removed stale: 0, written: 63

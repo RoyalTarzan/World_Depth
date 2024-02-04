@@ -1,6 +1,12 @@
 {
   "values": [
     "world_depth:raw_titanium_block",
-    "world_depth:titanium_block"
+    "world_depth:titanium_block",
+    "world_depth:granite_titanium_ore",
+    "world_depth:diorite_titanium_ore",
+    "world_depth:tuff_titanium_ore",
+    "world_depth:andesite_titanium_ore",
+    "world_depth:soap_stone_titanium_ore",
+    "world_depth:feryl_stone_titanium_ore"
   ]
 }
