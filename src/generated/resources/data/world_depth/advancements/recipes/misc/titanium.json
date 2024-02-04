@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:titanium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titanium_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:titanium_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_titanium_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:titanium"
+    ]
+  },
+  "sends_telemetry_event": false
+}

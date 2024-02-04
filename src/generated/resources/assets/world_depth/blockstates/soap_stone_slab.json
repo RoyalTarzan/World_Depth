@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "world_depth:block/soap_stone_slab"
+    },
+    "type=double": {
+      "model": "world_depth:block/soap_stone"
+    },
+    "type=top": {
+      "model": "world_depth:block/soap_stone_slab_top"
+    }
+  }
+}

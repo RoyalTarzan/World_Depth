@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soap_stone_aluminium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:soap_stone_aluminium_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:aluminium_from_blasting_soap_stone_aluminium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_soap_stone_aluminium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:aluminium_from_blasting_soap_stone_aluminium_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

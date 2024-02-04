@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_andesite_aluminium_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:andesite_aluminium_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:aluminium_from_smelting_andesite_aluminium_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_andesite_aluminium_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:aluminium_from_smelting_andesite_aluminium_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

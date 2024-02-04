@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "world_depth:block/granite_aluminium_ore"
+  }
+}

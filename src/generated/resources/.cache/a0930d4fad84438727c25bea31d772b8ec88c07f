@@ -1,0 +1,7 @@
+// 1.20.1	2024-02-04T14:05:39.2520091	Tags for minecraft:block mod id world_depth
+941714a040b5ef90b400b66f0d3a8e736804765a data/minecraft/tags/blocks/mineable/pickaxe.json
+b1db02d4e90bd58e2524e3fe1b17c0eb87b39ad7 data/minecraft/tags/blocks/needs_diamond_tool.json
+34cc3ad853d21fd4ffb642c6b364569d3264f9f0 data/minecraft/tags/blocks/needs_iron_tool.json
+11d9235fe631916a196555de04d9470d94105aec data/minecraft/tags/blocks/needs_stone_tool.json
+cfcbdd4e482f60d64726c24be9bd79eaea7dd0cb data/minecraft/tags/blocks/walls.json
+f99f8d1b89a9514b31238025f8610cd8d2713154 data/world_depth/tags/blocks/added_ores.json

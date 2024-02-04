@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 300,
+  "experience": 2.1,
+  "group": "aluminium",
+  "ingredient": {
+    "item": "world_depth:raw_aluminium_block"
+  },
+  "result": "world_depth:aluminium_block"
+}

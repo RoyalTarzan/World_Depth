@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "world_depth:block/soap_stone",
+    "side": "world_depth:block/soap_stone",
+    "top": "world_depth:block/soap_stone"
+  }
+}

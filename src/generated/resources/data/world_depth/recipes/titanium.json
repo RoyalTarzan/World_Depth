@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "world_depth:titanium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "world_depth:titanium"
+  }
+}

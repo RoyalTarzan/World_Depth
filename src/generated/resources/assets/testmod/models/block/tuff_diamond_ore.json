@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "testmod:block/tuff_diamond_ore"
-  }
-}

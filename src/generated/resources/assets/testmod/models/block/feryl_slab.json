@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "testmod:block/feryl_stone",
-    "side": "testmod:block/feryl_stone",
-    "top": "testmod:block/feryl_stone"
-  }
-}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "world_depth:aluminium_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "world_depth:aluminium"
+  }
+}

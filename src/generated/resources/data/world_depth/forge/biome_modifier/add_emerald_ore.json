@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_mountain",
+  "features": "world_depth:emerald_ore_placed",
+  "step": "underground_ores"
+}

@@ -1,6 +1,6 @@
 {
   "values": [
-    "testmod:raw_titanium_block",
-    "testmod:titanium_block"
+    "world_depth:raw_titanium_block",
+    "world_depth:titanium_block"
   ]
 }

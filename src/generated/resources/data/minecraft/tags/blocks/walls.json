@@ -1,6 +1,6 @@
 {
   "values": [
-    "testmod:feryl_wall",
-    "testmod:soap_stone_wall"
+    "world_depth:feryl_wall",
+    "world_depth:soap_stone_wall"
   ]
 }
