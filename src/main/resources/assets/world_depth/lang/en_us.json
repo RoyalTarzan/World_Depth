@@ -1,76 +1,108 @@
 {
   "item.world_depth.aluminium": "Aluminium",
+  "item.world_depth.energized_aluminium": "Energized Aluminium",
   "item.world_depth.raw_aluminium": "Raw Aluminium",
   "item.world_depth.titanium": "Titanium",
+  "item.world_depth.energized_titanium": "Energized Titanium",
   "item.world_depth.raw_titanium": "Raw Titanium",
   "item.world_depth.charged_redstone": "Charged Redstone",
+
+  "item.world_depth.aluminium_helmet": "Aluminium Helmet",
+  "item.world_depth.aluminium_chestplate": "Aluminium Chestplate",
+  "item.world_depth.aluminium_leggings": "Aluminium Leggings",
+  "item.world_depth.aluminium_boots": "Aluminium Boots",
+  "item.world_depth.energized_aluminium_helmet": "Energized Aluminium Helmet",
+  "item.world_depth.energized_aluminium_chestplate": "Energized Aluminium Chestplate",
+  "item.world_depth.energized_aluminium_leggings": "Energized Aluminium Leggings",
+  "item.world_depth.energized_aluminium_boots": "Energized Aluminium Boots",
+
+  "item.world_depth.titanium_helmet": "Titanium Helmet",
+  "item.world_depth.titanium_chestplate": "Titanium Chestplate",
+  "item.world_depth.titanium_leggings": "Titanium Leggings",
+  "item.world_depth.titanium_boots": "Titanium Boots",
+  "item.world_depth.energized_titanium_helmet": "Energized Titanium Helmet",
+  "item.world_depth.energized_titanium_chestplate": "Energized Titanium Chestplate",
+  "item.world_depth.energized_titanium_leggings": "Energized Titanium Leggings",
+  "item.world_depth.energized_titanium_boots": "Energized Titanium Boots",
+
+
   "block.world_depth.aluminium_block": "Block of Aluminium",
   "block.world_depth.raw_aluminium_block": "Block of Raw Aluminium",
   "block.world_depth.titanium_block": "Block of Titanium",
   "block.world_depth.raw_titanium_block": "Block of Raw Titanium",
-  "block.world_depth.aluminium_ore": "Aluminium Ore",
-  "block.world_depth.deepslate_aluminium_ore": "Deepslate Aluminium Ore",
+
   "block.world_depth.feryl_stone": "Feryl",
   "block.world_depth.soap_stone": "Soap Stone",
-  "block.world_depth.soap_stone_aluminium_ore": "Soap Stone Aluminium Ore",
+
   "block.world_depth.feryl_stairs": "Feryl Stairs",
   "block.world_depth.feryl_slab": "Feryl Slab",
   "block.world_depth.feryl_button": "Feryl Button",
   "block.world_depth.feryl_pressure_plate": "Feryl Pressure Plate",
   "block.world_depth.feryl_wall": "Feryl Wall",
+
   "block.world_depth.soap_stone_stairs": "Soap Stone Stairs",
   "block.world_depth.soap_stone_slab": "Soap Stone Slab",
   "block.world_depth.soap_stone_button": "Soap Stone Button",
   "block.world_depth.soap_stone_pressure_plate": "Soap Stone Pressure Plate",
   "block.world_depth.soap_stone_wall": "Soap Stone Wall",
+
   "block.world_depth.soap_stone_diamond_ore": "Soap Stone Diamond Ore",
   "block.world_depth.feryl_stone_diamond_ore": "Feryl Diamond Ore",
   "block.world_depth.andesite_diamond_ore": "Andesite Diamond Ore",
   "block.world_depth.diorite_diamond_ore": "Diorite Diamond Ore",
   "block.world_depth.granite_diamond_ore": "Granite Diamond Ore",
   "block.world_depth.tuff_diamond_ore": "Tuff Diamond Ore",
+
   "block.world_depth.andesite_iron_ore": "Andesite Iron Ore",
   "block.world_depth.diorite_iron_ore": "Diorite Iron Ore",
   "block.world_depth.granite_iron_ore": "Granite Iron Ore",
   "block.world_depth.tuff_iron_ore": "Tuff Iron Ore",
+
   "block.world_depth.andesite_copper_ore": "Andesite Copper Ore",
   "block.world_depth.diorite_copper_ore": "Diorite Copper Ore",
   "block.world_depth.granite_copper_ore": "Granite Copper Ore",
   "block.world_depth.tuff_copper_ore": "Tuff Copper Ore",
+
   "block.world_depth.andesite_gold_ore": "Andesite Gold Ore",
   "block.world_depth.diorite_gold_ore": "Diorite Gold Ore",
   "block.world_depth.granite_gold_ore": "Granite Gold Ore",
   "block.world_depth.tuff_gold_ore": "Tuff Gold Ore",
+
   "block.world_depth.andesite_coal_ore": "Andesite Coal Ore",
   "block.world_depth.diorite_coal_ore": "Diorite Coal Ore",
   "block.world_depth.granite_coal_ore": "Granite Coal Ore",
   "block.world_depth.tuff_coal_ore": "Tuff Coal Ore",
+
+  "block.world_depth.aluminium_ore": "Aluminium Ore",
+  "block.world_depth.deepslate_aluminium_ore": "Deepslate Aluminium Ore",
+  "block.world_depth.soap_stone_aluminium_ore": "Soap Stone Aluminium Ore",
   "block.world_depth.feryl_stone_aluminium_ore": "Feryl Aluminium Ore",
   "block.world_depth.andesite_aluminium_ore": "Andesite Aluminium Ore",
   "block.world_depth.diorite_aluminium_ore": "Diorite Aluminium Ore",
   "block.world_depth.granite_aluminium_ore": "Granite Aluminium Ore",
   "block.world_depth.tuff_aluminium_ore": "Tuff Aluminium Ore",
+
   "block.world_depth.andesite_lapis_ore": "Andesite Lapis Ore",
   "block.world_depth.diorite_lapis_ore": "Diorite Lapis Ore",
   "block.world_depth.granite_lapis_ore": "Granite Lapis Ore",
   "block.world_depth.tuff_lapis_ore": "Tuff Lapis Ore",
+
   "block.world_depth.andesite_redstone_ore": "Andesite Redstone Ore",
   "block.world_depth.diorite_redstone_ore": "Diorite Redstone Ore",
   "block.world_depth.granite_redstone_ore": "Granite Redstone Ore",
   "block.world_depth.tuff_redstone_ore": "Tuff Redstone Ore",
+
   "block.world_depth.andesite_emerald_ore": "Andesite Emerald Ore",
   "block.world_depth.diorite_emerald_ore": "Diorite Emerald Ore",
   "block.world_depth.granite_emerald_ore": "Granite Emerald Ore",
   "block.world_depth.tuff_emerald_ore": "Tuff Emerald Ore",
+
   "block.world_depth.soap_stone_titanium_ore": "Soap Stone Titanium Ore",
   "block.world_depth.feryl_stone_titanium_ore": "Feryl Titanium Ore",
   "block.world_depth.andesite_titanium_ore": "Andesite Titanium Ore",
   "block.world_depth.diorite_titanium_ore": "Diorite Titanium Ore",
   "block.world_depth.granite_titanium_ore": "Granite Titanium Ore",
   "block.world_depth.tuff_titanium_ore": "Tuff Titanium Ore",
-
-
-
 
 
   "creativetab.test_tab": "World depth"

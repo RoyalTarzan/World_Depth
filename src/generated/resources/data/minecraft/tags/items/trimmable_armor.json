@@ -1,0 +1,20 @@
+{
+  "values": [
+    "world_depth:aluminium_helmet",
+    "world_depth:aluminium_chestplate",
+    "world_depth:aluminium_leggings",
+    "world_depth:aluminium_boots",
+    "world_depth:titanium_helmet",
+    "world_depth:titanium_chestplate",
+    "world_depth:titanium_leggings",
+    "world_depth:titanium_boots",
+    "world_depth:energized_aluminium_helmet",
+    "world_depth:energized_aluminium_chestplate",
+    "world_depth:energized_aluminium_leggings",
+    "world_depth:energized_aluminium_boots",
+    "world_depth:energized_titanium_helmet",
+    "world_depth:energized_titanium_chestplate",
+    "world_depth:energized_titanium_leggings",
+    "world_depth:energized_titanium_boots"
+  ]
+}
