@@ -2,6 +2,7 @@ package net.tarzan.world_depth.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -68,113 +69,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.RAW_TITANIUM.get()), has(ModItems.RAW_TITANIUM.get()))
                 .save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ALUMINIUM_BOOTS.get())
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ALUMINIUM.get()), has(ModItems.ALUMINIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ALUMINIUM_LEGGINGS.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ALUMINIUM.get()), has(ModItems.ALUMINIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ALUMINIUM_CHESTPLATE.get())
-                .pattern("S S")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S',ModItems.ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ALUMINIUM.get()), has(ModItems.ALUMINIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ALUMINIUM_HELMET.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .define('S',ModItems.ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ALUMINIUM.get()), has(ModItems.ALUMINIUM.get()))
-                .save(consumer);
+        armorBoots(ModItems.ALUMINIUM.get(),ModItems.ALUMINIUM_BOOTS.get(),consumer);
+        armorLeggings(ModItems.ALUMINIUM.get(),ModItems.ALUMINIUM_LEGGINGS.get(),consumer);
+        armorChestplate(ModItems.ALUMINIUM.get(),ModItems.ALUMINIUM_CHESTPLATE.get(),consumer);
+        armorHelmet(ModItems.ALUMINIUM.get(),ModItems.ALUMINIUM_HELMET.get(),consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TITANIUM_BOOTS.get())
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.TITANIUM.get()), has(ModItems.TITANIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TITANIUM_LEGGINGS.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.TITANIUM.get()), has(ModItems.TITANIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TITANIUM_CHESTPLATE.get())
-                .pattern("S S")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S',ModItems.TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.TITANIUM.get()), has(ModItems.TITANIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.TITANIUM_HELMET.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .define('S',ModItems.TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.TITANIUM.get()), has(ModItems.TITANIUM.get()))
-                .save(consumer);
+        armorBoots(ModItems.TITANIUM.get(),ModItems.TITANIUM_BOOTS.get(),consumer);
+        armorLeggings(ModItems.TITANIUM.get(),ModItems.TITANIUM_LEGGINGS.get(),consumer);
+        armorChestplate(ModItems.TITANIUM.get(),ModItems.TITANIUM_CHESTPLATE.get(),consumer);
+        armorHelmet(ModItems.TITANIUM.get(),ModItems.TITANIUM_HELMET.get(),consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_ALUMINIUM_BOOTS.get())
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.ENERGIZED_ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_ALUMINIUM.get()), has(ModItems.ENERGIZED_ALUMINIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_ALUMINIUM_LEGGINGS.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.ENERGIZED_ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_ALUMINIUM.get()), has(ModItems.ENERGIZED_ALUMINIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_ALUMINIUM_CHESTPLATE.get())
-                .pattern("S S")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S',ModItems.ENERGIZED_ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_ALUMINIUM.get()), has(ModItems.ENERGIZED_ALUMINIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_ALUMINIUM_HELMET.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .define('S',ModItems.ENERGIZED_ALUMINIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_ALUMINIUM.get()), has(ModItems.ENERGIZED_ALUMINIUM.get()))
-                .save(consumer);
+        armorBoots(ModItems.ENERGIZED_ALUMINIUM.get(),ModItems.ENERGIZED_ALUMINIUM_BOOTS.get(),consumer);
+        armorLeggings(ModItems.ENERGIZED_ALUMINIUM.get(),ModItems.ENERGIZED_ALUMINIUM_LEGGINGS.get(),consumer);
+        armorChestplate(ModItems.ENERGIZED_ALUMINIUM.get(),ModItems.ENERGIZED_ALUMINIUM_CHESTPLATE.get(),consumer);
+        armorHelmet(ModItems.ENERGIZED_ALUMINIUM.get(),ModItems.ENERGIZED_ALUMINIUM_HELMET.get(),consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_TITANIUM_BOOTS.get())
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.ENERGIZED_TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_TITANIUM.get()), has(ModItems.ENERGIZED_TITANIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_TITANIUM_LEGGINGS.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .pattern("S S")
-                .define('S',ModItems.ENERGIZED_TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_TITANIUM.get()), has(ModItems.ENERGIZED_TITANIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_TITANIUM_CHESTPLATE.get())
-                .pattern("S S")
-                .pattern("SSS")
-                .pattern("SSS")
-                .define('S',ModItems.ENERGIZED_TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_TITANIUM.get()), has(ModItems.ENERGIZED_TITANIUM.get()))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.ENERGIZED_TITANIUM_HELMET.get())
-                .pattern("SSS")
-                .pattern("S S")
-                .define('S',ModItems.ENERGIZED_TITANIUM.get())
-                .unlockedBy(getHasName(ModItems.ENERGIZED_TITANIUM.get()), has(ModItems.ENERGIZED_TITANIUM.get()))
-                .save(consumer);
+        armorBoots(ModItems.ENERGIZED_TITANIUM.get(),ModItems.ENERGIZED_TITANIUM_BOOTS.get(),consumer);
+        armorLeggings(ModItems.ENERGIZED_TITANIUM.get(),ModItems.ENERGIZED_TITANIUM_LEGGINGS.get(),consumer);
+        armorChestplate(ModItems.ENERGIZED_TITANIUM.get(),ModItems.ENERGIZED_TITANIUM_CHESTPLATE.get(),consumer);
+        armorHelmet(ModItems.ENERGIZED_TITANIUM.get(),ModItems.ENERGIZED_TITANIUM_HELMET.get(),consumer);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.ALUMINIUM.get(), 9)
                 .requires(ModBlocks.ALUMINIUM_BLOCK.get())
@@ -191,6 +104,49 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.RAW_TITANIUM.get(), 9)
                 .requires(ModBlocks.RAW_TITANIUM_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RAW_TITANIUM_BLOCK.get()), has(ModBlocks.RAW_TITANIUM_BLOCK.get()))
+                .save(consumer);
+
+        armorBoots(ModItems.TANIUM.get(),ModItems.TANIUM_BOOTS.get(),consumer);
+        armorLeggings(ModItems.TANIUM.get(),ModItems.TANIUM_LEGGINGS.get(),consumer);
+        armorChestplate(ModItems.TANIUM.get(),ModItems.TANIUM_CHESTPLATE.get(),consumer);
+        armorHelmet(ModItems.TANIUM.get(),ModItems.TANIUM_HELMET.get(),consumer);
+    }
+
+    protected static void armorBoots(Item input, Item output, Consumer<FinishedRecipe> consumer){
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, output)
+                .pattern("S S")
+                .pattern("S S")
+                .define('S',input)
+                .unlockedBy(getHasName(input), has(input))
+                .save(consumer);
+    }
+
+    protected static void armorHelmet(Item input,Item output, Consumer<FinishedRecipe> consumer){
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,output)
+                .pattern("SSS")
+                .pattern("S S")
+                .define('S',input)
+                .unlockedBy(getHasName(input), has(input))
+                .save(consumer);
+    }
+
+    protected static void armorLeggings(Item input,Item output, Consumer<FinishedRecipe> consumer){
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,output)
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S',input)
+                .unlockedBy(getHasName(input), has(input))
+                .save(consumer);
+    }
+
+    protected static void armorChestplate(Item input,Item output, Consumer<FinishedRecipe> consumer){
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,output)
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S',input)
+                .unlockedBy(getHasName(input), has(input))
                 .save(consumer);
     }
     protected static void oreSmelting(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTIme, @NotNull String pGroup) {

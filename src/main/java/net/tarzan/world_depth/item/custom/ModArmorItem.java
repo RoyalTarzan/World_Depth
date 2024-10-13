@@ -16,10 +16,22 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Multimap<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP;
             static {Multimap<ArmorMaterial, MobEffectInstance> map = ArrayListMultimap.create();
-                map.put(ModArmorMaterials.ENERGIZED_ALUMINIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 3, false, false, true));
-                map.put(ModArmorMaterials.ENERGIZED_ALUMINIUM, new MobEffectInstance(MobEffects.JUMP, 200, 4, false, false, false));
-                map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 3, false, false, false));
-                map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 2, false, false, false));
+                map.put(ModArmorMaterials.ENERGIZED_ALUMINIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200,
+                        3, false, false, true));
+                map.put(ModArmorMaterials.ENERGIZED_ALUMINIUM, new MobEffectInstance(MobEffects.JUMP, 200, 4,
+                        false, false, false));
+                map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 3,
+                        false, false, false));
+                map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 2,
+                        false, false, false));
+                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1,
+                        false, false, true));
+                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.JUMP, 200, 2,
+                        false, false, false));
+                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1,
+                        false, false, false));
+                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 1,
+                        false, false, false));
                 MATERIAL_TO_EFFECT_MAP = map;
             }
 

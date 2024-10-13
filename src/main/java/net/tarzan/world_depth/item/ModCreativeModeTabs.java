@@ -48,6 +48,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHARGED_REDSTONE.get());
                         output.accept(ModItems.ENERGIZED_TITANIUM.get());
                         output.accept(ModItems.ENERGIZED_ALUMINIUM.get());
+                        output.accept(ModItems.TANIUM.get());
 
                         output.accept(ModBlocks.FERYL_STONE.get());
                         output.accept(ModBlocks.FERYL_STAIRS.get());

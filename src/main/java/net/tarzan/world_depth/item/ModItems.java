@@ -20,6 +20,8 @@ public class ModItems {
     public static final RegistryObject<Item> ENERGIZED_TITANIUM = ITEMS.register("energized_titanium",()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> CHARGED_REDSTONE = ITEMS.register("charged_redstone",()->new ChargedFoods(new Item.Properties()));
+    public static final RegistryObject<Item> TANIUM= ITEMS.register("tanium",()->new Item(new Item.Properties()));
+
 
     public static final RegistryObject<Item> TITANIUM_HELMET=ITEMS.register("titanium_helmet",
             ()->new ArmorItem(ModArmorMaterials.TITANIUM, ArmorItem.Type.HELMET, new Item.Properties()));
@@ -54,6 +56,15 @@ public class ModItems {
             ()->new ModArmorItem(ModArmorMaterials.ENERGIZED_ALUMINIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> ENERGIZED_ALUMINIUM_BOOTS=ITEMS.register("energized_aluminium_boots",
             ()->new ModArmorItem(ModArmorMaterials.ENERGIZED_ALUMINIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> TANIUM_HELMET=ITEMS.register("tanium_helmet",
+            ()->new ModArmorItem(ModArmorMaterials.TANIUM, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> TANIUM_CHESTPLATE=ITEMS.register("tanium_chestplate",
+            ()->new ModArmorItem(ModArmorMaterials.TANIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> TANIUM_LEGGINGS=ITEMS.register("tanium_leggings",
+            ()->new ModArmorItem(ModArmorMaterials.TANIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> TANIUM_BOOTS=ITEMS.register("tanium_boots",
+            ()->new ModArmorItem(ModArmorMaterials.TANIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
     public static void register(IEventBus eventBus){ITEMS.register(eventBus);}
