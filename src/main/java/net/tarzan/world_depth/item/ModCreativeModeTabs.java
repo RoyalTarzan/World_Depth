@@ -50,6 +50,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENERGIZED_ALUMINIUM.get());
                         output.accept(ModItems.TANIUM.get());
 
+                        output.accept(ModBlocks.ENERGIZER.get());
+
                         output.accept(ModBlocks.FERYL_STONE.get());
                         output.accept(ModBlocks.FERYL_STAIRS.get());
                         output.accept(ModBlocks.FERYL_SLAB.get());

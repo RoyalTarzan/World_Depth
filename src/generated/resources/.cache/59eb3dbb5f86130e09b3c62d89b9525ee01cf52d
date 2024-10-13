@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-04T14:39:30.5166117	Loot Tables
+// 1.20.1	2024-10-13T17:35:21.8370034	Loot Tables
 7d5fcd84101f007dfe512c6abf61658b4612b8be data/world_depth/loot_tables/blocks/aluminium_block.json
 9249293e5044ea0480c91c5b9e152a5fc6472628 data/world_depth/loot_tables/blocks/aluminium_ore.json
 384b31dccb72bf51cb69a1d91f236de56e9f09ee data/world_depth/loot_tables/blocks/andesite_aluminium_ore.json
@@ -22,6 +22,7 @@ ee4d25d7d807eef5a27a0dfe2beaf66e5ae745cd data/world_depth/loot_tables/blocks/dio
 d53f4b595ead64cddc58c3b0d4105bb382cf148f data/world_depth/loot_tables/blocks/diorite_lapis_ore.json
 1134c3078b31ad2d59042e64806369376feb14cb data/world_depth/loot_tables/blocks/diorite_redstone_ore.json
 ae64f205923d60eafbf6787307db1588202aaace data/world_depth/loot_tables/blocks/diorite_titanium_ore.json
+6641cf0f4013f065e369f35f3b13692bd9dc5c34 data/world_depth/loot_tables/blocks/energizer.json
 40ba68fbe1df82f85c4e4e5c393ab41be65b6cda data/world_depth/loot_tables/blocks/feryl_button.json
 d961c7d67f9cfbe4405fe07244574d6a0f5c0978 data/world_depth/loot_tables/blocks/feryl_pressure_plate.json
 0c6ea66c1a17b48cbc8cb84599b193ec37368717 data/world_depth/loot_tables/blocks/feryl_slab.json

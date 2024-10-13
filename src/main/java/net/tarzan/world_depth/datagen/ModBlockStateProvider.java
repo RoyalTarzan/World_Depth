@@ -3,6 +3,7 @@ package net.tarzan.world_depth.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
@@ -31,40 +32,49 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIORITE_COAL_ORE);
         blockWithItem(ModBlocks.TUFF_COAL_ORE);
         blockWithItem(ModBlocks.ANDESITE_COAL_ORE);
+
         blockWithItem(ModBlocks.GRANITE_IRON_ORE);
         blockWithItem(ModBlocks.DIORITE_IRON_ORE);
         blockWithItem(ModBlocks.TUFF_IRON_ORE);
         blockWithItem(ModBlocks.ANDESITE_IRON_ORE);
+
         blockWithItem(ModBlocks.GRANITE_ALUMINIUM_ORE);
         blockWithItem(ModBlocks.DIORITE_ALUMINIUM_ORE);
         blockWithItem(ModBlocks.TUFF_ALUMINIUM_ORE);
         blockWithItem(ModBlocks.ANDESITE_ALUMINIUM_ORE);
+
         blockWithItem(ModBlocks.GRANITE_GOLD_ORE);
         blockWithItem(ModBlocks.DIORITE_GOLD_ORE);
         blockWithItem(ModBlocks.TUFF_GOLD_ORE);
         blockWithItem(ModBlocks.ANDESITE_GOLD_ORE);
+
         blockWithItem(ModBlocks.GRANITE_COPPER_ORE);
         blockWithItem(ModBlocks.DIORITE_COPPER_ORE);
         blockWithItem(ModBlocks.TUFF_COPPER_ORE);
         blockWithItem(ModBlocks.ANDESITE_COPPER_ORE);
+
         blockWithItem(ModBlocks.GRANITE_DIAMOND_ORE);
         blockWithItem(ModBlocks.DIORITE_DIAMOND_ORE);
         blockWithItem(ModBlocks.TUFF_DIAMOND_ORE);
         blockWithItem(ModBlocks.ANDESITE_DIAMOND_ORE);
         blockWithItem(ModBlocks.SOAP_STONE_DIAMOND_ORE);
         blockWithItem(ModBlocks.FERYL_STONE_DIAMOND_ORE);
+
         blockWithItem(ModBlocks.GRANITE_LAPIS_ORE);
         blockWithItem(ModBlocks.DIORITE_LAPIS_ORE);
         blockWithItem(ModBlocks.TUFF_LAPIS_ORE);
         blockWithItem(ModBlocks.ANDESITE_LAPIS_ORE);
+
         blockWithItem(ModBlocks.GRANITE_REDSTONE_ORE);
         blockWithItem(ModBlocks.DIORITE_REDSTONE_ORE);
         blockWithItem(ModBlocks.TUFF_REDSTONE_ORE);
         blockWithItem(ModBlocks.ANDESITE_REDSTONE_ORE);
+
         blockWithItem(ModBlocks.GRANITE_EMERALD_ORE);
         blockWithItem(ModBlocks.DIORITE_EMERALD_ORE);
         blockWithItem(ModBlocks.TUFF_EMERALD_ORE);
         blockWithItem(ModBlocks.ANDESITE_EMERALD_ORE);
+
         blockWithItem(ModBlocks.GRANITE_TITANIUM_ORE);
         blockWithItem(ModBlocks.DIORITE_TITANIUM_ORE);
         blockWithItem(ModBlocks.TUFF_TITANIUM_ORE);
@@ -85,6 +95,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock(((WallBlock) ModBlocks.FERYL_WALL.get()), blockTexture(ModBlocks.FERYL_STONE.get()));
         wallBlock(((WallBlock) ModBlocks.SOAP_STONE_WALL.get()), blockTexture(ModBlocks.SOAP_STONE.get()));
 
+        simpleBlockWithItem(ModBlocks.ENERGIZER.get(),new ModelFile.UncheckedModelFile(modLoc("block/energizer")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject){

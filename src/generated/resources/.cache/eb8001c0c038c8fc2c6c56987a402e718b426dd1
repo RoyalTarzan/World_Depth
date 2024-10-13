@@ -1,4 +1,4 @@
-// 1.20.1	2024-02-04T14:39:30.512294	Block States: world_depth
+// 1.20.1	2024-10-13T17:35:21.8320026	Block States: world_depth
 2e7c7872c084e897cf382e8336a09d03b074d0a7 assets/world_depth/blockstates/aluminium_block.json
 febf88c271502b100cefe52a6834f49e143c5467 assets/world_depth/blockstates/aluminium_ore.json
 6d69ca97b0748a9bef805ac014e4c532c7b8f3af assets/world_depth/blockstates/andesite_aluminium_ore.json
@@ -22,6 +22,7 @@ eeb54101b95ae06cf7b36c14e116da1bb7ba5aa0 assets/world_depth/blockstates/diorite_
 1a8176590eceb3fc3c45eb3ef2b62363b871d075 assets/world_depth/blockstates/diorite_lapis_ore.json
 3897703c73008195be7429fbb5b9d6371fdec2cf assets/world_depth/blockstates/diorite_redstone_ore.json
 9be3ea780b2ed8d6a1e470bf05682ef8537e8a5c assets/world_depth/blockstates/diorite_titanium_ore.json
+41d76c0210814eaed266c26c0f0a68bbc9203d19 assets/world_depth/blockstates/energizer.json
 60e4a6f9c90d35a229076740d2b976edd706af8b assets/world_depth/blockstates/feryl_button.json
 f032c3008d4d6b700551664c6453ce874ed22882 assets/world_depth/blockstates/feryl_pressure_plate.json
 c7d0acca914986147299c39f887c9d33d63f8260 assets/world_depth/blockstates/feryl_slab.json
@@ -164,6 +165,7 @@ a7064962daac617e84145c5e79c70d1774d42d6d assets/world_depth/models/item/diorite_
 3ac3c5c2e217159b55afdc9dbd70e755f9c03df4 assets/world_depth/models/item/diorite_lapis_ore.json
 98c8d608497d528f43ac82197ab6176171d9523b assets/world_depth/models/item/diorite_redstone_ore.json
 dc3fd5f718550e09de0325ee3e8bec9737e3a53e assets/world_depth/models/item/diorite_titanium_ore.json
+145649f16acc8e57be7f8549cabf7c30448bafe3 assets/world_depth/models/item/energizer.json
 f59b8702c74da7e267e151b81a87f7d51bcd0cfe assets/world_depth/models/item/feryl_stone.json
 c4d7aa2694d73790c849e0063e8a2189c16342ea assets/world_depth/models/item/feryl_stone_aluminium_ore.json
 91c8f416afa1b572f01e6fb258d9bae444db5bed assets/world_depth/models/item/feryl_stone_diamond_ore.json
