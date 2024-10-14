@@ -18,7 +18,7 @@ public class EnergizerMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public EnergizerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData){
-        this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+        this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public EnergizerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data){
@@ -33,9 +33,11 @@ public class EnergizerMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
             this.addSlot(new SlotItemHandler(iItemHandler,1,58,11));
-            this.addSlot(new SlotItemHandler(iItemHandler,0,80,11));
-            this.addSlot(new SlotItemHandler(iItemHandler,2,102,11));
-            this.addSlot(new SlotItemHandler(iItemHandler,3,80,59));
+            this.addSlot(new SlotItemHandler(iItemHandler,2,80,11));
+            this.addSlot(new SlotItemHandler(iItemHandler,3,102,11));
+            this.addSlot(new SlotItemHandler(iItemHandler,0,36,11));
+            this.addSlot(new SlotItemHandler(iItemHandler,4,124,11));
+            this.addSlot(new SlotItemHandler(iItemHandler,5,80,59));
         });
 
         addDataSlots(data);
@@ -61,7 +63,7 @@ public class EnergizerMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 6;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);

@@ -13,7 +13,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -22,18 +21,22 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.recipe.EnergizerRecipe;
 import net.tarzan.world_depth.screen.EnergizerMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler=new ItemStackHandler(4);
+    private final ItemStackHandler itemHandler=new ItemStackHandler(6);
 
     private static final int INPUT_SLOT_1=0;
     private static final int INPUT_SLOT_2=1;
     private static final int INPUT_SLOT_3=2;
-    private static final int OUTPUT_SLOT= 3;
+    private static final int INPUT_SLOT_4=3;
+    private static final int INPUT_SLOT_5=4;
+    private static final int OUTPUT_SLOT= 5;
 
     private LazyOptional<IItemHandler> lazyItemHandler=LazyOptional.empty();
 
@@ -138,10 +141,14 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private void craftItem() {
-        ItemStack result=new ItemStack(ModItems.CHARGED_REDSTONE.get(),1);
+        Optional<EnergizerRecipe> recipe= getCurrentRecipe();
+        ItemStack result=recipe.get().getResultItem(null);
+
         this.itemHandler.extractItem(INPUT_SLOT_1,1,false);
         this.itemHandler.extractItem(INPUT_SLOT_2,1,false);
         this.itemHandler.extractItem(INPUT_SLOT_3,1,false);
+        this.itemHandler.extractItem(INPUT_SLOT_4,1,false);
+        this.itemHandler.extractItem(INPUT_SLOT_5,1,false);
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount()+result.getCount()));
@@ -160,10 +167,23 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private boolean hasRecipe() {
-        boolean hasCraftingItem=this.itemHandler.getStackInSlot(INPUT_SLOT_1).getItem()== Items.REDSTONE && this.itemHandler.getStackInSlot(INPUT_SLOT_2).getItem()== Items.REDSTONE && this.itemHandler.getStackInSlot(INPUT_SLOT_3).getItem()== Items.REDSTONE;
-        ItemStack result=new ItemStack(ModItems.CHARGED_REDSTONE.get());
+        Optional<EnergizerRecipe> recipe= getCurrentRecipe();
 
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        if (recipe.isEmpty()){
+            return false;
+        }
+        ItemStack result=recipe.get().getResultItem(null);
+
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private Optional<EnergizerRecipe> getCurrentRecipe() {
+        SimpleContainer inventory=new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i,this.itemHandler.getStackInSlot(i));
+        }
+
+        return this.level.getRecipeManager().getRecipeFor(EnergizerRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

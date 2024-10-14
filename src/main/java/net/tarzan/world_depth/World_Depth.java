@@ -17,6 +17,7 @@ import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.block.entity.ModBlockEntities;
 import net.tarzan.world_depth.item.ModCreativeModeTabs;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.recipe.ModRecipes;
 import net.tarzan.world_depth.screen.EnergizerScreen;
 import net.tarzan.world_depth.screen.ModMenuTypes;
 import org.slf4j.Logger;
@@ -33,6 +34,7 @@ public class World_Depth
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);

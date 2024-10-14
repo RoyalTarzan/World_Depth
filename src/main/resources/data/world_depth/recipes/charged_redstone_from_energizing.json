@@ -1,0 +1,24 @@
+{
+  "type": "world_depth:energizing",
+  "ingredients": [
+    {
+    "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:redstone"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "world_depth:charged_redstone"
+  }
+}
