@@ -14,6 +14,7 @@
     "world_depth:feryl_slab",
     "world_depth:feryl_pressure_plate",
     "world_depth:feryl_stairs",
+    "world_depth:energizer",
     "#world_depth:added_ores",
     "#minecraft:walls"
   ]

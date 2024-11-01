@@ -1,0 +1,26 @@
+{
+  "type": "world_depth:energizing",
+  "ingredients": [
+    {
+    "item": "world_depth:charged_redstone"
+    },
+    {
+      "item": "world_depth:aluminium"
+    },
+    {
+      "item": "world_depth:titanium"
+    },
+    {
+      "item": "world_depth:aluminium"
+    },
+    {
+      "item": "world_depth:charged_redstone"
+    }
+  ],
+  "redstone_needed": 100,
+  "charged_redstone_needed": 100,
+  "output": {
+    "count": 1,
+    "item": "world_depth:talium"
+  }
+}

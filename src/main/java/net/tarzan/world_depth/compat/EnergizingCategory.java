@@ -17,7 +17,7 @@ import net.tarzan.world_depth.recipe.EnergizerRecipe;
 
 public class EnergizingCategory implements IRecipeCategory<EnergizerRecipe> {
     public static final ResourceLocation UID=new ResourceLocation(World_Depth.MODID, "energizing");
-    public static final ResourceLocation TEXTURE=new ResourceLocation(World_Depth.MODID, "textures/gui/energizing_gui.png");
+    public static final ResourceLocation TEXTURE=new ResourceLocation(World_Depth.MODID, "textures/gui/energizer_gui.png");
 
     public static final RecipeType<EnergizerRecipe> ENERGIZING_TYPE=
         new RecipeType<>(UID, EnergizerRecipe.class);
@@ -26,7 +26,7 @@ public class EnergizingCategory implements IRecipeCategory<EnergizerRecipe> {
     private final IDrawable icon;
 
     public EnergizingCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE,5,4,169,80);
+        this.background = helper.createDrawable(TEXTURE,3,3,170,80);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.ENERGIZER.get()));
     }
 
@@ -52,13 +52,13 @@ public class EnergizingCategory implements IRecipeCategory<EnergizerRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder iRecipeLayoutBuilder, EnergizerRecipe energizerRecipe, IFocusGroup iFocusGroup) {
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,36,11 ).addIngredients(energizerRecipe.getIngredients().get(0));
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,58,11 ).addIngredients(energizerRecipe.getIngredients().get(1));
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,80,11).addIngredients(energizerRecipe.getIngredients().get(2));
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,102,11 ).addIngredients(energizerRecipe.getIngredients().get(3));
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,124,11 ).addIngredients(energizerRecipe.getIngredients().get(4));
+        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,33,8 ).addIngredients(energizerRecipe.getIngredients().get(0));
+        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,55,8 ).addIngredients(energizerRecipe.getIngredients().get(1));
+        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,77,8).addIngredients(energizerRecipe.getIngredients().get(2));
+        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,99,8 ).addIngredients(energizerRecipe.getIngredients().get(3));
+        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.INPUT,121,8 ).addIngredients(energizerRecipe.getIngredients().get(4));
 
 
-        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.OUTPUT,80, 59).addItemStack(energizerRecipe.getResultItem(null));
+        iRecipeLayoutBuilder.addSlot(RecipeIngredientRole.OUTPUT,77, 56).addItemStack(energizerRecipe.getResultItem(null));
     }
 }

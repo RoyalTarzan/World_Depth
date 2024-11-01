@@ -3,6 +3,7 @@ package net.tarzan.world_depth.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -39,6 +40,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(consumer, RAW_ALUMINIUM_BLOCK, RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get(), 2.1f,600,"aluminium");
         oreBlasting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 3f,300,"titanium");
         oreSmelting(consumer, RAW_TITANIUM_BLOCK, RecipeCategory.MISC, ModBlocks.TITANIUM_BLOCK.get(), 3f,600,"titanium");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE, ModBlocks.ENERGIZER.get())
+                .pattern("STS")
+                .pattern(" S ")
+                .pattern("RRR")
+                .define('S', ModItems.TITANIUM.get())
+                .define('T', Items.NETHERITE_INGOT)
+                .define('R', Items.REDSTONE_BLOCK)
+                .unlockedBy(getHasName(Items.NETHERITE_INGOT),has(Items.NETHERITE_INGOT))
+                .save(consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALUMINIUM_BLOCK.get())
                 .pattern("SSS")
@@ -106,10 +117,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.RAW_TITANIUM_BLOCK.get()), has(ModBlocks.RAW_TITANIUM_BLOCK.get()))
                 .save(consumer);
 
-        armorBoots(ModItems.TANIUM.get(),ModItems.TANIUM_BOOTS.get(),consumer);
-        armorLeggings(ModItems.TANIUM.get(),ModItems.TANIUM_LEGGINGS.get(),consumer);
-        armorChestplate(ModItems.TANIUM.get(),ModItems.TANIUM_CHESTPLATE.get(),consumer);
-        armorHelmet(ModItems.TANIUM.get(),ModItems.TANIUM_HELMET.get(),consumer);
+        armorBoots(ModItems.TALIUM.get(),ModItems.TALIUM_BOOTS.get(),consumer);
+        armorLeggings(ModItems.TALIUM.get(),ModItems.TALIUM_LEGGINGS.get(),consumer);
+        armorChestplate(ModItems.TALIUM.get(),ModItems.TALIUM_CHESTPLATE.get(),consumer);
+        armorHelmet(ModItems.TALIUM.get(),ModItems.TALIUM_HELMET.get(),consumer);
     }
 
     protected static void armorBoots(Item input, Item output, Consumer<FinishedRecipe> consumer){

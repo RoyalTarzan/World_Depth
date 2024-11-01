@@ -1,11 +1,11 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Made with Blockbench by RoyalTarzan",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "extensions",
-		"1": "pole",
-		"2": "base",
-		"particle": "base"
+		"0": "world_depth:block/energizer/extensions",
+		"1": "world_depth:block/energizer/pole",
+		"2": "world_depth:block/energizer/base",
+		"particle": "world_depth:block/energizer/base"
 	},
 	"elements": [
 		{

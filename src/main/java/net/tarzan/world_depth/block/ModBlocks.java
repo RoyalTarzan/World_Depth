@@ -35,6 +35,8 @@ public class ModBlocks {
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
     public static final RegistryObject<Block> SOAP_STONE=registerBlock("soap_stone",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,4.0f)));
+    public static final RegistryObject<Block> CHARGED_REDSTONE_BLOCK=registerBlock("charged_redstone_block",
+            ()->new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
 
     public static final RegistryObject<Block> SOAP_STONE_ALUMINIUM_ORE=registerBlock("soap_stone_aluminium_ore",
             ()->new DropExperienceBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(2f).requiresCorrectToolForDrops()));

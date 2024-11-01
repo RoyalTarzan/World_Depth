@@ -48,7 +48,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_TITANIUM);
         simpleItem(ModItems.TITANIUM);
         simpleItem(ModItems.ENERGIZED_TITANIUM);
-        simpleItem(ModItems.TANIUM);
+        simpleItem(ModItems.TALIUM);
 
         evenSimplerBlockItem(ModBlocks.FERYL_STAIRS);
         evenSimplerBlockItem(ModBlocks.FERYL_SLAB);
@@ -80,10 +80,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.ENERGIZED_TITANIUM_LEGGINGS);
         trimmedArmorItem(ModItems.ENERGIZED_TITANIUM_BOOTS);
 
-        trimmedArmorItem(ModItems.TANIUM_HELMET);
-        trimmedArmorItem(ModItems.TANIUM_CHESTPLATE);
-        trimmedArmorItem(ModItems.TANIUM_LEGGINGS);
-        trimmedArmorItem(ModItems.TANIUM_BOOTS);
+        trimmedArmorItem(ModItems.TALIUM_HELMET);
+        trimmedArmorItem(ModItems.TALIUM_CHESTPLATE);
+        trimmedArmorItem(ModItems.TALIUM_LEGGINGS);
+        trimmedArmorItem(ModItems.TALIUM_BOOTS);
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

@@ -22,6 +22,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.TITANIUM_BLOCK);
         blockWithItem(ModBlocks.FERYL_STONE);
         blockWithItem(ModBlocks.SOAP_STONE);
+        blockWithItem(ModBlocks.CHARGED_REDSTONE_BLOCK);
 
         blockWithItem(ModBlocks.ALUMINIUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ALUMINIUM_ORE);

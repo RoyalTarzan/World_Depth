@@ -18,7 +18,7 @@ public class EnergizerMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public EnergizerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData){
-        this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
+        this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(8));
     }
 
     public EnergizerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data){
@@ -38,6 +38,8 @@ public class EnergizerMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler,0,36,11));
             this.addSlot(new SlotItemHandler(iItemHandler,4,124,11));
             this.addSlot(new SlotItemHandler(iItemHandler,5,80,59));
+            this.addSlot(new SlotItemHandler(iItemHandler,6,29,59));
+            this.addSlot(new SlotItemHandler(iItemHandler,7,124,59));
         });
 
         addDataSlots(data);
@@ -55,6 +57,23 @@ public class EnergizerMenu extends AbstractContainerMenu {
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
+    public int getScaledRedstone(){
+        int redstoneAmount= this.data.get(3);
+        int maxRedstone= this.data.get(4);
+        int redstoneProgressBarSize=50;
+
+        return maxRedstone != 0 && redstoneAmount !=0 ? redstoneAmount * redstoneProgressBarSize / maxRedstone : 0;
+    }
+
+    public int getScaledChargedRedstone(){
+        int chargedRedstoneAmount= this.data.get(5);
+        int maxChargedRedstone= this.data.get(6);
+        int chargedRedstoneProgressBarSize=50;
+
+        return maxChargedRedstone != 0 && chargedRedstoneAmount !=0 ? chargedRedstoneAmount * chargedRedstoneProgressBarSize / maxChargedRedstone : 0;
+
+    }
+
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -63,7 +82,7 @@ public class EnergizerMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 6;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 8;  // must be the number of slots you have!
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);

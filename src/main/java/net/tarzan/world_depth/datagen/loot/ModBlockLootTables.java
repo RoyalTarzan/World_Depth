@@ -28,6 +28,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RAW_ALUMINIUM_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_TITANIUM_BLOCK.get());
         this.dropSelf(ModBlocks.ENERGIZER.get());
+        this.dropSelf(ModBlocks.CHARGED_REDSTONE_BLOCK.get());
         this.dropOther(ModBlocks.FERYL_STONE.get(), ModBlocks.FERYL_STONE.get());
         this.dropOther(ModBlocks.SOAP_STONE.get(), ModBlocks.SOAP_STONE.get());
 

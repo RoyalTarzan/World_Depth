@@ -17,6 +17,8 @@
       "item": "minecraft:redstone"
     }
   ],
+  "redstone_needed": 250,
+  "charged_redstone_needed": 0,
   "output": {
     "count": 1,
     "item": "world_depth:charged_redstone"

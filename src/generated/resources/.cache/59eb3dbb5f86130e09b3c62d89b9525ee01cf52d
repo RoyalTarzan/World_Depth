@@ -1,4 +1,4 @@
-// 1.20.1	2024-10-13T17:35:21.8370034	Loot Tables
+// 1.20.1	2024-11-01T17:52:08.6524618	Loot Tables
 7d5fcd84101f007dfe512c6abf61658b4612b8be data/world_depth/loot_tables/blocks/aluminium_block.json
 9249293e5044ea0480c91c5b9e152a5fc6472628 data/world_depth/loot_tables/blocks/aluminium_ore.json
 384b31dccb72bf51cb69a1d91f236de56e9f09ee data/world_depth/loot_tables/blocks/andesite_aluminium_ore.json
@@ -11,6 +11,7 @@ dc232b0644fd10b0f846fb80fd5bb370139cc883 data/world_depth/loot_tables/blocks/and
 f0f1ae1d56f730e69017b4a984639d68bb1a118d data/world_depth/loot_tables/blocks/andesite_lapis_ore.json
 719928edd593910fac6619da38d47fe4517678c4 data/world_depth/loot_tables/blocks/andesite_redstone_ore.json
 03fdfe0f82f8588669133bf4931337e1573c549d data/world_depth/loot_tables/blocks/andesite_titanium_ore.json
+9501e8a9cca5df8828610d73d4d23d137b1f9906 data/world_depth/loot_tables/blocks/charged_redstone_block.json
 66862839faacf561937f2addf2fc92a095bd553d data/world_depth/loot_tables/blocks/deepslate_aluminium_ore.json
 b44978f763bcbba1a431c5bb0ce32856054c5d21 data/world_depth/loot_tables/blocks/diorite_aluminium_ore.json
 61e88a41c3e4abee3916376f9a44bd9ba6a0469d data/world_depth/loot_tables/blocks/diorite_coal_ore.json

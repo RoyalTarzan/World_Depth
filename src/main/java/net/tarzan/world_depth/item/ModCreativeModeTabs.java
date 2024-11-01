@@ -46,9 +46,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TITANIUM_BLOCK.get());
                         output.accept(ModBlocks.RAW_TITANIUM_BLOCK.get());
                         output.accept(ModItems.CHARGED_REDSTONE.get());
+                        output.accept(ModBlocks.CHARGED_REDSTONE_BLOCK.get());
                         output.accept(ModItems.ENERGIZED_TITANIUM.get());
                         output.accept(ModItems.ENERGIZED_ALUMINIUM.get());
-                        output.accept(ModItems.TANIUM.get());
+                        output.accept(ModItems.TALIUM.get());
 
                         output.accept(ModBlocks.ENERGIZER.get());
 

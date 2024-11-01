@@ -17,6 +17,8 @@
       "item": "minecraft:redstone"
     }
   ],
+  "redstone_needed": 200,
+  "charged_redstone_needed": 110,
   "output": {
     "count": 1,
     "item": "world_depth:energized_aluminium"

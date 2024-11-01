@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "R": {
+      "item": "minecraft:redstone_block"
+    },
+    "S": {
+      "item": "world_depth:titanium"
+    },
+    "T": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "STS",
+    " S ",
+    "RRR"
+  ],
+  "result": {
+    "item": "world_depth:energizer"
+  },
+  "show_notification": true
+}

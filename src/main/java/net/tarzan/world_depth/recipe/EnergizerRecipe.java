@@ -18,11 +18,15 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
     private final NonNullList<Ingredient> inputItems;
     private final ItemStack output;
     private final ResourceLocation id;
+    private final int redstoneNeeded;
+    private final int chargedRedstoneNeeded;
 
-    public EnergizerRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
+    public EnergizerRecipe(NonNullList<Ingredient> inputItems, ItemStack output, int redstoneNeeded, int chargedRedstoneNeeded, ResourceLocation id) {
         this.inputItems = inputItems;
         this.output = output;
         this.id = id;
+        this.redstoneNeeded = redstoneNeeded;
+        this.chargedRedstoneNeeded = chargedRedstoneNeeded;
     }
 
     @Override
@@ -35,7 +39,7 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
                 inputItems.get(1).test(simpleContainer.getItem(1)) &&
                 inputItems.get(2).test(simpleContainer.getItem(2)) &&
                 inputItems.get(3).test(simpleContainer.getItem(3)) &&
-                inputItems.get(4).test(simpleContainer.getItem(4)) ;
+                inputItems.get(4).test(simpleContainer.getItem(4));
     }
 
     @Override
@@ -56,6 +60,14 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
     @Override
     public ItemStack getResultItem(RegistryAccess registryAccess) {
         return output.copy();
+    }
+
+    public int getRedstoneNeeded(){
+        return redstoneNeeded;
+    }
+
+    public int getChargedRedstoneNeeded(){
+        return chargedRedstoneNeeded;
     }
 
     @Override
@@ -93,7 +105,10 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new EnergizerRecipe(inputs, output, pRecipeId);
+            int redstoneNeeded=GsonHelper.getAsInt(jsonObject, "redstone_needed");
+            int chargedRedstoneNeeded=GsonHelper.getAsInt(jsonObject, "charged_redstone_needed");
+
+            return new EnergizerRecipe(inputs, output, redstoneNeeded, chargedRedstoneNeeded, pRecipeId);
         }
 
         @Override
@@ -105,7 +120,9 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output=friendlyByteBuf.readItem();
-            return new EnergizerRecipe(inputs, output, resourceLocation);
+            int redstoneNeeded=friendlyByteBuf.readInt();
+            int chargedRedstoneNeeded=friendlyByteBuf.readInt();
+            return new EnergizerRecipe(inputs, output, redstoneNeeded, chargedRedstoneNeeded, resourceLocation);
         }
 
         @Override
@@ -117,6 +134,9 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
             }
 
             friendlyByteBuf.writeItemStack(energizerRecipe.getResultItem(null),false);
+
+            friendlyByteBuf.writeInt(energizerRecipe.redstoneNeeded);
+            friendlyByteBuf.writeInt(energizerRecipe.chargedRedstoneNeeded);
         }
     }
 }

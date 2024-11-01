@@ -15,6 +15,10 @@
     "world_depth:energized_titanium_helmet",
     "world_depth:energized_titanium_chestplate",
     "world_depth:energized_titanium_leggings",
-    "world_depth:energized_titanium_boots"
+    "world_depth:energized_titanium_boots",
+    "world_depth:talium_helmet",
+    "world_depth:talium_chestplate",
+    "world_depth:talium_leggings",
+    "world_depth:talium_boots"
   ]
 }

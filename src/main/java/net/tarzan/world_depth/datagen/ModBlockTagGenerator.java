@@ -85,7 +85,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.FERYL_BUTTON.get(),
                         ModBlocks.FERYL_SLAB.get(),
                         ModBlocks.FERYL_PRESSURE_PLATE.get(),
-                        ModBlocks.FERYL_STAIRS.get())
+                        ModBlocks.FERYL_STAIRS.get(),
+                        ModBlocks.ENERGIZER.get())
                 .addTag(ModTags.Blocks.ADDED_ORES)
                 .addTag(BlockTags.WALLS);
 

@@ -18,8 +18,8 @@ public enum ModArmorMaterials implements ArmorMaterial {
             SoundEvents.ARMOR_EQUIP_GOLD, 0f, 0f,()->Ingredient.of(ModItems.ALUMINIUM.get())),
     ENERGIZED_ALUMINIUM("aluminium",20,new int[]{3,4,4,2},20,
             SoundEvents.ARMOR_EQUIP_GOLD, 0f, 0f,()->Ingredient.of(ModItems.ALUMINIUM.get())),
-    TANIUM("tanium",25,new int[]{4,6,6,3},15,
-            SoundEvents.ARMOR_EQUIP_DIAMOND,1f,0.5f,()->Ingredient.of(ModItems.TANIUM.get()));
+    TALIUM("talium",25,new int[]{4,6,6,3},15,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,1f,0.5f,()->Ingredient.of(ModItems.TALIUM.get()));
 
     private final String name;
     private final int durabilityMultiplier;

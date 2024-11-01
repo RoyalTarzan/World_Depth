@@ -6,6 +6,7 @@
   "item.world_depth.energized_titanium": "Energized Titanium",
   "item.world_depth.raw_titanium": "Raw Titanium",
   "item.world_depth.charged_redstone": "Charged Redstone",
+  "item.world_depth.talium": "Talium",
 
   "item.world_depth.aluminium_helmet": "Aluminium Helmet",
   "item.world_depth.aluminium_chestplate": "Aluminium Chestplate",
@@ -25,8 +26,14 @@
   "item.world_depth.energized_titanium_leggings": "Energized Titanium Leggings",
   "item.world_depth.energized_titanium_boots": "Energized Titanium Boots",
 
+  "item.world_depth.talium_helmet": "Talium Helmet",
+  "item.world_depth.talium_chestplate": "Talium Chestplate",
+  "item.world_depth.talium_leggings": "Talium Leggings",
+  "item.world_depth.talium_boots": "Talium Boots",
+
 
   "block.world_depth.energizer": "Energizer",
+  "block.world_depth.charged_redstone_block": "Charged Redstone Block",
 
   "block.world_depth.aluminium_block": "Block of Aluminium",
   "block.world_depth.raw_aluminium_block": "Block of Raw Aluminium",

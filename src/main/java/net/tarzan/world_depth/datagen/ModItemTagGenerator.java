@@ -35,6 +35,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.ENERGIZED_TITANIUM_HELMET.get(),
                         ModItems.ENERGIZED_TITANIUM_CHESTPLATE.get(),
                         ModItems.ENERGIZED_TITANIUM_LEGGINGS.get(),
-                        ModItems.ENERGIZED_TITANIUM_BOOTS.get());
+                        ModItems.ENERGIZED_TITANIUM_BOOTS.get(),
+                        ModItems.TALIUM_HELMET.get(),
+                        ModItems.TALIUM_CHESTPLATE.get(),
+                        ModItems.TALIUM_LEGGINGS.get(),
+                        ModItems.TALIUM_BOOTS.get());
     }
 }

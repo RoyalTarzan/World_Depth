@@ -11,6 +11,9 @@ import net.tarzan.world_depth.World_Depth;
 
 public class EnergizerScreen extends AbstractContainerScreen<EnergizerMenu> {
     private static final ResourceLocation TEXTURE=new ResourceLocation(World_Depth.MODID,"textures/gui/energizer_gui.png");
+    private static final ResourceLocation ARROW_TEXTURE=new ResourceLocation(World_Depth.MODID,"textures/gui/progress_arrows.png");
+    private static final ResourceLocation REDSTONE_TEXTURE=new ResourceLocation(World_Depth.MODID,"textures/gui/redstone_bar.png");
+    private static final ResourceLocation CHARGED_REDSTONE_TEXTURE=new ResourceLocation(World_Depth.MODID,"textures/gui/charged_redstone_bar.png");
 
     public EnergizerScreen(EnergizerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
@@ -19,6 +22,8 @@ public class EnergizerScreen extends AbstractContainerScreen<EnergizerMenu> {
     @Override
     protected void init() {
         super.init();
+        this.inventoryLabelY=100000000;
+        this.titleLabelY=100000000;
     }
 
     @Override
@@ -32,12 +37,22 @@ public class EnergizerScreen extends AbstractContainerScreen<EnergizerMenu> {
         guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
 
         renderProgressArrow(guiGraphics, x, y);
+        renderRedstoneBar(guiGraphics, x, y);
+        renderChargedRedstoneBar(guiGraphics, x, y);
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 43, y + 30, 0, 166, 92, menu.getScaledProgress());
+            guiGraphics.blit(ARROW_TEXTURE, x + 43, y + 30, 0, 0, 92, menu.getScaledProgress());
         }
+    }
+
+    private void renderRedstoneBar(GuiGraphics guiGraphics, int x, int y){
+        guiGraphics.blit(REDSTONE_TEXTURE, x + 8, y + 26, 0, 0, 16, menu.getScaledRedstone());
+    }
+
+    private void renderChargedRedstoneBar(GuiGraphics guiGraphics, int x, int y){
+        guiGraphics.blit(CHARGED_REDSTONE_TEXTURE, x + 145, y + 26, 0, 0, 16, menu.getScaledChargedRedstone());
     }
 
     @Override

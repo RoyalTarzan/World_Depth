@@ -24,13 +24,13 @@ public class ModArmorItem extends ArmorItem {
                         false, false, false));
                 map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 2,
                         false, false, false));
-                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1,
+                map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1,
                         false, false, true));
-                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.JUMP, 200, 2,
+                map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.JUMP, 200, 2,
                         false, false, false));
-                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1,
+                map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1,
                         false, false, false));
-                map.put(ModArmorMaterials.TANIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 1,
+                map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 1,
                         false, false, false));
                 MATERIAL_TO_EFFECT_MAP = map;
             }
