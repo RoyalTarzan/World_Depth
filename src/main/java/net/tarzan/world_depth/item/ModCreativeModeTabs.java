@@ -41,6 +41,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENERGIZED_TITANIUM_LEGGINGS.get());
                         output.accept(ModItems.ENERGIZED_TITANIUM_BOOTS.get());
 
+                        output.accept(ModItems.TALIUM_HELMET.get());
+                        output.accept(ModItems.TALIUM_CHESTPLATE.get());
+                        output.accept(ModItems.TITANIUM_LEGGINGS.get());
+                        output.accept(ModItems.TITANIUM_BOOTS.get());
+
                         output.accept(ModItems.TITANIUM.get());
                         output.accept(ModItems.RAW_TITANIUM.get());
                         output.accept(ModBlocks.TITANIUM_BLOCK.get());
