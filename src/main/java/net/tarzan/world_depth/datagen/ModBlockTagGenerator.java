@@ -149,5 +149,41 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.DIORITE_REDSTONE_ORE.get(),
                         ModBlocks.TUFF_REDSTONE_ORE.get(),
                         ModBlocks.ANDESITE_REDSTONE_ORE.get());
+
+        this.tag(BlockTags.DRIPSTONE_REPLACEABLE)
+                .add(ModBlocks.SOAP_STONE.get(),
+                ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.LUSH_GROUND_REPLACEABLE)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.MOSS_REPLACEABLE)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.SNAPS_GOAT_HORN)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.AZALEA_ROOT_REPLACEABLE)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.SCULK_REPLACEABLE_WORLD_GEN)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.SCULK_REPLACEABLE)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
+
+        this.tag(BlockTags.DRIPSTONE_REPLACEABLE)
+                .add(ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.FERYL_STONE.get());
     }
 }
