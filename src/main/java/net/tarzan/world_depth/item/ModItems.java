@@ -1,7 +1,6 @@
 package net.tarzan.world_depth.item;
 
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -40,6 +39,18 @@ public class ModItems {
     public static final RegistryObject<Item> ENERGIZED_TITANIUM_BOOTS=ITEMS.register("energized_titanium_boots",
             ()->new ModArmorItem(ModArmorMaterials.ENERGIZED_TITANIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> TITANIUM_SWORD=ITEMS.register("titanium_sword",
+            ()-> new SwordItem(ModToolTiers.TITANIUM,3,4, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_PICKAXE=ITEMS.register("titanium_pickaxe",
+            ()-> new PickaxeItem(ModToolTiers.TITANIUM,1,1, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_AXE=ITEMS.register("titanium_axe",
+            ()-> new AxeItem(ModToolTiers.TITANIUM,5,2, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_SHOVEL=ITEMS.register("titanium_shovel",
+            ()-> new ShovelItem(ModToolTiers.TITANIUM,0,0, new Item.Properties()));
+    public static final RegistryObject<Item> TITANIUM_HOE=ITEMS.register("titanium_hoe",
+            ()-> new HoeItem(ModToolTiers.TITANIUM,0,0, new Item.Properties()));
+
+
     public static final RegistryObject<Item> ALUMINIUM_HELMET=ITEMS.register("aluminium_helmet",
             ()->new ArmorItem(ModArmorMaterials.ALUMINIUM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> ALUMINIUM_CHESTPLATE=ITEMS.register("aluminium_chestplate",
@@ -56,6 +67,17 @@ public class ModItems {
             ()->new ModArmorItem(ModArmorMaterials.ENERGIZED_ALUMINIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> ENERGIZED_ALUMINIUM_BOOTS=ITEMS.register("energized_aluminium_boots",
             ()->new ModArmorItem(ModArmorMaterials.ENERGIZED_ALUMINIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    public static final RegistryObject<Item> ALUMINIUM_SWORD=ITEMS.register("aluminium_sword",
+            ()-> new SwordItem(ModToolTiers.ALUMINIUM,3,4, new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_PICKAXE=ITEMS.register("aluminium_pickaxe",
+            ()-> new PickaxeItem(ModToolTiers.ALUMINIUM,1,1, new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_AXE=ITEMS.register("aluminium_axe",
+            ()-> new AxeItem(ModToolTiers.ALUMINIUM,5,2, new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_SHOVEL=ITEMS.register("aluminium_shovel",
+            ()-> new ShovelItem(ModToolTiers.ALUMINIUM,0,0, new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINIUM_HOE=ITEMS.register("aluminium_hoe",
+            ()-> new HoeItem(ModToolTiers.ALUMINIUM,0,0, new Item.Properties()));
 
     public static final RegistryObject<Item> TALIUM_HELMET =ITEMS.register("talium_helmet",
             ()->new ModArmorItem(ModArmorMaterials.TALIUM, ArmorItem.Type.HELMET, new Item.Properties()));

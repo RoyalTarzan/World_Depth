@@ -150,6 +150,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.TUFF_REDSTONE_ORE.get(),
                         ModBlocks.ANDESITE_REDSTONE_ORE.get());
 
+        this.tag(ModTags.Blocks.NEEDS_ALUMINIUM_TOOL).addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        this.tag(ModTags.Blocks.NEEDS_TITANIUM_TOOL);
+
         this.tag(BlockTags.DRIPSTONE_REPLACEABLE)
                 .add(ModBlocks.SOAP_STONE.get(),
                 ModBlocks.FERYL_STONE.get());
