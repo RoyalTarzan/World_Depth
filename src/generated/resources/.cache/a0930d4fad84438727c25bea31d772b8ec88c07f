@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-06T19:29:00.632656	Tags for minecraft:block mod id world_depth
+// 1.20.1	2024-11-10T15:05:19.9166467	Tags for minecraft:block mod id world_depth
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/azalea_root_replaceable.json
 d58ab5f835b56262165c7372df3d15d1deceaf88 data/minecraft/tags/blocks/dripstone_replaceable_blocks.json
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/lush_ground_replaceable.json
@@ -13,3 +13,5 @@ b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/sculk_replac
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/snaps_goat_horn.json
 cfcbdd4e482f60d64726c24be9bd79eaea7dd0cb data/minecraft/tags/blocks/walls.json
 9b2d7ac1d580232976fa7e8ef644b410d56d71c0 data/world_depth/tags/blocks/added_ores.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/world_depth/tags/blocks/needs_aluminium_tool.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/world_depth/tags/blocks/needs_titanium_tool.json

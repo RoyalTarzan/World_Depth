@@ -58,6 +58,18 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.ENERGIZER.get());
 
+                        output.accept(ModItems.ALUMINIUM_AXE.get());
+                        output.accept(ModItems.ALUMINIUM_HOE.get());
+                        output.accept(ModItems.ALUMINIUM_PICKAXE.get());
+                        output.accept(ModItems.ALUMINIUM_SWORD.get());
+                        output.accept(ModItems.ALUMINIUM_SHOVEL.get());
+
+                        output.accept(ModItems.TITANIUM_AXE.get());
+                        output.accept(ModItems.TITANIUM_HOE.get());
+                        output.accept(ModItems.TITANIUM_PICKAXE.get());
+                        output.accept(ModItems.TITANIUM_SWORD.get());
+                        output.accept(ModItems.TITANIUM_SHOVEL.get());
+
                         output.accept(ModBlocks.FERYL_STONE.get());
                         output.accept(ModBlocks.FERYL_STAIRS.get());
                         output.accept(ModBlocks.FERYL_SLAB.get());

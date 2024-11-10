@@ -17,7 +17,7 @@ public class ModArmorItem extends ArmorItem {
     private static final Multimap<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP;
             static {Multimap<ArmorMaterial, MobEffectInstance> map = ArrayListMultimap.create();
                 map.put(ModArmorMaterials.ENERGIZED_ALUMINIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200,
-                        3, false, false, true));
+                        3, false, false, false));
                 map.put(ModArmorMaterials.ENERGIZED_ALUMINIUM, new MobEffectInstance(MobEffects.JUMP, 200, 4,
                         false, false, false));
                 map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 3,
@@ -25,7 +25,7 @@ public class ModArmorItem extends ArmorItem {
                 map.put(ModArmorMaterials.ENERGIZED_TITANIUM, new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 200, 2,
                         false, false, false));
                 map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 200, 1,
-                        false, false, true));
+                        false, false, false));
                 map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.JUMP, 200, 2,
                         false, false, false));
                 map.put(ModArmorMaterials.TALIUM, new MobEffectInstance(MobEffects.DAMAGE_BOOST, 200, 1,
