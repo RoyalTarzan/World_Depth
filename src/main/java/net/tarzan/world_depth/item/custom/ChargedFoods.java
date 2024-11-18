@@ -21,15 +21,33 @@ public class ChargedFoods extends Item {
         ItemStack stack=pPlayer.getItemInHand(pUsedHand);
         pPlayer.eat(pLevel, stack);
         Random random=new Random();
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP,1200,8));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,1200,6));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE,1200,23));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,1200,23));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.SATURATION,1200,12));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.GLOWING,1200,23));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING,1200,23));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,1200,100));
-        if(random.nextInt(100)<20)pPlayer.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING,20,3));
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.JUMP,1200,8));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,1200,6));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE,1200,23));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION,1200,23));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.SATURATION,1200,12));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.GLOWING,1200,23));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING,1200,23));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED,1200,100));
+        }
+        if(random.nextInt(100)<20){
+            pPlayer.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING,20,3));
+        }
 
         pPlayer.resetFallDistance();
 

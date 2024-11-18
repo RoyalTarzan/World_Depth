@@ -6,10 +6,7 @@
     "targets": [
       {
         "state": {
-          "Name": "world_depth:granite_redstone_ore",
-          "Properties": {
-            "lit": "false"
-          }
+          "Name": "world_depth:granite_titanium_ore"
         },
         "target": {
           "block": "minecraft:granite",
@@ -18,10 +15,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:diorite_redstone_ore",
-          "Properties": {
-            "lit": "false"
-          }
+          "Name": "world_depth:diorite_titanium_ore"
         },
         "target": {
           "block": "minecraft:diorite",
@@ -30,10 +24,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:tuff_redstone_ore",
-          "Properties": {
-            "lit": "false"
-          }
+          "Name": "world_depth:tuff_titanium_ore"
         },
         "target": {
           "block": "minecraft:tuff",
@@ -42,13 +33,28 @@
       },
       {
         "state": {
-          "Name": "world_depth:andesite_redstone_ore",
-          "Properties": {
-            "lit": "false"
-          }
+          "Name": "world_depth:andesite_titanium_ore"
         },
         "target": {
           "block": "minecraft:andesite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:soap_stone_titanium_ore"
+        },
+        "target": {
+          "block": "world_depth:soap_stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:feryl_stone_titanium_ore"
+        },
+        "target": {
+          "block": "world_depth:feryl_stone",
           "predicate_type": "minecraft:block_match"
         }
       }
