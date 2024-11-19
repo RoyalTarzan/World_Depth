@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-05T19:18:11.3227501	Registries
+// 1.20.1	2024-11-18T20:46:39.7975987	Registries
 f3274cfd9cd24e570232f3f847a7953844722b8e data/world_depth/forge/biome_modifier/add_aluminium_ore.json
 41dafa97caa91c71579f29613f5f5df50da03ba5 data/world_depth/forge/biome_modifier/add_coal_ore.json
 c3ae61ea4dc3edd6bad4b6d85ec362f02302a824 data/world_depth/forge/biome_modifier/add_copper_ore.json
@@ -18,7 +18,7 @@ de39d7edd0ab5fd228a7ed7125b3c2683813a9ce data/world_depth/worldgen/configured_fe
 eef4d600587f2ca6c48897cee555157827459734 data/world_depth/worldgen/configured_feature/iron_ore.json
 19e1079172998e00f9904081e004f3a39d9cd92d data/world_depth/worldgen/configured_feature/lapis_ore.json
 c9f27474f9b52c2ec24dde5f780d2e19e4efd226 data/world_depth/worldgen/configured_feature/redstone_ore.json
-c9f27474f9b52c2ec24dde5f780d2e19e4efd226 data/world_depth/worldgen/configured_feature/titanium_ore.json
+533627299f383e4852295c7333e0322007343058 data/world_depth/worldgen/configured_feature/titanium_ore.json
 fcabdeb3ce46c26f580c2991e617fa830f61a656 data/world_depth/worldgen/placed_feature/aluminium_ore_placed.json
 c7fea48f2135e0fc5a25bd33cc6bebd5a5d824ef data/world_depth/worldgen/placed_feature/coal_ore_placed.json
 14c6a31b5050c42dbb334c9aaae6a78db387f9f5 data/world_depth/worldgen/placed_feature/copper_ore_placed.json

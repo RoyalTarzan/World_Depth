@@ -106,8 +106,7 @@ public class ModConfiguredFeatures {
         register(context, LAPIS_ORE_KEY, Feature.ORE, new OreConfiguration(lapisOres, 8));
         register(context, EMERALD_ORE_KEY, Feature.ORE, new OreConfiguration(emeraldOres, 2));
         register(context, REDSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(redstoneOres, 8));
-        register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(redstoneOres, 8));
-
+        register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(titaniumOres, 8));
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
