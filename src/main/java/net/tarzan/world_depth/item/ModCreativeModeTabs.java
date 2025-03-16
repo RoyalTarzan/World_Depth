@@ -43,8 +43,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.TALIUM_HELMET.get());
                         output.accept(ModItems.TALIUM_CHESTPLATE.get());
-                        output.accept(ModItems.TITANIUM_LEGGINGS.get());
-                        output.accept(ModItems.TITANIUM_BOOTS.get());
+                        output.accept(ModItems.TALIUM_LEGGINGS.get());
+                        output.accept(ModItems.TALIUM_BOOTS.get());
 
                         output.accept(ModItems.TITANIUM.get());
                         output.accept(ModItems.RAW_TITANIUM.get());
@@ -55,8 +55,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENERGIZED_TITANIUM.get());
                         output.accept(ModItems.ENERGIZED_ALUMINIUM.get());
                         output.accept(ModItems.TALIUM.get());
+                        output.accept(ModBlocks.TALIUM_BLOCK.get());
+
+                        output.accept(ModBlocks.DEEP_LIGHT.get());
 
                         output.accept(ModBlocks.ENERGIZER.get());
+                        output.accept(ModItems.WORLD_GEM.get());
 
                         output.accept(ModItems.ALUMINIUM_AXE.get());
                         output.accept(ModItems.ALUMINIUM_HOE.get());
@@ -77,12 +81,27 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.FERYL_PRESSURE_PLATE.get());
                         output.accept(ModBlocks.FERYL_WALL.get());
 
+                        output.accept(ModBlocks.COBBLED_FERYL_STONE.get());
+                        output.accept(ModBlocks.COBBLED_FERYL_STAIRS.get());
+                        output.accept(ModBlocks.COBBLED_FERYL_SLAB.get());
+                        output.accept(ModBlocks.COBBLED_FERYL_BUTTON.get());
+                        output.accept(ModBlocks.COBBLED_FERYL_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.COBBLED_FERYL_WALL.get());
+
                         output.accept(ModBlocks.SOAP_STONE.get());
                         output.accept(ModBlocks.SOAP_STONE_STAIRS.get());
                         output.accept(ModBlocks.SOAP_STONE_SLAB.get());
                         output.accept(ModBlocks.SOAP_STONE_BUTTON.get());
                         output.accept(ModBlocks.SOAP_STONE_PRESSURE_PLATE.get());
                         output.accept(ModBlocks.SOAP_STONE_WALL.get());
+
+                        output.accept(ModBlocks.COBBLED_SOAP_STONE.get());
+                        output.accept(ModBlocks.COBBLED_SOAP_STONE_STAIRS.get());
+                        output.accept(ModBlocks.COBBLED_SOAP_STONE_SLAB.get());
+                        output.accept(ModBlocks.COBBLED_SOAP_STONE_BUTTON.get());
+                        output.accept(ModBlocks.COBBLED_SOAP_STONE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.COBBLED_SOAP_STONE_WALL.get());
+
 
                         output.accept(ModBlocks.ANDESITE_COAL_ORE.get());
                         output.accept(ModBlocks.DIORITE_COAL_ORE.get());

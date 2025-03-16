@@ -1,0 +1,13 @@
+{
+  "name": "world_depth:underground_village/fallback/upper_floor",
+  "fallback": "world_depth:underground_village/fallback/upper_floor",
+  "elements": [{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/house/upper_terrace",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  }]
+}

@@ -20,6 +20,8 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_TITANIUM = ITEMS.register("raw_titanium",()->new Item(new Item.Properties()));
     public static final RegistryObject<Item> CHARGED_REDSTONE = ITEMS.register("charged_redstone",()->new ChargedFoods(new Item.Properties()));
     public static final RegistryObject<Item> TALIUM = ITEMS.register("talium",()->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WORLD_GEM = ITEMS.register("world_gem",()->new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LIGHT_GEM = ITEMS.register("light_gem",()->new Item(new Item.Properties()));
 
 
     public static final RegistryObject<Item> TITANIUM_HELMET=ITEMS.register("titanium_helmet",

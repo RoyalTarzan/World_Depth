@@ -49,18 +49,29 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TITANIUM);
         simpleItem(ModItems.ENERGIZED_TITANIUM);
         simpleItem(ModItems.TALIUM);
+        simpleItem(ModItems.WORLD_GEM);
 
         evenSimplerBlockItem(ModBlocks.FERYL_STAIRS);
         evenSimplerBlockItem(ModBlocks.FERYL_SLAB);
         evenSimplerBlockItem(ModBlocks.FERYL_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.COBBLED_FERYL_STAIRS);
+        evenSimplerBlockItem(ModBlocks.COBBLED_FERYL_SLAB);
+        evenSimplerBlockItem(ModBlocks.COBBLED_FERYL_PRESSURE_PLATE);
         evenSimplerBlockItem(ModBlocks.SOAP_STONE_STAIRS);
         evenSimplerBlockItem(ModBlocks.SOAP_STONE_SLAB);
         evenSimplerBlockItem(ModBlocks.SOAP_STONE_PRESSURE_PLATE);
+        evenSimplerBlockItem(ModBlocks.COBBLED_SOAP_STONE_STAIRS);
+        evenSimplerBlockItem(ModBlocks.COBBLED_SOAP_STONE_SLAB);
+        evenSimplerBlockItem(ModBlocks.COBBLED_SOAP_STONE_PRESSURE_PLATE);
 
         buttonItem(ModBlocks.FERYL_BUTTON, ModBlocks.FERYL_STONE);
         wallItem(ModBlocks.FERYL_WALL, ModBlocks.FERYL_STONE);
+        buttonItem(ModBlocks.COBBLED_FERYL_BUTTON, ModBlocks.COBBLED_FERYL_STONE);
+        wallItem(ModBlocks.COBBLED_FERYL_WALL, ModBlocks.COBBLED_FERYL_STONE);
         buttonItem(ModBlocks.SOAP_STONE_BUTTON, ModBlocks.SOAP_STONE);
         wallItem(ModBlocks.SOAP_STONE_WALL, ModBlocks.SOAP_STONE);
+        buttonItem(ModBlocks.COBBLED_SOAP_STONE_BUTTON, ModBlocks.COBBLED_SOAP_STONE);
+        wallItem(ModBlocks.COBBLED_SOAP_STONE_WALL, ModBlocks.COBBLED_SOAP_STONE);
 
         trimmedArmorItem(ModItems.ALUMINIUM_HELMET);
         trimmedArmorItem(ModItems.ALUMINIUM_CHESTPLATE);

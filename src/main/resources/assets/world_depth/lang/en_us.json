@@ -7,6 +7,8 @@
   "item.world_depth.raw_titanium": "Raw Titanium",
   "item.world_depth.charged_redstone": "Charged Redstone",
   "item.world_depth.talium": "Talium",
+  "item.world_depth.world_gem": "World Gem",
+  "item.world_depth.light_gem": "Light Gem",
 
   "item.world_depth.aluminium_helmet": "Aluminium Helmet",
   "item.world_depth.aluminium_chestplate": "Aluminium Chestplate",
@@ -45,6 +47,7 @@
 
 
   "block.world_depth.energizer": "Energizer",
+  "block.world_depth.deep_light": "Deep Light",
   "block.world_depth.charged_redstone_block": "Charged Redstone Block",
 
   "block.world_depth.aluminium_block": "Block of Aluminium",
@@ -54,6 +57,20 @@
 
   "block.world_depth.feryl_stone": "Feryl",
   "block.world_depth.soap_stone": "Soap Stone",
+  "block.world_depth.cobbled_feryl_stone": "Cobbled Feryl",
+  "block.world_depth.cobbled_soap_stone": "Cobbled Soap Stone",
+
+  "block.world_depth.cobbled_feryl_stairs": "Cobbled Feryl Stairs",
+  "block.world_depth.cobbled_feryl_slab": "Cobbled Feryl Slab",
+  "block.world_depth.cobbled_feryl_button": "Cobbled Feryl Button",
+  "block.world_depth.cobbled_feryl_pressure_plate": "Cobbled Feryl Pressure Plate",
+  "block.world_depth.cobbled_feryl_wall": "Cobbled Feryl Wall",
+
+  "block.world_depth.cobbled_soap_stone_stairs": "Cobbled Soap Stone Stairs",
+  "block.world_depth.cobbled_soap_stone_slab": "Cobbled Soap Stone Slab",
+  "block.world_depth.cobbled_soap_stone_button": "Cobbled Soap Stone Button",
+  "block.world_depth.cobbled_soap_stone_pressure_plate": "Cobbled Soap Stone Pressure Plate",
+  "block.world_depth.cobbled_soap_stone_wall": "Cobbled Soap Stone Wall",
 
   "block.world_depth.feryl_stairs": "Feryl Stairs",
   "block.world_depth.feryl_slab": "Feryl Slab",

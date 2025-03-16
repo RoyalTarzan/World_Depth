@@ -25,13 +25,22 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
         this.dropSelf(ModBlocks.ALUMINIUM_BLOCK.get());
         this.dropSelf(ModBlocks.TITANIUM_BLOCK.get());
+        this.dropSelf(ModBlocks.TALIUM_BLOCK.get());
+        this.dropSelf(ModBlocks.DEEP_LIGHT.get());
         this.dropSelf(ModBlocks.RAW_ALUMINIUM_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_TITANIUM_BLOCK.get());
         this.dropSelf(ModBlocks.ENERGIZER.get());
         this.dropSelf(ModBlocks.CHARGED_REDSTONE_BLOCK.get());
-        this.dropOther(ModBlocks.FERYL_STONE.get(), ModBlocks.FERYL_STONE.get());
-        this.dropOther(ModBlocks.SOAP_STONE.get(), ModBlocks.SOAP_STONE.get());
+        this.dropSelf(ModBlocks.COBBLED_SOAP_STONE.get());
+        this.dropSelf(ModBlocks.COBBLED_FERYL_STONE.get());
+        this.dropOther(ModBlocks.FERYL_STONE.get(), ModBlocks.COBBLED_FERYL_STONE.get());
+        this.dropOther(ModBlocks.SOAP_STONE.get(), ModBlocks.COBBLED_SOAP_STONE.get());
 
+        this.dropSelf(ModBlocks.COBBLED_FERYL_WALL.get());
+        this.dropSelf(ModBlocks.COBBLED_FERYL_BUTTON.get());
+        this.dropSelf(ModBlocks.COBBLED_FERYL_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.COBBLED_FERYL_STAIRS.get());
+        this.add(ModBlocks.COBBLED_FERYL_SLAB.get(), block -> createSlabItemTable(ModBlocks.COBBLED_FERYL_SLAB.get()));
         this.dropSelf(ModBlocks.FERYL_WALL.get());
         this.dropSelf(ModBlocks.FERYL_BUTTON.get());
         this.dropSelf(ModBlocks.FERYL_PRESSURE_PLATE.get());
@@ -42,6 +51,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SOAP_STONE_PRESSURE_PLATE.get());
         this.dropSelf(ModBlocks.SOAP_STONE_STAIRS.get());
         this.add(ModBlocks.SOAP_STONE_SLAB.get(), block -> createSlabItemTable(ModBlocks.SOAP_STONE_SLAB.get()));
+        this.dropSelf(ModBlocks.COBBLED_SOAP_STONE_WALL.get());
+        this.dropSelf(ModBlocks.COBBLED_SOAP_STONE_BUTTON.get());
+        this.dropSelf(ModBlocks.COBBLED_SOAP_STONE_PRESSURE_PLATE.get());
+        this.dropSelf(ModBlocks.COBBLED_SOAP_STONE_STAIRS.get());
+        this.add(ModBlocks.COBBLED_SOAP_STONE_SLAB.get(), block -> createSlabItemTable(ModBlocks.COBBLED_SOAP_STONE_SLAB.get()));
 
         this.add(ModBlocks.ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.ALUMINIUM_ORE.get()));
         this.add(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get()));

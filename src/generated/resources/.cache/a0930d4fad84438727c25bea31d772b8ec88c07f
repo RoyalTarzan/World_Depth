@@ -1,10 +1,10 @@
-// 1.20.1	2024-11-10T15:05:19.9166467	Tags for minecraft:block mod id world_depth
+// 1.20.1	2025-03-13T20:21:38.4082028	Tags for minecraft:block mod id world_depth
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/azalea_root_replaceable.json
 d58ab5f835b56262165c7372df3d15d1deceaf88 data/minecraft/tags/blocks/dripstone_replaceable_blocks.json
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/lush_ground_replaceable.json
-7c62d0de56d41d101a970eb6d767657f3605f7bd data/minecraft/tags/blocks/mineable/pickaxe.json
+5b618e804480f44d05e883eb7ec6fe5b932c6491 data/minecraft/tags/blocks/mineable/pickaxe.json
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/moss_replaceable.json
-c294185db4d53cbaa5e05a76c6600428b49d4a4e data/minecraft/tags/blocks/needs_diamond_tool.json
+46444be0097af84ad08c30afdcea6cc630e8acb9 data/minecraft/tags/blocks/needs_diamond_tool.json
 34cc3ad853d21fd4ffb642c6b364569d3264f9f0 data/minecraft/tags/blocks/needs_iron_tool.json
 11d9235fe631916a196555de04d9470d94105aec data/minecraft/tags/blocks/needs_stone_tool.json
 b2e38ba86d9d665f752a799acb48e8bcdebadc81 data/minecraft/tags/blocks/overworld_carver_replaceables.json

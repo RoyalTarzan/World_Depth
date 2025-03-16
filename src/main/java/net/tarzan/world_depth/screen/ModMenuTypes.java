@@ -16,6 +16,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<EnergizerMenu>> ENERGIZER_MENU=
             registerMenuType("energizer_menu",EnergizerMenu::new);
+    public static final RegistryObject<MenuType<DeepLightMenu>> DEEP_LIGHT_MENU=
+            registerMenuType("deep_light_menu",DeepLightMenu::new);
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory){
         return MENUS.register(name, ()-> IForgeMenuType.create(factory));

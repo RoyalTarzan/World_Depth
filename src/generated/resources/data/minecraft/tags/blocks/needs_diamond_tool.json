@@ -2,6 +2,7 @@
   "values": [
     "world_depth:raw_titanium_block",
     "world_depth:titanium_block",
+    "world_depth:talium_block",
     "world_depth:granite_titanium_ore",
     "world_depth:diorite_titanium_ore",
     "world_depth:tuff_titanium_ore",

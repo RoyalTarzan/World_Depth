@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "world_depth:block/cobbled_feryl_slab"
+    },
+    "type=double": {
+      "model": "world_depth:block/cobbled_feryl_stone"
+    },
+    "type=top": {
+      "model": "world_depth:block/cobbled_feryl_slab_top"
+    }
+  }
+}

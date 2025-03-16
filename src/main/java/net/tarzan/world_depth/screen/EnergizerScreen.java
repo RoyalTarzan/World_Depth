@@ -43,16 +43,16 @@ public class EnergizerScreen extends AbstractContainerScreen<EnergizerMenu> {
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            guiGraphics.blit(ARROW_TEXTURE, x + 43, y + 30, 0, 0, 92, menu.getScaledProgress());
+            guiGraphics.blit(ARROW_TEXTURE, x + 43, y + 30, 0, 0, 92,menu.getScaledProgress());
         }
     }
 
     private void renderRedstoneBar(GuiGraphics guiGraphics, int x, int y){
-        guiGraphics.blit(REDSTONE_TEXTURE, x + 8, y + 26, 0, 0, 16, menu.getScaledRedstone());
+        guiGraphics.blit(REDSTONE_TEXTURE, x + 8, y + 26, 0, 0, 16, 50-menu.getScaledRedstone());
     }
 
     private void renderChargedRedstoneBar(GuiGraphics guiGraphics, int x, int y){
-        guiGraphics.blit(CHARGED_REDSTONE_TEXTURE, x + 145, y + 26, 0, 0, 16, menu.getScaledChargedRedstone());
+        guiGraphics.blit(CHARGED_REDSTONE_TEXTURE, x + 145, y + 26, 0, 0, 16, 50-menu.getScaledChargedRedstone());
     }
 
     @Override

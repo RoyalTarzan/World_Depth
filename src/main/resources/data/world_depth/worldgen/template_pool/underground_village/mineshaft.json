@@ -1,6 +1,6 @@
 {
-  "name": "world_depth:underground_village/roads",
-  "fallback": "minecraft:empty",
+  "name": "world_depth:underground_village/mineshaft",
+  "fallback": "world_depth:underground_village/fallback/mineshaft",
   "elements": [{
     "weight": 15,
     "element": {

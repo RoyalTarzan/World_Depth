@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-10T15:05:19.9196463	Item Models: world_depth
+// 1.20.1	2025-03-10T20:19:05.470118	Item Models: world_depth
 8421e912b04c95f888df418693646bb1c32540bf assets/world_depth/models/item/aluminium.json
 fdd2d38d61e45d77fef3b00db79d3f9916061a3b assets/world_depth/models/item/aluminium_axe.json
 8e6dd5684c833a0093de981dba20e4f6b84a45ac assets/world_depth/models/item/aluminium_boots.json
@@ -50,6 +50,16 @@ cd3f2f480503e321ac9dacb8e944eb411cae6231 assets/world_depth/models/item/aluminiu
 62aea2c0c907cce78e79ae63f1a8155213821bc5 assets/world_depth/models/item/aluminium_shovel.json
 fb4c8a2a66c6357fd11d1200c8f0325f523d38e6 assets/world_depth/models/item/aluminium_sword.json
 e67db212b43afaba5a0b998e405642c400048f50 assets/world_depth/models/item/charged_redstone.json
+e9557018eaa53675b75f9978b73fd8fb90d8095e assets/world_depth/models/item/cobbled_feryl_button.json
+276a6b273d12150be4ab2a995fe8690e03ea6a8b assets/world_depth/models/item/cobbled_feryl_pressure_plate.json
+57848eefd0aa2a7755612f35a8d97c04eaa51920 assets/world_depth/models/item/cobbled_feryl_slab.json
+258aba38248c692da2656a108d6f32f779f014bc assets/world_depth/models/item/cobbled_feryl_stairs.json
+c1dea16c6febe3c3d6fdcab890789b8dca7aec4c assets/world_depth/models/item/cobbled_feryl_wall.json
+2d19ac99fed3672d55b0025864a488e08c31d47b assets/world_depth/models/item/cobbled_soap_stone_button.json
+0cc1ad0ec21779db66d3e422a0c577115a102660 assets/world_depth/models/item/cobbled_soap_stone_pressure_plate.json
+75e2fdb8dcd922e9bb9899dc0ecc15a951bcc8de assets/world_depth/models/item/cobbled_soap_stone_slab.json
+174ff8f5aac08b93f08dec13f608ba72649668ea assets/world_depth/models/item/cobbled_soap_stone_stairs.json
+99459ed1630c870e64f0f6b04a8d126835c8861b assets/world_depth/models/item/cobbled_soap_stone_wall.json
 9c8e9224c819443e9ae9116e8252d2d02b15f2d0 assets/world_depth/models/item/energized_aluminium.json
 b74ecdabdaabb54fff8540110a6be667cb7c415a assets/world_depth/models/item/energized_aluminium_boots.json
 7ee42ac006f32b633aa1cce8d686a444a57b3d62 assets/world_depth/models/item/energized_aluminium_boots_amethyst_trim.json
@@ -247,3 +257,4 @@ d0d36f597cd78dbaea46854a5d167ac2e95fd50f assets/world_depth/models/item/titanium
 891cf02219215a92261d344910e9729ba39d3aed assets/world_depth/models/item/titanium_pickaxe.json
 85980b4aed8f2df6b3fdc8236feadaba3b37d7cd assets/world_depth/models/item/titanium_shovel.json
 c907859fe61991628b90ffa38d322d96fd0ce61d assets/world_depth/models/item/titanium_sword.json
+cf881d3121b5c8b33eb068663e552c29b88f36e2 assets/world_depth/models/item/world_gem.json

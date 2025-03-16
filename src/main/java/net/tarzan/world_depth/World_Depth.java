@@ -18,6 +18,7 @@ import net.tarzan.world_depth.block.entity.ModBlockEntities;
 import net.tarzan.world_depth.item.ModCreativeModeTabs;
 import net.tarzan.world_depth.item.ModItems;
 import net.tarzan.world_depth.recipe.ModRecipes;
+import net.tarzan.world_depth.screen.DeepLightScreen;
 import net.tarzan.world_depth.screen.EnergizerScreen;
 import net.tarzan.world_depth.screen.ModMenuTypes;
 import org.slf4j.Logger;
@@ -60,6 +61,7 @@ public class World_Depth
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event){
             MenuScreens.register(ModMenuTypes.ENERGIZER_MENU.get(), EnergizerScreen::new);
+            MenuScreens.register(ModMenuTypes.DEEP_LIGHT_MENU.get(), DeepLightScreen::new);
         }
     }
 }

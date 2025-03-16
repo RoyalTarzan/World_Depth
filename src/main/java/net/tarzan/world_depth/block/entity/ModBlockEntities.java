@@ -15,6 +15,9 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<EnergizerBlockEntity>> ENERGIZER_BE=
             BLOCK_ENTITIES.register("energizer_be",()->
                 BlockEntityType.Builder.of(EnergizerBlockEntity::new, ModBlocks.ENERGIZER.get()).build(null));
+    public static final RegistryObject<BlockEntityType<DeepLightBlockEntity>> DEEP_LIGHT_BE=
+            BLOCK_ENTITIES.register("deep_light_be",()->
+                    BlockEntityType.Builder.of(DeepLightBlockEntity::new, ModBlocks.DEEP_LIGHT.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

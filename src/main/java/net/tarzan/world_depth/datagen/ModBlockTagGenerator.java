@@ -76,8 +76,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 ModBlocks.RAW_ALUMINIUM_BLOCK.get(),
                 ModBlocks.RAW_TITANIUM_BLOCK.get(),
                 ModBlocks.TITANIUM_BLOCK.get(),
+                        ModBlocks.TALIUM_BLOCK.get(),
                 ModBlocks.FERYL_STONE.get(),
                 ModBlocks.SOAP_STONE.get(),
+                        ModBlocks.COBBLED_FERYL_STONE.get(),
+                        ModBlocks.COBBLED_SOAP_STONE.get(),
                         ModBlocks.SOAP_STONE_BUTTON.get(),
                         ModBlocks.SOAP_STONE_SLAB.get(),
                         ModBlocks.SOAP_STONE_PRESSURE_PLATE.get(),
@@ -86,6 +89,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.FERYL_SLAB.get(),
                         ModBlocks.FERYL_PRESSURE_PLATE.get(),
                         ModBlocks.FERYL_STAIRS.get(),
+                        ModBlocks.COBBLED_SOAP_STONE_BUTTON.get(),
+                        ModBlocks.COBBLED_SOAP_STONE_SLAB.get(),
+                        ModBlocks.COBBLED_SOAP_STONE_PRESSURE_PLATE.get(),
+                        ModBlocks.COBBLED_SOAP_STONE_STAIRS.get(),
+                        ModBlocks.COBBLED_FERYL_BUTTON.get(),
+                        ModBlocks.COBBLED_FERYL_SLAB.get(),
+                        ModBlocks.COBBLED_FERYL_PRESSURE_PLATE.get(),
+                        ModBlocks.COBBLED_FERYL_STAIRS.get(),
                         ModBlocks.ENERGIZER.get())
                 .addTag(ModTags.Blocks.ADDED_ORES)
                 .addTag(BlockTags.WALLS);
@@ -93,6 +104,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.RAW_TITANIUM_BLOCK.get(),
                         ModBlocks.TITANIUM_BLOCK.get(),
+                        ModBlocks.TALIUM_BLOCK.get(),
                         ModBlocks.GRANITE_TITANIUM_ORE.get(),
                         ModBlocks.DIORITE_TITANIUM_ORE.get(),
                         ModBlocks.TUFF_TITANIUM_ORE.get(),

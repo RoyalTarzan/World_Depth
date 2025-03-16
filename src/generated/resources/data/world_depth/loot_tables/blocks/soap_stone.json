@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "world_depth:soap_stone"
+          "name": "world_depth:cobbled_soap_stone"
         }
       ],
       "rolls": 1.0

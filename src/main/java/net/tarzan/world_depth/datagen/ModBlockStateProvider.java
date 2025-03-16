@@ -20,9 +20,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.RAW_ALUMINIUM_BLOCK);
         blockWithItem(ModBlocks.RAW_TITANIUM_BLOCK);
         blockWithItem(ModBlocks.TITANIUM_BLOCK);
+        blockWithItem(ModBlocks.TALIUM_BLOCK);
         blockWithItem(ModBlocks.FERYL_STONE);
         blockWithItem(ModBlocks.SOAP_STONE);
+        blockWithItem(ModBlocks.COBBLED_FERYL_STONE);
+        blockWithItem(ModBlocks.COBBLED_SOAP_STONE);
         blockWithItem(ModBlocks.CHARGED_REDSTONE_BLOCK);
+        blockWithItem(ModBlocks.DEEP_LIGHT);
 
         blockWithItem(ModBlocks.ALUMINIUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ALUMINIUM_ORE);
@@ -87,14 +91,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
         slabBlock(((SlabBlock) ModBlocks.FERYL_SLAB.get()), blockTexture(ModBlocks.FERYL_STONE.get()),blockTexture(ModBlocks.FERYL_STONE.get()));
         stairsBlock(((StairBlock) ModBlocks.SOAP_STONE_STAIRS.get()), blockTexture(ModBlocks.SOAP_STONE.get()));
         slabBlock(((SlabBlock) ModBlocks.SOAP_STONE_SLAB.get()), blockTexture(ModBlocks.SOAP_STONE.get()),blockTexture(ModBlocks.SOAP_STONE.get()));
+        stairsBlock(((StairBlock) ModBlocks.COBBLED_FERYL_STAIRS.get()), blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.COBBLED_FERYL_SLAB.get()), blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()),blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()));
+        stairsBlock(((StairBlock) ModBlocks.COBBLED_SOAP_STONE_STAIRS.get()), blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()));
+        slabBlock(((SlabBlock) ModBlocks.COBBLED_SOAP_STONE_SLAB.get()), blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()),blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()));
 
         buttonBlock(((ButtonBlock) ModBlocks.FERYL_BUTTON.get()), blockTexture(ModBlocks.FERYL_STONE.get()));
         pressurePlateBlock(((PressurePlateBlock) ModBlocks.FERYL_PRESSURE_PLATE.get()), blockTexture(ModBlocks.FERYL_STONE.get()));
         buttonBlock(((ButtonBlock) ModBlocks.SOAP_STONE_BUTTON.get()), blockTexture(ModBlocks.SOAP_STONE.get()));
         pressurePlateBlock(((PressurePlateBlock) ModBlocks.SOAP_STONE_PRESSURE_PLATE.get()), blockTexture(ModBlocks.SOAP_STONE.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.COBBLED_FERYL_BUTTON.get()), blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.COBBLED_FERYL_PRESSURE_PLATE.get()), blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()));
+        buttonBlock(((ButtonBlock) ModBlocks.COBBLED_SOAP_STONE_BUTTON.get()), blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()));
+        pressurePlateBlock(((PressurePlateBlock) ModBlocks.COBBLED_SOAP_STONE_PRESSURE_PLATE.get()), blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()));
 
         wallBlock(((WallBlock) ModBlocks.FERYL_WALL.get()), blockTexture(ModBlocks.FERYL_STONE.get()));
         wallBlock(((WallBlock) ModBlocks.SOAP_STONE_WALL.get()), blockTexture(ModBlocks.SOAP_STONE.get()));
+        wallBlock(((WallBlock) ModBlocks.COBBLED_FERYL_WALL.get()), blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()));
+        wallBlock(((WallBlock) ModBlocks.COBBLED_SOAP_STONE_WALL.get()), blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()));
 
         simpleBlockWithItem(ModBlocks.ENERGIZER.get(),new ModelFile.UncheckedModelFile(modLoc("block/energizer")));
     }

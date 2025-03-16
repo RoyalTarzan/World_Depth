@@ -6,11 +6,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
+import net.tarzan.world_depth.block.custom.DeepLightBlock;
 import net.tarzan.world_depth.block.custom.EnergizerBlock;
 import net.tarzan.world_depth.item.ModItems;
 
@@ -25,6 +27,8 @@ public class ModBlocks {
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
     public static final RegistryObject<Block> TITANIUM_BLOCK=registerBlock("titanium_block",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+    public static final RegistryObject<Block> TALIUM_BLOCK=registerBlock("talium_block",
+            ()->new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
     public static final RegistryObject<Block> RAW_TITANIUM_BLOCK=registerBlock("raw_titanium_block",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS)));
     public static final RegistryObject<Block> ALUMINIUM_ORE=registerBlock("aluminium_ore",
@@ -35,6 +39,10 @@ public class ModBlocks {
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
     public static final RegistryObject<Block> SOAP_STONE=registerBlock("soap_stone",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,4.0f)));
+    public static final RegistryObject<Block> COBBLED_FERYL_STONE=registerBlock("cobbled_feryl_stone",
+            ()->new Block(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get())));
+    public static final RegistryObject<Block> COBBLED_SOAP_STONE=registerBlock("cobbled_soap_stone",
+            ()->new Block(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get())));
     public static final RegistryObject<Block> CHARGED_REDSTONE_BLOCK=registerBlock("charged_redstone_block",
             ()->new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
 
@@ -142,19 +150,28 @@ public class ModBlocks {
 
 
 
-
     public static final RegistryObject<Block> FERYL_STAIRS=registerBlock("feryl_stairs",
             ()->new StairBlock(()->ModBlocks.FERYL_STONE.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
     public static final RegistryObject<Block> FERYL_SLAB=registerBlock("feryl_slab",
             ()->new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(1.7f,7f)));
-
     public static final RegistryObject<Block> FERYL_BUTTON=registerBlock("feryl_button",
             ()->new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE,10,true));
     public static final RegistryObject<Block> FERYL_PRESSURE_PLATE=registerBlock("feryl_pressure_plate",
             ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS,BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()), BlockSetType.STONE));
-
     public static final RegistryObject<Block> FERYL_WALL=registerBlock("feryl_wall",
+            ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(1.7f,7f)));
+
+    public static final RegistryObject<Block> COBBLED_FERYL_STAIRS=registerBlock("cobbled_feryl_stairs",
+            ()->new StairBlock(()->ModBlocks.FERYL_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.7f,7f)));
+    public static final RegistryObject<Block> COBBLED_FERYL_SLAB=registerBlock("cobbled_feryl_slab",
+            ()->new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(1.7f,7f)));
+    public static final RegistryObject<Block> COBBLED_FERYL_BUTTON=registerBlock("cobbled_feryl_button",
+            ()->new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.STONE,10,true));
+    public static final RegistryObject<Block> COBBLED_FERYL_PRESSURE_PLATE=registerBlock("cobbled_feryl_pressure_plate",
+            ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS,BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()), BlockSetType.STONE));
+    public static final RegistryObject<Block> COBBLED_FERYL_WALL=registerBlock("cobbled_feryl_wall",
             ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.FERYL_STONE.get()).strength(1.7f,7f)));
 
     public static final RegistryObject<Block> SOAP_STONE_STAIRS=registerBlock("soap_stone_stairs",
@@ -162,17 +179,29 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,7f)));
     public static final RegistryObject<Block> SOAP_STONE_SLAB=registerBlock("soap_stone_slab",
             ()->new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(1.0f,7f)));
-
     public static final RegistryObject<Block> SOAP_STONE_BUTTON=registerBlock("soap_stone_button",
             ()->new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.GOLD,5,true));
     public static final RegistryObject<Block> SOAP_STONE_PRESSURE_PLATE=registerBlock("soap_stone_pressure_plate",
             ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()), BlockSetType.GOLD));
-
     public static final RegistryObject<Block> SOAP_STONE_WALL=registerBlock("soap_stone_wall",
+            ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get())));
+
+    public static final RegistryObject<Block> COBBLED_SOAP_STONE_STAIRS=registerBlock("cobbled_soap_stone_stairs",
+            ()->new StairBlock(()->ModBlocks.SOAP_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.STONE).strength(1.0f,7f)));
+    public static final RegistryObject<Block> COBBLED_SOAP_STONE_SLAB=registerBlock("cobbled_soap_stone_slab",
+            ()->new SlabBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).strength(1.0f,7f)));
+    public static final RegistryObject<Block> COBBLED_SOAP_STONE_BUTTON=registerBlock("cobbled_soap_stone_button",
+            ()->new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON), BlockSetType.GOLD,5,true));
+    public static final RegistryObject<Block> COBBLED_SOAP_STONE_PRESSURE_PLATE=registerBlock("cobbled_soap_stone_pressure_plate",
+            ()->new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()), BlockSetType.GOLD));
+    public static final RegistryObject<Block> COBBLED_SOAP_STONE_WALL=registerBlock("cobbled_soap_stone_wall",
             ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get())));
 
     public static final RegistryObject<Block> ENERGIZER=registerBlock("energizer",
             ()->new EnergizerBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).noOcclusion()));
+
+    public static final RegistryObject<Block> DEEP_LIGHT=registerBlock("deep_light",()-> new DeepLightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(0.3F).sound(SoundType.NETHERITE_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn=BLOCKS.register(name, block);
