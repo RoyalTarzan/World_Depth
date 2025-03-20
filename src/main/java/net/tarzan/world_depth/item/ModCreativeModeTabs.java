@@ -61,6 +61,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.ENERGIZER.get());
                         output.accept(ModItems.WORLD_GEM.get());
+                        output.accept(ModItems.LIGHT_GEM.get());
 
                         output.accept(ModItems.ALUMINIUM_AXE.get());
                         output.accept(ModItems.ALUMINIUM_HOE.get());

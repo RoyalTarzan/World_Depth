@@ -41,14 +41,12 @@ public class DeepLightBlock extends BaseEntityBlock {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
             if (blockEntity instanceof DeepLightBlockEntity) {
                 ((DeepLightBlockEntity) blockEntity).drops();
-            }
-            if (!pLevel.isClientSide()){
-                for (int i = -128; i < 128; i+=2) {
-                    for (int j = -128; j < 128; j+=2) {
-                        for (int k = -128; k < 128; k++) {
-                            BlockPos blockPos2=new BlockPos(pPos.getX()+i,pPos.getY()+k,pPos.getZ()+j);
-                            if (pLevel.getBlockState(blockPos2)== Blocks.LIGHT.defaultBlockState()){
-                                pLevel.setBlockAndUpdate(blockPos2,Blocks.AIR.defaultBlockState());
+                if (!pLevel.isClientSide()){
+                    for (int i = -127; i < 129; i+=2) {
+                        for (int j = -127; j < 129; j+=2) {
+                            BlockPos blockPos2=new BlockPos(pPos.getX()+i,pPos.getY(),pPos.getZ()+j);
+                            if (pLevel.getBlockState(blockPos2)==Blocks.LIGHT.defaultBlockState()){
+                                pLevel.setBlockAndUpdate(blockPos2, Blocks.AIR.defaultBlockState());
                             }
                         }
                     }

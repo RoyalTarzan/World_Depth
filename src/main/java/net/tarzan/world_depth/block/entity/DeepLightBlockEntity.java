@@ -10,6 +10,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -31,9 +32,35 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
 
     private LazyOptional<IItemHandler> lazyItemHandler=LazyOptional.empty();
 
+    protected final ContainerData data;
+    private int previousAmount=0;
+    private int currentAmount=0;
 
     public DeepLightBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.DEEP_LIGHT_BE.get(), pPos, pBlockState);
+        this.data = new ContainerData() {
+            @Override
+            public int get(int i) {
+                return switch (i){
+                    case 0 ->DeepLightBlockEntity.this.currentAmount;
+                    case 1 ->DeepLightBlockEntity.this.previousAmount;
+                    default -> 1;
+                };
+            }
+
+            @Override
+            public void set(int i, int value) {
+                switch (i){
+                    case 0 ->DeepLightBlockEntity.this.currentAmount=value;
+                    case 1 ->DeepLightBlockEntity.this.previousAmount=value;
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 0;
+            }
+        };
     }
 
     @Override
@@ -89,26 +116,55 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
     }
     public void tick(Level pLevel, BlockPos blockPos) {
-        if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem()== ModItems.LIGHT_GEM.get() && !pLevel.isClientSide()){
-            for (int i = this.itemHandler.getStackInSlot(INPUT_SLOT).getCount()*-2; i < this.itemHandler.getStackInSlot(INPUT_SLOT).getCount()*2; i+=2) {
-                for (int j = this.itemHandler.getStackInSlot(INPUT_SLOT).getCount()*-2; j < this.itemHandler.getStackInSlot(INPUT_SLOT).getCount()*2; j+=2) {
-                    for (int k = this.itemHandler.getStackInSlot(INPUT_SLOT).getCount()*-2; k < this.itemHandler.getStackInSlot(INPUT_SLOT).getCount()*2; k+=2) {
-                        BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY()+k,blockPos.getZ()+j);
-                        if (pLevel.getBlockState(blockPos2)==Blocks.AIR.defaultBlockState()){
-                            pLevel.setBlockAndUpdate(blockPos2,Blocks.LIGHT.defaultBlockState());
-                        }
-                    }
+        this.data.set(0,this.itemHandler.getStackInSlot(INPUT_SLOT).getCount());
+        if (this.data.get(0)>=this.data.get(1)){
+            if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem()== ModItems.LIGHT_GEM.get() && !pLevel.isClientSide()){
+                matrixPlacement(this.data.get(0)*2,pLevel,blockPos,
+                        Blocks.AIR.defaultBlockState(),Blocks.LIGHT.defaultBlockState());
+            }else {
+                matrixPlacement(128,pLevel,blockPos,
+                        Blocks.LIGHT.defaultBlockState(),Blocks.AIR.defaultBlockState());
+            }
+        } else if (this.data.get(0)<this.data.get(1)) {
+            matrixPlacement(128,this.data.get(0)*2,pLevel,blockPos,
+                    Blocks.LIGHT.defaultBlockState(),Blocks.AIR.defaultBlockState());
+        }
+        this.data.set(1,this.itemHandler.getStackInSlot(INPUT_SLOT).getCount());
+    }
+
+    public void matrixPlacement(int diameter,Level pLevel,BlockPos blockPos,BlockState Original,BlockState Replaced){
+        for (int i = -diameter+1; i < diameter+1; i+=2) {
+            for (int j = -diameter+1; j < diameter+1; j+=2) {
+                BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY(),blockPos.getZ()+j);
+                if (pLevel.getBlockState(blockPos2)==Original){
+                    pLevel.setBlockAndUpdate(blockPos2,Replaced);
                 }
             }
-        }else {
-            for (int i = -128; i < 128; i+=2) {
-                for (int j = -128; j < 128; j+=2) {
-                    for (int k = -128; k < 128; k+=2) {
-                        BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY()+k,blockPos.getZ()+j);
-                        if (pLevel.getBlockState(blockPos2)==Blocks.LIGHT.defaultBlockState()){
-                            pLevel.setBlockAndUpdate(blockPos2,Blocks.AIR.defaultBlockState());
-                        }
-                    }
+        }
+    }
+
+    public void matrixPlacement(int diameter,int innerDiameter,Level pLevel,BlockPos blockPos, BlockState Original,BlockState Replaced){
+        for (int i = -diameter+1; i < -innerDiameter+1; i+=2) {
+            for (int j = -diameter+1; j < diameter+1; j+=2) {
+                BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY(),blockPos.getZ()+j);
+                if (pLevel.getBlockState(blockPos2)==Original){
+                    pLevel.setBlockAndUpdate(blockPos2,Replaced);
+                }
+                BlockPos blockPos3=new BlockPos(blockPos.getX()+j,blockPos.getY(),blockPos.getZ()+i);
+                if (pLevel.getBlockState(blockPos3)==Original){
+                    pLevel.setBlockAndUpdate(blockPos3,Replaced);
+                }
+            }
+        }
+        for (int i = diameter+3; i > innerDiameter-1; i-=2) {
+            for (int j = -diameter+1; j < diameter+3; j+=2) {
+                BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY(),blockPos.getZ()+j);
+                if (pLevel.getBlockState(blockPos2)==Original){
+                    pLevel.setBlockAndUpdate(blockPos2,Replaced);
+                }
+                BlockPos blockPos3=new BlockPos(blockPos.getX()+j,blockPos.getY(),blockPos.getZ()+i);
+                if (pLevel.getBlockState(blockPos3)==Original){
+                    pLevel.setBlockAndUpdate(blockPos3,Replaced);
                 }
             }
         }

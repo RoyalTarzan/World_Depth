@@ -50,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ENERGIZED_TITANIUM);
         simpleItem(ModItems.TALIUM);
         simpleItem(ModItems.WORLD_GEM);
+        simpleItem(ModItems.LIGHT_GEM);
 
         evenSimplerBlockItem(ModBlocks.FERYL_STAIRS);
         evenSimplerBlockItem(ModBlocks.FERYL_SLAB);
