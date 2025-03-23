@@ -4,15 +4,21 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.ModBlocks;
+import net.tarzan.world_depth.worldgen.tree.custom.StookTrunkPlacer;
 
 import java.util.List;
 
@@ -27,6 +33,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> REDSTONE_ORE_KEY=registerKey("redstone_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMERALD_ORE_KEY=registerKey("emerald_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TITANIUM_ORE_KEY=registerKey("titanium_ore");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> STOOK_KEY=registerKey("stook");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?,?>> context){
@@ -107,6 +115,13 @@ public class ModConfiguredFeatures {
         register(context, EMERALD_ORE_KEY, Feature.ORE, new OreConfiguration(emeraldOres, 2));
         register(context, REDSTONE_ORE_KEY, Feature.ORE, new OreConfiguration(redstoneOres, 8));
         register(context, TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(titaniumOres, 8));
+
+        register(context, STOOK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(ModBlocks.STOOK_LOG.get()),
+                new StookTrunkPlacer(5,6,4),
+                BlockStateProvider.simple(ModBlocks.STOOK_LEAVES.get()),
+                new BlobFoliagePlacer(ConstantInt.of(3),ConstantInt.of(2),3),
+                new TwoLayersFeatureSize(1,0,2)).build());
     }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

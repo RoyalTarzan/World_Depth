@@ -21,6 +21,8 @@ import net.tarzan.world_depth.recipe.ModRecipes;
 import net.tarzan.world_depth.screen.DeepLightScreen;
 import net.tarzan.world_depth.screen.EnergizerScreen;
 import net.tarzan.world_depth.screen.ModMenuTypes;
+import net.tarzan.world_depth.worldgen.tree.ModFoliagePlacerTypes;
+import net.tarzan.world_depth.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
 @Mod(World_Depth.MODID)
@@ -36,7 +38,11 @@ public class World_Depth
         ModBlocks.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacerTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+
+
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);

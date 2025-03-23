@@ -1,10 +1,12 @@
 package net.tarzan.world_depth.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.ModBlocks;
@@ -110,7 +112,37 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock(((WallBlock) ModBlocks.COBBLED_FERYL_WALL.get()), blockTexture(ModBlocks.COBBLED_FERYL_STONE.get()));
         wallBlock(((WallBlock) ModBlocks.COBBLED_SOAP_STONE_WALL.get()), blockTexture(ModBlocks.COBBLED_SOAP_STONE.get()));
 
+        saplingBlock(ModBlocks.STOOK_SAPLING);
+        leavesBlock(ModBlocks.STOOK_LEAVES);
+        logBlock(((RotatedPillarBlock) ModBlocks.STOOK_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STOOK_WOOD.get()),blockTexture(ModBlocks.STOOK_LOG.get()),blockTexture(ModBlocks.STOOK_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_STOOK_LOG.get()),blockTexture(ModBlocks.STRIPPED_STOOK_LOG.get()),
+                new ResourceLocation(World_Depth.MODID,"block/stripped_stook_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_STOOK_WOOD.get()),blockTexture(ModBlocks.STRIPPED_STOOK_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_STOOK_LOG.get()));
+
+        blockItem(ModBlocks.STOOK_LOG);
+        blockItem(ModBlocks.STRIPPED_STOOK_LOG);
+        blockItem(ModBlocks.STRIPPED_STOOK_WOOD);
+        blockItem(ModBlocks.STOOK_WOOD);
+
         simpleBlockWithItem(ModBlocks.ENERGIZER.get(),new ModelFile.UncheckedModelFile(modLoc("block/energizer")));
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(World_Depth.MODID +
+                ":block/" + ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject){

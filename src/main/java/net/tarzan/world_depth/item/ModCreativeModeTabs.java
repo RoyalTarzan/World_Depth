@@ -103,6 +103,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.COBBLED_SOAP_STONE_PRESSURE_PLATE.get());
                         output.accept(ModBlocks.COBBLED_SOAP_STONE_WALL.get());
 
+                        output.accept(ModBlocks.STOOK_LOG.get());
+                        output.accept(ModBlocks.STOOK_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_STOOK_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_STOOK_WOOD.get());
+                        output.accept(ModBlocks.STOOK_PLANKS.get());
+                        output.accept(ModBlocks.STOOK_LEAVES.get());
+                        output.accept(ModBlocks.STOOK_SAPLING.get());
+
 
                         output.accept(ModBlocks.ANDESITE_COAL_ORE.get());
                         output.accept(ModBlocks.DIORITE_COAL_ORE.get());

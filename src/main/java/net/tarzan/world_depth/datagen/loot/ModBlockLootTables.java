@@ -33,8 +33,17 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CHARGED_REDSTONE_BLOCK.get());
         this.dropSelf(ModBlocks.COBBLED_SOAP_STONE.get());
         this.dropSelf(ModBlocks.COBBLED_FERYL_STONE.get());
+        this.dropSelf(ModBlocks.STOOK_LOG.get());
+        this.dropSelf(ModBlocks.STOOK_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_STOOK_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_STOOK_WOOD.get());
+        this.dropSelf(ModBlocks.STOOK_PLANKS.get());
+        this.dropSelf(ModBlocks.STOOK_SAPLING.get());
         this.dropOther(ModBlocks.FERYL_STONE.get(), ModBlocks.COBBLED_FERYL_STONE.get());
         this.dropOther(ModBlocks.SOAP_STONE.get(), ModBlocks.COBBLED_SOAP_STONE.get());
+
+        this.add(ModBlocks.STOOK_LEAVES.get(),block ->
+                createLeavesDrops(block, ModBlocks.STOOK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         this.dropSelf(ModBlocks.COBBLED_FERYL_WALL.get());
         this.dropSelf(ModBlocks.COBBLED_FERYL_BUTTON.get());

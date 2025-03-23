@@ -1,10 +1,14 @@
 package net.tarzan.world_depth.block;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -14,7 +18,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.custom.DeepLightBlock;
 import net.tarzan.world_depth.block.custom.EnergizerBlock;
+import net.tarzan.world_depth.block.custom.ModFlammableRotatedPillarBlock;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.worldgen.tree.StookTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -198,10 +204,57 @@ public class ModBlocks {
     public static final RegistryObject<Block> COBBLED_SOAP_STONE_WALL=registerBlock("cobbled_soap_stone_wall",
             ()->new WallBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get())));
 
+    public static final RegistryObject<Block> STOOK_LOG=registerBlock("stook_log",
+            ()->new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(5)));
+    public static final RegistryObject<Block> STOOK_WOOD=registerBlock("stook_wood",
+            ()->new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(5)));
+    public static final RegistryObject<Block> STRIPPED_STOOK_LOG=registerBlock("stripped_stook_log",
+            ()->new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(5)));
+    public static final RegistryObject<Block> STRIPPED_STOOK_WOOD=registerBlock("stripped_stook_wood",
+            ()->new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(5)));
+
+    public static final RegistryObject<Block> STOOK_PLANKS=registerBlock("stook_planks",
+            ()->new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
+    public static final RegistryObject<Block> STOOK_LEAVES=registerBlock("stook_leaves",
+            ()->new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 10;
+                }
+            });
+    public static final RegistryObject<Block> STOOK_SAPLING=registerBlock("stook_sapling",
+            ()-> new SaplingBlock(new StookTreeGrower(),BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
     public static final RegistryObject<Block> ENERGIZER=registerBlock("energizer",
             ()->new EnergizerBlock(BlockBehaviour.Properties.copy(ModBlocks.SOAP_STONE.get()).noOcclusion()));
 
-    public static final RegistryObject<Block> DEEP_LIGHT=registerBlock("deep_light",()-> new DeepLightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(0.3F).sound(SoundType.NETHERITE_BLOCK)));
+    public static final RegistryObject<Block> DEEP_LIGHT=registerBlock("deep_light",
+            ()-> new DeepLightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(0.3F).sound(SoundType.NETHERITE_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn=BLOCKS.register(name, block);

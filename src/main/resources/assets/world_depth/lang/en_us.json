@@ -55,6 +55,13 @@
   "block.world_depth.titanium_block": "Block of Titanium",
   "block.world_depth.raw_titanium_block": "Block of Raw Titanium",
 
+  "block.world_depth.stook_log": "Stook Log",
+  "block.world_depth.stook_wood": "Stook Wood",
+  "block.world_depth.stripped_stook_log": "Stripped Stook Log",
+  "block.world_depth.stripped_stook_wood": "Stripped Stook Wood",
+  "block.world_depth.stook_planks": "Stook Planks",
+  "block.world_depth.stook_leaves": "Stook Leaves",
+
   "block.world_depth.feryl_stone": "Feryl",
   "block.world_depth.soap_stone": "Soap Stone",
   "block.world_depth.cobbled_feryl_stone": "Cobbled Feryl",
