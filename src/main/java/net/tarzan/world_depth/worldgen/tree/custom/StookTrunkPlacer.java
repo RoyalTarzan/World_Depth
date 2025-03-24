@@ -43,25 +43,50 @@ public class StookTrunkPlacer extends TrunkPlacer {
             placeLog(pLevel, blockSetter, random, blockPos.above(i),treeConfiguration);
             if (i>4){
                 if (i%5==0){
-                    for (int j = 1; j < 5; j++) {
-                        blockSetter.accept(blockPos.above(i).relative(Direction.NORTH, j), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                        blockSetter.accept(blockPos.above(i).relative(Direction.SOUTH, j), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                        blockSetter.accept(blockPos.above(i).relative(Direction.EAST, j), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                        blockSetter.accept(blockPos.above(i).relative(Direction.WEST, j), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.NORTH,5),0,false));
-                    foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.SOUTH,5),0,false));
-                    foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.EAST,5),0,false));
-                    foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.WEST,5),0,false));
-
+                    foliageAttachments.addAll(branch(i,blockPos,pLevel,blockSetter,random,treeConfiguration));
                 }
             }
         }
         foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(treeHeight),0,false));
+
+        return foliageAttachments;
+    }
+
+    private static List<FoliagePlacer.FoliageAttachment> branch(int i, BlockPos blockPos,LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration){
+        List<FoliagePlacer.FoliageAttachment> foliageAttachments = Lists.newArrayList();
+        int j=1,k=1,l=1,m=1;
+        if (random.nextInt(1,100)<=25){
+            blockSetter.accept(blockPos.above(i).relative(Direction.NORTH, j), ((BlockState)
+                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
+            j++;
+            for (int n = 1; n < 5; n++) {
+                
+            }
+            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.WEST,j)
+                    .relative(Direction.EAST,k).relative(Direction.NORTH,l).relative(Direction.SOUTH,m), 0,false));
+        }
+        if (random.nextInt(1,100)<=25) {
+            blockSetter.accept(blockPos.above(i).relative(Direction.SOUTH, k), ((BlockState)
+                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
+            k++;
+            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.WEST,j)
+                    .relative(Direction.EAST,k).relative(Direction.NORTH,l).relative(Direction.SOUTH,m), 0,false));
+        }
+        if (random.nextInt(1,100)<=25) {
+            blockSetter.accept(blockPos.above(i).relative(Direction.EAST, m), ((BlockState)
+                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
+            m++;
+            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.WEST,j)
+                    .relative(Direction.EAST,k).relative(Direction.NORTH,l).relative(Direction.SOUTH,m), 0,false));
+        }
+        if (random.nextInt(1,100)<=25) {
+            blockSetter.accept(blockPos.above(i).relative(Direction.WEST, l), ((BlockState)
+                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
+            l++;
+            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(i).relative(Direction.WEST,j)
+                    .relative(Direction.EAST,k).relative(Direction.NORTH,l).relative(Direction.SOUTH,m), 0,false));
+        }
+
 
         return foliageAttachments;
     }
