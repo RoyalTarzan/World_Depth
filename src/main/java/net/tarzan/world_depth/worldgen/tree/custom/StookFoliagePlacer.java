@@ -29,17 +29,17 @@ public class StookFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(LevelSimulatedReader level, FoliageSetter foliageSetter, RandomSource randomSource, TreeConfiguration treeConfiguration, int i, FoliageAttachment foliageAttachment, int i1, int i2, int i3) {
+    protected void createFoliage(LevelSimulatedReader level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration tree, int i, FoliageAttachment foliageAttachment, int i1, int i2, int i3) {
 
     }
 
     @Override
-    public int foliageHeight(RandomSource randomSource, int i, TreeConfiguration treeConfiguration) {
+    public int foliageHeight(RandomSource random, int i, TreeConfiguration tree) {
         return this.height;
     }
 
     @Override
-    protected boolean shouldSkipLocation(RandomSource randomSource, int i, int i1, int i2, int i3, boolean b) {
+    protected boolean shouldSkipLocation(RandomSource random, int i, int i1, int i2, int i3, boolean b) {
         return false;
     }
 }
