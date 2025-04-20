@@ -3,6 +3,8 @@ package net.tarzan.world_depth.worldgen;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.Holder;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -12,6 +14,7 @@ import net.tarzan.world_depth.World_Depth;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.tarzan.world_depth.block.ModBlocks;
 
 import java.util.List;
 
@@ -26,6 +29,7 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> REDSTONE_ORE_PLACED_KEY=registerKey("redstone_ore_placed");
     public static final ResourceKey<PlacedFeature> EMERALD_ORE_PLACED_KEY=registerKey("emerald_ore_placed");
     public static final ResourceKey<PlacedFeature> TITANIUM_ORE_PLACED_KEY=registerKey("titanium_ore_placed");
+    public static final ResourceKey<PlacedFeature> STOOK_PLACED_KEY=registerKey("stook_placed_key");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context){
         HolderGetter<ConfiguredFeature<?,?>> configuredFeatures=context.lookup(Registries.CONFIGURED_FEATURE);
@@ -50,6 +54,10 @@ public class ModPlacedFeatures {
                 ModOrePlacement.rareOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.absolute(-512), VerticalAnchor.absolute(70))));
         register(context, TITANIUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.TITANIUM_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.absolute(-512), VerticalAnchor.absolute(70))));
+
+        register(context, STOOK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.STOOK_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(5,0.1f,2),
+                        ModBlocks.STOOK_SAPLING.get()));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

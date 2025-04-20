@@ -20,54 +20,6 @@
   },{
     "weight": 1,
     "element": {
-      "location": "world_depth:underground_village/buildings/tree_farms/oak",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/buildings/tree_farms/spruce",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/buildings/tree_farms/jungle",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/buildings/tree_farms/dark_oak",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/buildings/tree_farms/birch",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/buildings/tree_farms/acacia",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
       "element_type": "minecraft:empty_pool_element"
     }
   }]

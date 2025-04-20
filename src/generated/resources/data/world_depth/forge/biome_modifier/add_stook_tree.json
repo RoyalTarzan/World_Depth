@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#world_depth:is_deep_plains",
+  "features": "world_depth:stook_placed_key",
+  "step": "vegetal_decoration"
+}
