@@ -43,7 +43,14 @@ public class StookTrunkPlacer extends TrunkPlacer {
             placeLog(pLevel, blockSetter, random, blockPos.above(currentHeight),treeConfiguration);
             if (currentHeight>4){
                 if (currentHeight%5==0){
-                    foliageAttachments.addAll(branch(currentHeight,blockPos,blockSetter,random,treeConfiguration, treeHeight));
+                    foliageAttachments.addAll(branch(currentHeight,blockPos,blockSetter,random,treeConfiguration, treeHeight, random.nextInt(0,10),
+                            switch (random.nextInt(0,3)){
+                        case 0 -> Direction.WEST;
+                        case 1 -> Direction.SOUTH;
+                        case 2 -> Direction.NORTH;
+                        case 3 -> Direction.EAST;
+                        default -> throw new IllegalStateException("Unexpected value: " + random.nextInt(0,3));
+                    }));
                 }
             }
         }
@@ -52,7 +59,7 @@ public class StookTrunkPlacer extends TrunkPlacer {
         return foliageAttachments;
     }
 
-    private static List<FoliagePlacer.FoliageAttachment> branch(int currentHeight, BlockPos blockPos, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration, int treeHeight){
+    /*private static List<FoliagePlacer.FoliageAttachment> branch(int currentHeight, BlockPos blockPos, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration, int treeHeight){
         List<FoliagePlacer.FoliageAttachment> foliageAttachments = Lists.newArrayList();
         if (random.nextInt(1,100)<=25){
             int north=1,east=0;
@@ -175,32 +182,31 @@ public class StookTrunkPlacer extends TrunkPlacer {
             foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), 0,false));
         }
         return foliageAttachments;
-    }
+    }*/
 
     private static List<FoliagePlacer.FoliageAttachment> branch(int currentHeight, BlockPos startpos, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration, int treeHeight, int length,Direction direction){
         List<FoliagePlacer.FoliageAttachment> foliageAttachments = Lists.newArrayList();
-        int north = 0,east=0;
-        switch (direction){
-            case EAST -> east=1;
-            case WEST -> east=-1;
-            case NORTH -> north=1;
-            case SOUTH -> north=-1;
-        }
+        int north = 0,east=0,relativeHeight=0;
         for (int j = 0; j < length; j++) {
             switch (direction){
                 case SOUTH,NORTH ->
                 {switch (random.nextInt(1,5)){
                     case 1-> {north=north(direction,north);east=east(Direction.WEST,east);
                         blockSetter.accept(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
+                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
                     }
                     case 2-> {north=north(direction,north);east=east(Direction.EAST,east);
                         blockSetter.accept(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
+                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
                     }
                     case 3-> {north=north(direction,north);
                         blockSetter.accept(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
+                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
+                    }
+                    case 4-> {if (currentHeight<treeHeight){currentHeight++;}
+                        north=north(direction,north);
+                        blockSetter.accept(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
+                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
                     }
                     }
                 }
@@ -219,8 +225,30 @@ public class StookTrunkPlacer extends TrunkPlacer {
                         blockSetter.accept(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
                                 Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
                     }
+                    case 4-> {if (currentHeight<treeHeight){currentHeight++;}
+                        east=east(direction,east);
+                        blockSetter.accept(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
+                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, startpos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
+                    }
                 }
                 }
+            }
+            if (j%3==0 && random.nextBoolean() && j<3){
+                foliageAttachments.addAll(branch(currentHeight,
+                        startpos.above(relativeHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east),
+                        blockSetter,
+                        random,
+                        treeConfiguration,
+                        treeHeight,
+                        random.nextInt(0,length),
+                        switch (direction){
+                            case DOWN -> null;case UP -> null;
+                            case NORTH,SOUTH -> random.nextBoolean() ? Direction.EAST:Direction.WEST;
+                            case WEST,EAST -> random.nextBoolean() ? Direction.NORTH:Direction.SOUTH;
+                        }));
+            }
+            if (j==length-1){
+                foliageAttachments.add(new FoliagePlacer.FoliageAttachment(startpos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), 0,false));
             }
         }
         return foliageAttachments;
@@ -230,7 +258,6 @@ public class StookTrunkPlacer extends TrunkPlacer {
         switch (direction){
             case NORTH -> north++;
             case SOUTH -> north--;
-            default -> throw new IllegalStateException("Unexpected value: " + direction);
         }
         return north;
     }
@@ -239,7 +266,6 @@ public class StookTrunkPlacer extends TrunkPlacer {
         switch (direction){
             case EAST -> east++;
             case WEST -> east--;
-            default -> throw new IllegalStateException("Unexpected value: " + direction);
         }
         return east;
     }
