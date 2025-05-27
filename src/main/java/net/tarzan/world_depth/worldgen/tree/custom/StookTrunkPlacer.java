@@ -60,131 +60,6 @@ public class StookTrunkPlacer extends TrunkPlacer {
         return foliageAttachments;
     }
 
-    /*private static List<FoliagePlacer.FoliageAttachment> branch(int currentHeight, BlockPos blockPos, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration, int treeHeight){
-        List<FoliagePlacer.FoliageAttachment> foliageAttachments = Lists.newArrayList();
-        if (random.nextInt(1,100)<=25){
-            int north=1,east=0;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH, north), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-            north++;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH, north), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-            for (int n = 1; n < 10; n++) {
-                switch (random.nextInt(1,6)){
-                    case 1-> {north++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                    case 2-> {east++;north++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                    case 3-> {east--;north++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                    case 4-> {if (currentHeight<treeHeight){currentHeight++;}north++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                }
-            }
-            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(currentHeight).relative(Direction.NORTH,north)
-                    .relative(Direction.EAST,east).relative(Direction.WEST,east).relative(Direction.SOUTH,north), 0,false));
-        }
-        if (random.nextInt(1,100)<=25) {
-            int north=0,east=1;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.EAST, east), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-            east++;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.EAST, east), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-            for (int n = 1; n < 10; n++) {
-                switch (random.nextInt(1,6)){
-                    case 1-> {north++;east++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    case 2-> {east++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    case 3-> {north--;east++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    case 4-> {if (currentHeight<treeHeight){currentHeight++;}east++;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                }
-            }
-            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(currentHeight).relative(Direction.NORTH,north)
-                    .relative(Direction.EAST,east).relative(Direction.WEST,east).relative(Direction.SOUTH,north), 0,false));
-        }
-        if (random.nextInt(1,100)<=25) {
-            int north=-1,east=0;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH, north), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-            north--;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH, north), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-            for (int n = 1; n < 10; n++) {
-                switch (random.nextInt(1,6)){
-                    case 1-> {east++;north--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                    case 2-> {north--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                    case 3-> {east--;north--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                    case 4-> {if (currentHeight<treeHeight){currentHeight++;}north--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                }
-            }
-            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(currentHeight).relative(Direction.NORTH,north)
-                    .relative(Direction.EAST,east).relative(Direction.WEST,east).relative(Direction.SOUTH,north), 0,false));
-        }
-        if (random.nextInt(1,100)<=25) {
-            int north=0,east=-1;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.EAST, east), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-            east--;
-            blockSetter.accept(blockPos.above(currentHeight).relative(Direction.EAST, east), ((BlockState)
-                    Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-            for (int n = 1; n < 10; n++) {
-                switch (random.nextInt(1,6)){
-                    case 1-> {north++;east--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    case 2-> {north--;east--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    case 3-> {east--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                    case 4-> {if (currentHeight<treeHeight){currentHeight++;}
-                        east--;
-                        blockSetter.accept(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), ((BlockState)
-                                Function.identity().apply(treeConfiguration.trunkProvider.getState(random, blockPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                }
-            }
-            foliageAttachments.add(new FoliagePlacer.FoliageAttachment(blockPos.above(currentHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east), 0,false));
-        }
-        return foliageAttachments;
-    }*/
-
     private static List<FoliagePlacer.FoliageAttachment> branch(int currentHeight, BlockPos startpos, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration, int treeHeight, int length,Direction direction){
         List<FoliagePlacer.FoliageAttachment> foliageAttachments = Lists.newArrayList();
         int north = 0,east=0;
@@ -234,14 +109,9 @@ public class StookTrunkPlacer extends TrunkPlacer {
                 }
                 }
             }
-            if (j%3==0 && j<3){
+            if (j%3==0 && j>3){
                 foliageAttachments.addAll(branch(currentHeight,
-                        startpos.relative(Direction.NORTH,north).relative(Direction.EAST,east),
-                        blockSetter,
-                        random,
-                        treeConfiguration,
-                        treeHeight,
-                        random.nextInt(0,length),
+                        startpos.relative(Direction.NORTH,north).relative(Direction.EAST,east), blockSetter, random, treeConfiguration, treeHeight, random.nextInt(0,length),
                         switch (direction){
                             case DOWN,UP -> null;
                             case NORTH,SOUTH -> random.nextBoolean() ? Direction.EAST:Direction.WEST;
