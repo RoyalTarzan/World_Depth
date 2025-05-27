@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 import net.tarzan.world_depth.worldgen.tree.ModTrunkPlacerTypes;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -28,12 +29,12 @@ public class StookTrunkPlacer extends TrunkPlacer {
     }
 
     @Override
-    protected TrunkPlacerType<?> type() {
+    protected @NotNull TrunkPlacerType<?> type() {
         return ModTrunkPlacerTypes.STOOK_TRUNK_PLACER.get();
     }
 
     @Override
-    public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, int height, BlockPos blockPos, TreeConfiguration treeConfiguration) {
+    public @NotNull List<FoliagePlacer.FoliageAttachment> placeTrunk(@NotNull LevelSimulatedReader pLevel, @NotNull BiConsumer<BlockPos, BlockState> blockSetter, @NotNull RandomSource random, int height, BlockPos blockPos, @NotNull TreeConfiguration treeConfiguration) {
 
         setDirtAt(pLevel,blockSetter,random,blockPos.below(),treeConfiguration);
         int treeHeight=height+random.nextInt(heightRandA,heightRandA+heightRandB);
@@ -43,13 +44,13 @@ public class StookTrunkPlacer extends TrunkPlacer {
             placeLog(pLevel, blockSetter, random, blockPos.above(currentHeight),treeConfiguration);
             if (currentHeight>4){
                 if (currentHeight%5==0){
-                    foliageAttachments.addAll(branch(currentHeight,blockPos,blockSetter,random,treeConfiguration, treeHeight, random.nextInt(0,10),
-                            switch (random.nextInt(0,3)){
-                        case 0 -> Direction.WEST;
+                    foliageAttachments.addAll(branch(currentHeight,blockPos,blockSetter,random,treeConfiguration, treeHeight, random.nextInt(5,10),
+                            switch (random.nextInt(1,4)){
                         case 1 -> Direction.SOUTH;
                         case 2 -> Direction.NORTH;
                         case 3 -> Direction.EAST;
-                        default -> throw new IllegalStateException("Unexpected value: " + random.nextInt(0,3));
+                        case 4 -> Direction.WEST;
+                        default -> throw new IllegalStateException("Unexpected value");
                     }));
                 }
             }
@@ -186,7 +187,7 @@ public class StookTrunkPlacer extends TrunkPlacer {
 
     private static List<FoliagePlacer.FoliageAttachment> branch(int currentHeight, BlockPos startpos, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, TreeConfiguration treeConfiguration, int treeHeight, int length,Direction direction){
         List<FoliagePlacer.FoliageAttachment> foliageAttachments = Lists.newArrayList();
-        int north = 0,east=0,relativeHeight=0;
+        int north = 0,east=0;
         for (int j = 0; j < length; j++) {
             switch (direction){
                 case SOUTH,NORTH ->
@@ -233,16 +234,16 @@ public class StookTrunkPlacer extends TrunkPlacer {
                 }
                 }
             }
-            if (j%3==0 && random.nextBoolean() && j<3){
+            if (j%3==0 && j<3){
                 foliageAttachments.addAll(branch(currentHeight,
-                        startpos.above(relativeHeight).relative(Direction.NORTH,north).relative(Direction.EAST,east),
+                        startpos.relative(Direction.NORTH,north).relative(Direction.EAST,east),
                         blockSetter,
                         random,
                         treeConfiguration,
                         treeHeight,
                         random.nextInt(0,length),
                         switch (direction){
-                            case DOWN -> null;case UP -> null;
+                            case DOWN,UP -> null;
                             case NORTH,SOUTH -> random.nextBoolean() ? Direction.EAST:Direction.WEST;
                             case WEST,EAST -> random.nextBoolean() ? Direction.NORTH:Direction.SOUTH;
                         }));
