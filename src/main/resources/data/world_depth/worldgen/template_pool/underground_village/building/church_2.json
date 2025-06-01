@@ -1,0 +1,29 @@
+{
+  "name": "world_depth:underground_village/building/church_2",
+  "fallback": "minecraft:empty",
+  "elements": [{
+    "weight": 2,
+    "element": {
+      "location": "world_depth:underground_village/buildings/church_2/altar",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/buildings/church_2/altar_front",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/buildings/church_2/hall",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  }]
+}

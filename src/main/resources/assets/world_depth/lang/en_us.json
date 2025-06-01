@@ -150,6 +150,8 @@
   "block.world_depth.granite_titanium_ore": "Granite Titanium Ore",
   "block.world_depth.tuff_titanium_ore": "Tuff Titanium Ore",
 
+  "biome.world_depth.deep_plains": "Deep Plains",
 
-  "creativetab.test_tab": "World depth"
+  "creativetab.test_tab": "World depth",
+  "creativetab.ore_tab": "Ores"
 }

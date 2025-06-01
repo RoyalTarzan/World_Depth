@@ -110,67 +110,71 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STOOK_PLANKS.get());
                         output.accept(ModBlocks.STOOK_LEAVES.get());
                         output.accept(ModBlocks.STOOK_SAPLING.get());
-
-
-                        output.accept(ModBlocks.ANDESITE_COAL_ORE.get());
-                        output.accept(ModBlocks.DIORITE_COAL_ORE.get());
-                        output.accept(ModBlocks.GRANITE_COAL_ORE.get());
-                        output.accept(ModBlocks.TUFF_COAL_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_IRON_ORE.get());
-                        output.accept(ModBlocks.DIORITE_IRON_ORE.get());
-                        output.accept(ModBlocks.GRANITE_IRON_ORE.get());
-                        output.accept(ModBlocks.TUFF_IRON_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_GOLD_ORE.get());
-                        output.accept(ModBlocks.DIORITE_GOLD_ORE.get());
-                        output.accept(ModBlocks.GRANITE_GOLD_ORE.get());
-                        output.accept(ModBlocks.TUFF_GOLD_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_COPPER_ORE.get());
-                        output.accept(ModBlocks.DIORITE_COPPER_ORE.get());
-                        output.accept(ModBlocks.GRANITE_COPPER_ORE.get());
-                        output.accept(ModBlocks.TUFF_COPPER_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_DIAMOND_ORE.get());
-                        output.accept(ModBlocks.DIORITE_DIAMOND_ORE.get());
-                        output.accept(ModBlocks.GRANITE_DIAMOND_ORE.get());
-                        output.accept(ModBlocks.TUFF_DIAMOND_ORE.get());
-                        output.accept(ModBlocks.SOAP_STONE_DIAMOND_ORE.get());
-                        output.accept(ModBlocks.FERYL_STONE_DIAMOND_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_LAPIS_ORE.get());
-                        output.accept(ModBlocks.DIORITE_LAPIS_ORE.get());
-                        output.accept(ModBlocks.GRANITE_LAPIS_ORE.get());
-                        output.accept(ModBlocks.TUFF_LAPIS_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_REDSTONE_ORE.get());
-                        output.accept(ModBlocks.DIORITE_REDSTONE_ORE.get());
-                        output.accept(ModBlocks.GRANITE_REDSTONE_ORE.get());
-                        output.accept(ModBlocks.TUFF_REDSTONE_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_EMERALD_ORE.get());
-                        output.accept(ModBlocks.DIORITE_EMERALD_ORE.get());
-                        output.accept(ModBlocks.GRANITE_EMERALD_ORE.get());
-                        output.accept(ModBlocks.TUFF_EMERALD_ORE.get());
-
-                        output.accept(ModBlocks.ANDESITE_TITANIUM_ORE.get());
-                        output.accept(ModBlocks.DIORITE_TITANIUM_ORE.get());
-                        output.accept(ModBlocks.GRANITE_TITANIUM_ORE.get());
-                        output.accept(ModBlocks.TUFF_TITANIUM_ORE.get());
-                        output.accept(ModBlocks.SOAP_STONE_TITANIUM_ORE.get());
-                        output.accept(ModBlocks.FERYL_STONE_TITANIUM_ORE.get());
-
-                        output.accept(ModBlocks.ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.ANDESITE_ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.TUFF_ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.GRANITE_ALUMINIUM_ORE.get());
-                        output.accept(ModBlocks.DIORITE_ALUMINIUM_ORE.get());
                     })
                     .build());
+
+    public static final RegistryObject<CreativeModeTab> ORE_TAB=CREATIVE_MODE_TABS.register("ore_tab",
+            ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModBlocks.ALUMINIUM_ORE.get()))
+            .title(Component.translatable("creativetab.ore_tab"))
+            .displayItems((itemDisplayParameters, output) -> {
+                output.accept(ModBlocks.ANDESITE_COAL_ORE.get());
+                output.accept(ModBlocks.DIORITE_COAL_ORE.get());
+                output.accept(ModBlocks.GRANITE_COAL_ORE.get());
+                output.accept(ModBlocks.TUFF_COAL_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_IRON_ORE.get());
+                output.accept(ModBlocks.DIORITE_IRON_ORE.get());
+                output.accept(ModBlocks.GRANITE_IRON_ORE.get());
+                output.accept(ModBlocks.TUFF_IRON_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_GOLD_ORE.get());
+                output.accept(ModBlocks.DIORITE_GOLD_ORE.get());
+                output.accept(ModBlocks.GRANITE_GOLD_ORE.get());
+                output.accept(ModBlocks.TUFF_GOLD_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_COPPER_ORE.get());
+                output.accept(ModBlocks.DIORITE_COPPER_ORE.get());
+                output.accept(ModBlocks.GRANITE_COPPER_ORE.get());
+                output.accept(ModBlocks.TUFF_COPPER_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.DIORITE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.GRANITE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.TUFF_DIAMOND_ORE.get());
+                output.accept(ModBlocks.SOAP_STONE_DIAMOND_ORE.get());
+                output.accept(ModBlocks.FERYL_STONE_DIAMOND_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_LAPIS_ORE.get());
+                output.accept(ModBlocks.DIORITE_LAPIS_ORE.get());
+                output.accept(ModBlocks.GRANITE_LAPIS_ORE.get());
+                output.accept(ModBlocks.TUFF_LAPIS_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.DIORITE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.GRANITE_REDSTONE_ORE.get());
+                output.accept(ModBlocks.TUFF_REDSTONE_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_EMERALD_ORE.get());
+                output.accept(ModBlocks.DIORITE_EMERALD_ORE.get());
+                output.accept(ModBlocks.GRANITE_EMERALD_ORE.get());
+                output.accept(ModBlocks.TUFF_EMERALD_ORE.get());
+
+                output.accept(ModBlocks.ANDESITE_TITANIUM_ORE.get());
+                output.accept(ModBlocks.DIORITE_TITANIUM_ORE.get());
+                output.accept(ModBlocks.GRANITE_TITANIUM_ORE.get());
+                output.accept(ModBlocks.TUFF_TITANIUM_ORE.get());
+                output.accept(ModBlocks.SOAP_STONE_TITANIUM_ORE.get());
+                output.accept(ModBlocks.FERYL_STONE_TITANIUM_ORE.get());
+
+                output.accept(ModBlocks.ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.ANDESITE_ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.TUFF_ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.GRANITE_ALUMINIUM_ORE.get());
+                output.accept(ModBlocks.DIORITE_ALUMINIUM_ORE.get());}).build());
+
     public static void register(IEventBus eventBus){
         CREATIVE_MODE_TABS.register(eventBus);
     }

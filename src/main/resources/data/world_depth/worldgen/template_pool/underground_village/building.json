@@ -2,7 +2,7 @@
   "name": "world_depth:underground_village/building",
   "fallback": "minecraft:empty",
   "elements": [{
-    "weight": 2,
+    "weight": 10,
     "element": {
       "location": "world_depth:underground_village/buildings/house",
       "processors": "minecraft:empty",
@@ -10,7 +10,7 @@
       "element_type": "minecraft:single_pool_element"
     }
   },{
-    "weight": 1,
+    "weight": 5,
     "element": {
       "location": "world_depth:underground_village/buildings/energizer_house",
       "processors": "minecraft:empty",
@@ -21,6 +21,22 @@
     "weight": 1,
     "element": {
       "element_type": "minecraft:empty_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/buildings/church_1/entrance",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/buildings/church_2/entrance",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
     }
   }]
 }
