@@ -1,7 +1,6 @@
 {
   "carvers": {
     "air": [
-      "minecraft:nether_cave",
       "minecraft:cave",
       "minecraft:cave_extra_underground",
       "minecraft:canyon"
@@ -18,11 +17,17 @@
   },
   "features": [
     [],
-    [],
     [
-      "minecraft:forest_rock"
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
-    [],
+    [
+      "minecraft:amethyst_geode"
+    ],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
     [],
     [],
     [
@@ -40,16 +45,20 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
+      "minecraft:ore_copper_large",
       "minecraft:underwater_magma"
     ],
     [],
-    [],
     [
-      "minecraft:forest_flowers",
-      "minecraft:patch_large_fern",
-      "world_depth:stook_placed_key"
-    ]
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "minecraft:glow_lichen",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal"
+    ],
+    []
   ],
   "has_precipitation": true,
   "spawn_costs": {},

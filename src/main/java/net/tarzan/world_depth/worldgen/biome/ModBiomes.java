@@ -3,16 +3,13 @@ package net.tarzan.world_depth.worldgen.biome;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.Carvers;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
-import net.minecraft.world.level.levelgen.GenerationStep;
 import net.tarzan.world_depth.World_Depth;
-import net.tarzan.world_depth.worldgen.ModPlacedFeatures;
 
 public class ModBiomes {
     public static final ResourceKey<Biome> DEEP_PLAINS= ResourceKey.create(Registries.BIOME,
@@ -39,14 +36,7 @@ public class ModBiomes {
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
-        biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE);
-        biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.CAVE_EXTRA_UNDERGROUND);
-        biomeBuilder.addCarver(GenerationStep.Carving.AIR, Carvers.CANYON);
-        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
-        BiomeDefaultFeatures.addForestFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addFerns(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION,ModPlacedFeatures.STOOK_PLACED_KEY);
+        globalOverworldGeneration(biomeBuilder);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
