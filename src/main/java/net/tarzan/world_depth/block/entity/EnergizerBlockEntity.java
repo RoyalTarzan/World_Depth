@@ -32,7 +32,15 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler=new ItemStackHandler(8);
+    private final ItemStackHandler itemHandler=new ItemStackHandler(8) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
+            if(!level.isClientSide()) {
+                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+            }
+        }
+    };
 
     private static final int INPUT_SLOT_1=0;
     private static final int INPUT_SLOT_2=1;

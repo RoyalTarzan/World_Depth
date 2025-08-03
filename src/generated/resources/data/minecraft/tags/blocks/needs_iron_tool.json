@@ -9,6 +9,8 @@
     "world_depth:diorite_gold_ore",
     "world_depth:tuff_gold_ore",
     "world_depth:andesite_gold_ore",
+    "world_depth:soap_stone_gold_ore",
+    "world_depth:feryl_stone_gold_ore",
     "world_depth:raw_aluminium_block",
     "world_depth:aluminium_ore",
     "world_depth:deepslate_aluminium_ore",
@@ -22,10 +24,14 @@
     "world_depth:granite_emerald_ore",
     "world_depth:diorite_emerald_ore",
     "world_depth:tuff_emerald_ore",
+    "world_depth:soap_stone_emerald_ore",
+    "world_depth:feryl_stone_emerald_ore",
     "world_depth:andesite_emerald_ore",
     "world_depth:granite_redstone_ore",
     "world_depth:diorite_redstone_ore",
     "world_depth:tuff_redstone_ore",
-    "world_depth:andesite_redstone_ore"
+    "world_depth:andesite_redstone_ore",
+    "world_depth:soap_stone_redstone_ore",
+    "world_depth:feryl_stone_redstone_ore"
   ]
 }

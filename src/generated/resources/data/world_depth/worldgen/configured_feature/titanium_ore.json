@@ -6,6 +6,24 @@
     "targets": [
       {
         "state": {
+          "Name": "world_depth:titanium_ore"
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:deepslate_titanium_ore"
+        },
+        "target": {
+          "block": "minecraft:deepslate",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
           "Name": "world_depth:granite_titanium_ore"
         },
         "target": {

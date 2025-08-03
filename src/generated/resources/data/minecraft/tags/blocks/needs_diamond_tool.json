@@ -8,6 +8,8 @@
     "world_depth:tuff_titanium_ore",
     "world_depth:andesite_titanium_ore",
     "world_depth:soap_stone_titanium_ore",
-    "world_depth:feryl_stone_titanium_ore"
+    "world_depth:feryl_stone_titanium_ore",
+    "world_depth:deepslate_titanium_ore",
+    "world_depth:granite_titanium_ore"
   ]
 }

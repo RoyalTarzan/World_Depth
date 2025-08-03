@@ -59,22 +59,30 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> coalOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_COAL_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_COAL_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_COAL_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_COAL_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_COAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_COAL_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_COAL_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> ironOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_IRON_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_IRON_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_IRON_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_IRON_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_IRON_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_IRON_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_IRON_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> goldOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_GOLD_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_GOLD_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_GOLD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_GOLD_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_GOLD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_GOLD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_GOLD_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> copperOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_COPPER_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_COPPER_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_COPPER_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_COPPER_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_COPPER_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_COPPER_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> diamondOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_DIAMOND_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_DIAMOND_ORE.get().defaultBlockState()),
@@ -86,19 +94,27 @@ public class ModConfiguredFeatures {
         List<OreConfiguration.TargetBlockState> lapisOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_LAPIS_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_LAPIS_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_LAPIS_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_LAPIS_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_LAPIS_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_LAPIS_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_LAPIS_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> redstoneOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_REDSTONE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_REDSTONE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_REDSTONE_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_REDSTONE_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_REDSTONE_ORE.get().defaultBlockState()));
 
         List<OreConfiguration.TargetBlockState> emeraldOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_EMERALD_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_EMERALD_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_EMERALD_ORE.get().defaultBlockState()),
-                OreConfiguration.target(andesite, ModBlocks.ANDESITE_EMERALD_ORE.get().defaultBlockState()));
+                OreConfiguration.target(andesite, ModBlocks.ANDESITE_EMERALD_ORE.get().defaultBlockState()),
+                OreConfiguration.target(soap_stone, ModBlocks.SOAP_STONE_REDSTONE_ORE.get().defaultBlockState()),
+                OreConfiguration.target(feryl_stone, ModBlocks.FERYL_STONE_REDSTONE_ORE.get().defaultBlockState()));
 
-        List<OreConfiguration.TargetBlockState> titaniumOres=List.of(OreConfiguration.target(granite, ModBlocks.GRANITE_TITANIUM_ORE.get().defaultBlockState()),
+        List<OreConfiguration.TargetBlockState> titaniumOres=List.of(OreConfiguration.target(stone, ModBlocks.TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(deepslate, ModBlocks.DEEPSLATE_TITANIUM_ORE.get().defaultBlockState()),
+                OreConfiguration.target(granite, ModBlocks.GRANITE_TITANIUM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(diorite, ModBlocks.DIORITE_TITANIUM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(tuff, ModBlocks.TUFF_TITANIUM_ORE.get().defaultBlockState()),
                 OreConfiguration.target(andesite, ModBlocks.ANDESITE_TITANIUM_ORE.get().defaultBlockState()),

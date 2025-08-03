@@ -32,6 +32,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.ALUMINIUM_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_ALUMINIUM_ORE);
+        blockWithItem(ModBlocks.GRANITE_ALUMINIUM_ORE);
+        blockWithItem(ModBlocks.DIORITE_ALUMINIUM_ORE);
+        blockWithItem(ModBlocks.TUFF_ALUMINIUM_ORE);
+        blockWithItem(ModBlocks.ANDESITE_ALUMINIUM_ORE);
         blockWithItem(ModBlocks.SOAP_STONE_ALUMINIUM_ORE);
         blockWithItem(ModBlocks.FERYL_STONE_ALUMINIUM_ORE);
 
@@ -39,26 +43,29 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIORITE_COAL_ORE);
         blockWithItem(ModBlocks.TUFF_COAL_ORE);
         blockWithItem(ModBlocks.ANDESITE_COAL_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_COAL_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_COAL_ORE);
 
         blockWithItem(ModBlocks.GRANITE_IRON_ORE);
         blockWithItem(ModBlocks.DIORITE_IRON_ORE);
         blockWithItem(ModBlocks.TUFF_IRON_ORE);
         blockWithItem(ModBlocks.ANDESITE_IRON_ORE);
-
-        blockWithItem(ModBlocks.GRANITE_ALUMINIUM_ORE);
-        blockWithItem(ModBlocks.DIORITE_ALUMINIUM_ORE);
-        blockWithItem(ModBlocks.TUFF_ALUMINIUM_ORE);
-        blockWithItem(ModBlocks.ANDESITE_ALUMINIUM_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_IRON_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_IRON_ORE);
 
         blockWithItem(ModBlocks.GRANITE_GOLD_ORE);
         blockWithItem(ModBlocks.DIORITE_GOLD_ORE);
         blockWithItem(ModBlocks.TUFF_GOLD_ORE);
         blockWithItem(ModBlocks.ANDESITE_GOLD_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_GOLD_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_GOLD_ORE);
 
         blockWithItem(ModBlocks.GRANITE_COPPER_ORE);
         blockWithItem(ModBlocks.DIORITE_COPPER_ORE);
         blockWithItem(ModBlocks.TUFF_COPPER_ORE);
         blockWithItem(ModBlocks.ANDESITE_COPPER_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_COPPER_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_COPPER_ORE);
 
         blockWithItem(ModBlocks.GRANITE_DIAMOND_ORE);
         blockWithItem(ModBlocks.DIORITE_DIAMOND_ORE);
@@ -71,17 +78,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DIORITE_LAPIS_ORE);
         blockWithItem(ModBlocks.TUFF_LAPIS_ORE);
         blockWithItem(ModBlocks.ANDESITE_LAPIS_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_LAPIS_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_LAPIS_ORE);
 
         blockWithItem(ModBlocks.GRANITE_REDSTONE_ORE);
         blockWithItem(ModBlocks.DIORITE_REDSTONE_ORE);
         blockWithItem(ModBlocks.TUFF_REDSTONE_ORE);
         blockWithItem(ModBlocks.ANDESITE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_REDSTONE_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_REDSTONE_ORE);
 
         blockWithItem(ModBlocks.GRANITE_EMERALD_ORE);
         blockWithItem(ModBlocks.DIORITE_EMERALD_ORE);
         blockWithItem(ModBlocks.TUFF_EMERALD_ORE);
         blockWithItem(ModBlocks.ANDESITE_EMERALD_ORE);
+        blockWithItem(ModBlocks.SOAP_STONE_EMERALD_ORE);
+        blockWithItem(ModBlocks.FERYL_STONE_EMERALD_ORE);
 
+        blockWithItem(ModBlocks.TITANIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_TITANIUM_ORE);
         blockWithItem(ModBlocks.GRANITE_TITANIUM_ORE);
         blockWithItem(ModBlocks.DIORITE_TITANIUM_ORE);
         blockWithItem(ModBlocks.TUFF_TITANIUM_ORE);

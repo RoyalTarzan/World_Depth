@@ -4,17 +4,25 @@
     "world_depth:diorite_coal_ore",
     "world_depth:tuff_coal_ore",
     "world_depth:andesite_coal_ore",
+    "world_depth:soap_stone_coal_ore",
+    "world_depth:feryl_stone_coal_ore",
     "world_depth:granite_iron_ore",
     "world_depth:diorite_iron_ore",
     "world_depth:tuff_iron_ore",
     "world_depth:andesite_iron_ore",
+    "world_depth:soap_stone_iron_ore",
+    "world_depth:feryl_stone_iron_ore",
     "world_depth:granite_copper_ore",
     "world_depth:diorite_copper_ore",
     "world_depth:tuff_copper_ore",
     "world_depth:andesite_copper_ore",
+    "world_depth:soap_stone_copper_ore",
+    "world_depth:feryl_stone_copper_ore",
     "world_depth:granite_lapis_ore",
     "world_depth:diorite_lapis_ore",
     "world_depth:tuff_lapis_ore",
-    "world_depth:andesite_lapis_ore"
+    "world_depth:andesite_lapis_ore",
+    "world_depth:soap_stone_lapis_ore",
+    "world_depth:feryl_stone_lapis_ore"
   ]
 }

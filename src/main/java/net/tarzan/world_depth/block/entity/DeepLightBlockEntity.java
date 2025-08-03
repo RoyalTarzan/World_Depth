@@ -26,7 +26,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler=new ItemStackHandler(1);
+    private final ItemStackHandler itemHandler=new ItemStackHandler(1) {
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
+            if(!level.isClientSide()) {
+                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
+            }
+        }
+    };
 
     private static final int INPUT_SLOT=0;
 

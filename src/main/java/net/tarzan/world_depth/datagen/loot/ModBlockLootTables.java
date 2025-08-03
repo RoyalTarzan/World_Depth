@@ -74,40 +74,65 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.ANDESITE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.ANDESITE_ALUMINIUM_ORE.get()));
         this.add(ModBlocks.TUFF_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.TUFF_ALUMINIUM_ORE.get()));
         this.add(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get()));
+
         this.add(ModBlocks.GRANITE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_COAL_ORE.get(), Items.COAL));
         this.add(ModBlocks.DIORITE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_COAL_ORE.get(), Items.COAL));
         this.add(ModBlocks.TUFF_COAL_ORE.get(), block -> createOreDrop(ModBlocks.TUFF_COAL_ORE.get(), Items.COAL));
         this.add(ModBlocks.ANDESITE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.ANDESITE_COAL_ORE.get(), Items.COAL));
+        this.add(ModBlocks.SOAP_STONE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), Items.COAL));
+        this.add(ModBlocks.FERYL_STONE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), Items.COAL));
+
         this.add(ModBlocks.GRANITE_IRON_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_IRON_ORE.get(), Items.RAW_IRON));
         this.add(ModBlocks.DIORITE_IRON_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_IRON_ORE.get(), Items.RAW_IRON));
         this.add(ModBlocks.TUFF_IRON_ORE.get(), block -> createOreDrop(ModBlocks.TUFF_IRON_ORE.get(), Items.RAW_IRON));
         this.add(ModBlocks.ANDESITE_IRON_ORE.get(), block -> createOreDrop(ModBlocks.ANDESITE_IRON_ORE.get(), Items.RAW_IRON));
+        this.add(ModBlocks.SOAP_STONE_IRON_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), Items.RAW_IRON));
+        this.add(ModBlocks.FERYL_STONE_IRON_ORE.get(), block -> createOreDrop(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), Items.RAW_IRON));
+
         this.add(ModBlocks.GRANITE_GOLD_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_GOLD_ORE.get(), Items.RAW_GOLD));
         this.add(ModBlocks.DIORITE_GOLD_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_GOLD_ORE.get(), Items.RAW_GOLD));
         this.add(ModBlocks.TUFF_GOLD_ORE.get(), block -> createOreDrop(ModBlocks.TUFF_GOLD_ORE.get(), Items.RAW_GOLD));
         this.add(ModBlocks.ANDESITE_GOLD_ORE.get(), block -> createOreDrop(ModBlocks.ANDESITE_GOLD_ORE.get(), Items.RAW_GOLD));
+        this.add(ModBlocks.SOAP_STONE_GOLD_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), Items.RAW_GOLD));
+        this.add(ModBlocks.FERYL_STONE_GOLD_ORE.get(), block -> createOreDrop(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), Items.RAW_GOLD));
+
         this.add(ModBlocks.GRANITE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.GRANITE_COPPER_ORE.get()));
         this.add(ModBlocks.DIORITE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.DIORITE_COPPER_ORE.get()));
         this.add(ModBlocks.TUFF_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.TUFF_COPPER_ORE.get()));
         this.add(ModBlocks.ANDESITE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.ANDESITE_COPPER_ORE.get()));
+        this.add(ModBlocks.SOAP_STONE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.SOAP_STONE_COPPER_ORE.get()));
+        this.add(ModBlocks.FERYL_STONE_COPPER_ORE.get(), block -> createCopperOreDrops(ModBlocks.FERYL_STONE_COPPER_ORE.get()));
+
         this.add(ModBlocks.GRANITE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_DIAMOND_ORE.get(), Items.DIAMOND));
         this.add(ModBlocks.DIORITE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_DIAMOND_ORE.get(), Items.DIAMOND));
         this.add(ModBlocks.TUFF_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.TUFF_DIAMOND_ORE.get(), Items.DIAMOND));
         this.add(ModBlocks.ANDESITE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.ANDESITE_DIAMOND_ORE.get(), Items.DIAMOND));
         this.add(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), Items.DIAMOND));
         this.add(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), block -> createOreDrop(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), Items.DIAMOND));
+
         this.add(ModBlocks.GRANITE_EMERALD_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_EMERALD_ORE.get(), Items.EMERALD));
         this.add(ModBlocks.DIORITE_EMERALD_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_EMERALD_ORE.get(), Items.EMERALD));
         this.add(ModBlocks.TUFF_EMERALD_ORE.get(), block -> createOreDrop(ModBlocks.TUFF_EMERALD_ORE.get(), Items.EMERALD));
         this.add(ModBlocks.ANDESITE_EMERALD_ORE.get(), block -> createOreDrop(ModBlocks.ANDESITE_EMERALD_ORE.get(), Items.EMERALD));
+        this.add(ModBlocks.SOAP_STONE_EMERALD_ORE.get(), block -> createOreDrop(ModBlocks.SOAP_STONE_DIAMOND_ORE.get(), Items.EMERALD));
+        this.add(ModBlocks.FERYL_STONE_EMERALD_ORE.get(), block -> createOreDrop(ModBlocks.FERYL_STONE_DIAMOND_ORE.get(), Items.EMERALD));
+
         this.add(ModBlocks.TUFF_REDSTONE_ORE.get(), block -> createRedstoneOreDrops(ModBlocks.TUFF_REDSTONE_ORE.get()));
         this.add(ModBlocks.ANDESITE_REDSTONE_ORE.get(), block -> createRedstoneOreDrops(ModBlocks.ANDESITE_REDSTONE_ORE.get()));
         this.add(ModBlocks.DIORITE_REDSTONE_ORE.get(), block -> createRedstoneOreDrops(ModBlocks.DIORITE_REDSTONE_ORE.get()));
         this.add(ModBlocks.GRANITE_REDSTONE_ORE.get(), block -> createRedstoneOreDrops(ModBlocks.GRANITE_REDSTONE_ORE.get()));
+        this.add(ModBlocks.SOAP_STONE_REDSTONE_ORE.get(), block -> createRedstoneOreDrops(ModBlocks.SOAP_STONE_REDSTONE_ORE.get()));
+        this.add(ModBlocks.FERYL_STONE_REDSTONE_ORE.get(), block -> createRedstoneOreDrops(ModBlocks.FERYL_STONE_REDSTONE_ORE.get()));
+
         this.add(ModBlocks.TUFF_LAPIS_ORE.get(), block -> createLapisOreDrops(ModBlocks.TUFF_LAPIS_ORE.get()));
         this.add(ModBlocks.ANDESITE_LAPIS_ORE.get(), block -> createLapisOreDrops(ModBlocks.ANDESITE_LAPIS_ORE.get()));
         this.add(ModBlocks.DIORITE_LAPIS_ORE.get(), block -> createLapisOreDrops(ModBlocks.DIORITE_LAPIS_ORE.get()));
         this.add(ModBlocks.GRANITE_LAPIS_ORE.get(), block -> createLapisOreDrops(ModBlocks.GRANITE_LAPIS_ORE.get()));
+        this.add(ModBlocks.SOAP_STONE_LAPIS_ORE.get(), block -> createLapisOreDrops(ModBlocks.SOAP_STONE_LAPIS_ORE.get()));
+        this.add(ModBlocks.FERYL_STONE_LAPIS_ORE.get(), block -> createLapisOreDrops(ModBlocks.FERYL_STONE_LAPIS_ORE.get()));
+
+        this.add(ModBlocks.TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.TITANIUM_ORE.get()));
+        this.add(ModBlocks.DEEPSLATE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.DEEPSLATE_TITANIUM_ORE.get()));
         this.add(ModBlocks.GRANITE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.GRANITE_TITANIUM_ORE.get()));
         this.add(ModBlocks.DIORITE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.DIORITE_TITANIUM_ORE.get()));
         this.add(ModBlocks.TUFF_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.TUFF_TITANIUM_ORE.get()));

@@ -51,6 +51,24 @@
           "block": "minecraft:andesite",
           "predicate_type": "minecraft:block_match"
         }
+      },
+      {
+        "state": {
+          "Name": "world_depth:soap_stone_redstone_ore"
+        },
+        "target": {
+          "block": "world_depth:soap_stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:feryl_stone_redstone_ore"
+        },
+        "target": {
+          "block": "world_depth:feryl_stone",
+          "predicate_type": "minecraft:block_match"
+        }
       }
     ]
   }
