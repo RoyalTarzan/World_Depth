@@ -33,5 +33,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModBiomeTagGenerator(packOutput, lookupProvider,existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(),new ModPoiTypeTagsProvider(packOutput, lookupProvider, existingFileHelper));
     }
 }

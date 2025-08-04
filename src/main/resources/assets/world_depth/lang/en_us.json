@@ -103,21 +103,29 @@
   "block.world_depth.diorite_iron_ore": "Diorite Iron Ore",
   "block.world_depth.granite_iron_ore": "Granite Iron Ore",
   "block.world_depth.tuff_iron_ore": "Tuff Iron Ore",
+  "block.world_depth.soap_stone_iron_ore": "Soap Stone Iron Ore",
+  "block.world_depth.feryl_stone_iron_ore": "Feryl Iron Ore",
 
   "block.world_depth.andesite_copper_ore": "Andesite Copper Ore",
   "block.world_depth.diorite_copper_ore": "Diorite Copper Ore",
   "block.world_depth.granite_copper_ore": "Granite Copper Ore",
   "block.world_depth.tuff_copper_ore": "Tuff Copper Ore",
+  "block.world_depth.soap_stone_copper_ore": "Soap Stone Copper Ore",
+  "block.world_depth.feryl_stone_copper_ore": "Feryl Copper Ore",
 
   "block.world_depth.andesite_gold_ore": "Andesite Gold Ore",
   "block.world_depth.diorite_gold_ore": "Diorite Gold Ore",
   "block.world_depth.granite_gold_ore": "Granite Gold Ore",
   "block.world_depth.tuff_gold_ore": "Tuff Gold Ore",
+  "block.world_depth.soap_stone_gold_ore": "Soap Stone Gold Ore",
+  "block.world_depth.feryl_stone_gold_ore": "Feryl Gold Ore",
 
   "block.world_depth.andesite_coal_ore": "Andesite Coal Ore",
   "block.world_depth.diorite_coal_ore": "Diorite Coal Ore",
   "block.world_depth.granite_coal_ore": "Granite Coal Ore",
   "block.world_depth.tuff_coal_ore": "Tuff Coal Ore",
+  "block.world_depth.soap_stone_coal_ore": "Soap Stone Coal Ore",
+  "block.world_depth.feryl_stone_coal_ore": "Feryl Coal Ore",
 
   "block.world_depth.aluminium_ore": "Aluminium Ore",
   "block.world_depth.deepslate_aluminium_ore": "Deepslate Aluminium Ore",
@@ -132,16 +140,22 @@
   "block.world_depth.diorite_lapis_ore": "Diorite Lapis Ore",
   "block.world_depth.granite_lapis_ore": "Granite Lapis Ore",
   "block.world_depth.tuff_lapis_ore": "Tuff Lapis Ore",
+  "block.world_depth.soap_stone_lapis_ore": "Soap Stone Lapis Ore",
+  "block.world_depth.feryl_stone_lapis_ore": "Feryl Lapis Ore",
 
   "block.world_depth.andesite_redstone_ore": "Andesite Redstone Ore",
   "block.world_depth.diorite_redstone_ore": "Diorite Redstone Ore",
   "block.world_depth.granite_redstone_ore": "Granite Redstone Ore",
   "block.world_depth.tuff_redstone_ore": "Tuff Redstone Ore",
+  "block.world_depth.soap_stone_redstone_ore": "Soap Stone Redstone Ore",
+  "block.world_depth.feryl_stone_redstone_ore": "Feryl Redstone Ore",
 
   "block.world_depth.andesite_emerald_ore": "Andesite Emerald Ore",
   "block.world_depth.diorite_emerald_ore": "Diorite Emerald Ore",
   "block.world_depth.granite_emerald_ore": "Granite Emerald Ore",
   "block.world_depth.tuff_emerald_ore": "Tuff Emerald Ore",
+  "block.world_depth.soap_stone_emerald_ore": "Soap Stone Emerald Ore",
+  "block.world_depth.feryl_stone_emerald_ore": "Feryl Emerald Ore",
 
   "block.world_depth.soap_stone_titanium_ore": "Soap Stone Titanium Ore",
   "block.world_depth.feryl_stone_titanium_ore": "Feryl Titanium Ore",
@@ -151,6 +165,8 @@
   "block.world_depth.tuff_titanium_ore": "Tuff Titanium Ore",
 
   "biome.world_depth.deep_plains": "Deep Plains",
+
+  "entity.minecraft.villager.world_depth.energizer_smith": "Energizer Smith",
 
   "creativetab.test_tab": "World depth",
   "creativetab.ore_tab": "Ores"

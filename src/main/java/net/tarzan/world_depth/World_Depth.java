@@ -21,6 +21,7 @@ import net.tarzan.world_depth.recipe.ModRecipes;
 import net.tarzan.world_depth.screen.DeepLightScreen;
 import net.tarzan.world_depth.screen.EnergizerScreen;
 import net.tarzan.world_depth.screen.ModMenuTypes;
+import net.tarzan.world_depth.villager.ModVillagers;
 import net.tarzan.world_depth.worldgen.tree.ModFoliagePlacerTypes;
 import net.tarzan.world_depth.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
@@ -41,6 +42,7 @@ public class World_Depth
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacerTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);
