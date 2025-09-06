@@ -1,12 +1,12 @@
 {
   "type": "minecraft:ore",
   "config": {
-    "discard_chance_on_air_exposure": 0.0,
-    "size": 8,
+    "discard_chance_on_air_exposure": 1.0,
+    "size": 7,
     "targets": [
       {
         "state": {
-          "Name": "world_depth:titanium_ore"
+          "Name": "minecraft:lapis_ore"
         },
         "target": {
           "block": "minecraft:stone",
@@ -15,7 +15,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:deepslate_titanium_ore"
+          "Name": "minecraft:deepslate_lapis_ore"
         },
         "target": {
           "block": "minecraft:deepslate",
@@ -24,7 +24,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:granite_titanium_ore"
+          "Name": "world_depth:granite_lapis_ore"
         },
         "target": {
           "block": "minecraft:granite",
@@ -33,7 +33,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:diorite_titanium_ore"
+          "Name": "world_depth:diorite_lapis_ore"
         },
         "target": {
           "block": "minecraft:diorite",
@@ -42,7 +42,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:tuff_titanium_ore"
+          "Name": "world_depth:tuff_lapis_ore"
         },
         "target": {
           "block": "minecraft:tuff",
@@ -51,7 +51,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:andesite_titanium_ore"
+          "Name": "world_depth:andesite_lapis_ore"
         },
         "target": {
           "block": "minecraft:andesite",
@@ -60,7 +60,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:soap_stone_titanium_ore"
+          "Name": "world_depth:soap_stone_lapis_ore"
         },
         "target": {
           "block": "world_depth:soap_stone",
@@ -69,7 +69,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:feryl_stone_titanium_ore"
+          "Name": "world_depth:feryl_stone_lapis_ore"
         },
         "target": {
           "block": "world_depth:feryl_stone",

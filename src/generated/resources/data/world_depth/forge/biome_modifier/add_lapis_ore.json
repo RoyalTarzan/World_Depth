@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "world_depth:lapis_ore_placed",
+  "features": "world_depth:ore_lapis",
   "step": "underground_ores"
 }

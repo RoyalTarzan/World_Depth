@@ -1,9 +1,9 @@
 {
-  "feature": "world_depth:lapis_ore",
+  "feature": "world_depth:ore_diamond_large",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 30
+      "count": 21
     },
     {
       "type": "minecraft:in_square"
@@ -11,12 +11,12 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:uniform",
+        "type": "minecraft:trapezoid",
         "max_inclusive": {
           "absolute": 70
         },
         "min_inclusive": {
-          "absolute": -512
+          "absolute": -296
         }
       }
     },

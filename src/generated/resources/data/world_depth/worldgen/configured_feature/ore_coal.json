@@ -2,11 +2,29 @@
   "type": "minecraft:ore",
   "config": {
     "discard_chance_on_air_exposure": 0.0,
-    "size": 8,
+    "size": 17,
     "targets": [
       {
         "state": {
-          "Name": "world_depth:granite_diamond_ore"
+          "Name": "minecraft:coal_ore"
+        },
+        "target": {
+          "block": "minecraft:stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "minecraft:deepslate_coal_ore"
+        },
+        "target": {
+          "block": "minecraft:deepslate",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:granite_coal_ore"
         },
         "target": {
           "block": "minecraft:granite",
@@ -15,7 +33,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:diorite_diamond_ore"
+          "Name": "world_depth:diorite_coal_ore"
         },
         "target": {
           "block": "minecraft:diorite",
@@ -24,7 +42,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:tuff_diamond_ore"
+          "Name": "world_depth:tuff_coal_ore"
         },
         "target": {
           "block": "minecraft:tuff",
@@ -33,7 +51,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:andesite_diamond_ore"
+          "Name": "world_depth:andesite_coal_ore"
         },
         "target": {
           "block": "minecraft:andesite",
@@ -42,7 +60,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:soap_stone_diamond_ore"
+          "Name": "world_depth:soap_stone_coal_ore"
         },
         "target": {
           "block": "world_depth:soap_stone",
@@ -51,7 +69,7 @@
       },
       {
         "state": {
-          "Name": "world_depth:feryl_stone_diamond_ore"
+          "Name": "world_depth:feryl_stone_coal_ore"
         },
         "target": {
           "block": "world_depth:feryl_stone",

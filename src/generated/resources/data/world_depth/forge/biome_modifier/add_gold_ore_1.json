@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_overworld",
-  "features": "world_depth:ore_iron_middle",
+  "features": "world_depth:ore_gold_extra",
   "step": "underground_ores"
 }

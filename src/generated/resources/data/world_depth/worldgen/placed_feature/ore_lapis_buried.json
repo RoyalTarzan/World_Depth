@@ -1,9 +1,9 @@
 {
-  "feature": "world_depth:copper_ore",
+  "feature": "world_depth:ore_lapis_buried",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 30
+      "count": 10
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +13,10 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 70
+          "absolute": 64
         },
         "min_inclusive": {
-          "absolute": -512
+          "above_bottom": 0
         }
       }
     },

@@ -1,9 +1,9 @@
 {
-  "feature": "world_depth:gold_ore",
+  "feature": "world_depth:ore_redstone",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 10
+      "count": 20
     },
     {
       "type": "minecraft:in_square"
@@ -11,12 +11,12 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:uniform",
+        "type": "minecraft:trapezoid",
         "max_inclusive": {
-          "absolute": 70
+          "absolute": 32
         },
         "min_inclusive": {
-          "absolute": -512
+          "absolute": -128
         }
       }
     },

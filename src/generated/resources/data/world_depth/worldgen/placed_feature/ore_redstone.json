@@ -1,9 +1,9 @@
 {
-  "feature": "world_depth:ore_titanium",
+  "feature": "world_depth:ore_redstone",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
+      "type": "minecraft:count",
+      "count": 10
     },
     {
       "type": "minecraft:in_square"
@@ -11,12 +11,12 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:trapezoid",
+        "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 0
+          "absolute": 15
         },
         "min_inclusive": {
-          "absolute": -512
+          "above_bottom": 0
         }
       }
     },
