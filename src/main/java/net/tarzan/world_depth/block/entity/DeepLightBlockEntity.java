@@ -43,6 +43,8 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData data;
     private int previousAmount=0;
     private int currentAmount=0;
+    private int wait;
+    private final int wait_time=5; //time to wait between checks and updates in seconds
 
     public DeepLightBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.DEEP_LIGHT_BE.get(), pPos, pBlockState);
@@ -52,6 +54,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
                 return switch (i){
                     case 0 ->DeepLightBlockEntity.this.currentAmount;
                     case 1 ->DeepLightBlockEntity.this.previousAmount;
+                    case 2 ->DeepLightBlockEntity.this.wait;
                     default -> 1;
                 };
             }
@@ -61,12 +64,13 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
                 switch (i){
                     case 0 ->DeepLightBlockEntity.this.currentAmount=value;
                     case 1 ->DeepLightBlockEntity.this.previousAmount=value;
+                    case 2 ->DeepLightBlockEntity.this.wait=value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 0;
+                return 3;
             }
         };
     }
@@ -125,7 +129,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
     }
     public void tick(Level pLevel, BlockPos blockPos) {
         this.data.set(0,this.itemHandler.getStackInSlot(INPUT_SLOT).getCount());
-        if (this.data.get(0)>=this.data.get(1)){
+        if (this.data.get(0)>=this.data.get(1) && this.data.get(2)>wait_time*20){
             if (this.itemHandler.getStackInSlot(INPUT_SLOT).getItem()== ModItems.LIGHT_GEM.get() && !pLevel.isClientSide()){
                 matrixPlacement(this.data.get(0)*2,pLevel,blockPos,
                         Blocks.AIR.defaultBlockState(),Blocks.LIGHT.defaultBlockState());
@@ -133,46 +137,25 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
                 matrixPlacement(128,pLevel,blockPos,
                         Blocks.LIGHT.defaultBlockState(),Blocks.AIR.defaultBlockState());
             }
+            this.data.set(2,0);
         } else if (this.data.get(0)<this.data.get(1)) {
-            matrixPlacement(128,this.data.get(0)*2,pLevel,blockPos,
+            matrixPlacement(128,pLevel,blockPos,
                     Blocks.LIGHT.defaultBlockState(),Blocks.AIR.defaultBlockState());
-        }
+            matrixPlacement(this.data.get(0)*2,pLevel,blockPos,
+                    Blocks.AIR.defaultBlockState(),Blocks.LIGHT.defaultBlockState());
+        } else { this.data.set(2,this.data.get(2)+1);}
         this.data.set(1,this.itemHandler.getStackInSlot(INPUT_SLOT).getCount());
     }
 
     public void matrixPlacement(int diameter,Level pLevel,BlockPos blockPos,BlockState Original,BlockState Replaced){
         for (int i = -diameter+1; i < diameter+1; i+=2) {
             for (int j = -diameter+1; j < diameter+1; j+=2) {
-                BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY(),blockPos.getZ()+j);
-                if (pLevel.getBlockState(blockPos2)==Original){
-                    pLevel.setBlockAndUpdate(blockPos2,Replaced);
-                }
-            }
-        }
-    }
+                for (int k = -diameter+1; k < diameter+1; k+=2) {
+                    BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY()+k,blockPos.getZ()+j);
+                    if (pLevel.getBlockState(blockPos2)==Original){
+                        pLevel.setBlockAndUpdate(blockPos2,Replaced);
+                    }
 
-    public void matrixPlacement(int diameter,int innerDiameter,Level pLevel,BlockPos blockPos, BlockState Original,BlockState Replaced){
-        for (int i = -diameter+1; i < -innerDiameter+1; i+=2) {
-            for (int j = -diameter+1; j < diameter+1; j+=2) {
-                BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY(),blockPos.getZ()+j);
-                if (pLevel.getBlockState(blockPos2)==Original){
-                    pLevel.setBlockAndUpdate(blockPos2,Replaced);
-                }
-                BlockPos blockPos3=new BlockPos(blockPos.getX()+j,blockPos.getY(),blockPos.getZ()+i);
-                if (pLevel.getBlockState(blockPos3)==Original){
-                    pLevel.setBlockAndUpdate(blockPos3,Replaced);
-                }
-            }
-        }
-        for (int i = diameter+3; i > innerDiameter-1; i-=2) {
-            for (int j = -diameter+1; j < diameter+3; j+=2) {
-                BlockPos blockPos2=new BlockPos(blockPos.getX()+i,blockPos.getY(),blockPos.getZ()+j);
-                if (pLevel.getBlockState(blockPos2)==Original){
-                    pLevel.setBlockAndUpdate(blockPos2,Replaced);
-                }
-                BlockPos blockPos3=new BlockPos(blockPos.getX()+j,blockPos.getY(),blockPos.getZ()+i);
-                if (pLevel.getBlockState(blockPos3)==Original){
-                    pLevel.setBlockAndUpdate(blockPos3,Replaced);
                 }
             }
         }
