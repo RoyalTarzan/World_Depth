@@ -9,6 +9,8 @@ import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.item.custom.ChargedFoods;
 import net.tarzan.world_depth.item.custom.ModArmorItem;
 
+import java.util.function.Supplier;
+
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS=
             DeferredRegister.create(ForgeRegistries.ITEMS, World_Depth.MODID);
@@ -91,5 +93,29 @@ public class ModItems {
             ()->new ModArmorItem(ModArmorMaterials.TALIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
+    public void register(String name, Supplier<? extends Item> itemProperties){
+        ITEMS.register(name,itemProperties);
+    }
+
     public static void register(IEventBus eventBus){ITEMS.register(eventBus);}
+
+    public static void registerArmorSet(String name,ModArmorMaterials armorMaterial){
+        ITEMS.register(name+"_helmet",()->new ModArmorItem(armorMaterial, ArmorItem.Type.HELMET,new Item.Properties()));
+        ITEMS.register(name+"_boots",()->new ModArmorItem(armorMaterial, ArmorItem.Type.BOOTS,new Item.Properties()));
+        ITEMS.register(name+"_leggings",()->new ModArmorItem(armorMaterial, ArmorItem.Type.LEGGINGS,new Item.Properties()));
+        ITEMS.register(name+"_chestplate",()->new ModArmorItem(armorMaterial, ArmorItem.Type.CHESTPLATE,new Item.Properties()));
+    }
+
+    public static void registerToolSet(String name,Tier toolTier,int attackDamageModifier,int attackSpeedModifier){
+        ITEMS.register(name+"_hoe",
+                ()-> new HoeItem(toolTier,attackDamageModifier,attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name+"_axe",
+                ()-> new AxeItem(toolTier,attackDamageModifier,attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name+"_pickaxe",
+                ()-> new PickaxeItem(toolTier,attackDamageModifier,attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name+"_shovel",
+                ()-> new ShovelItem(toolTier,attackDamageModifier,attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name+"_sword",
+                ()-> new SwordItem(toolTier,attackDamageModifier,attackSpeedModifier, new Item.Properties()));
+    }
 }

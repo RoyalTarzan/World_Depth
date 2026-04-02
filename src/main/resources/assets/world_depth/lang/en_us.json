@@ -168,6 +168,6 @@
 
   "entity.minecraft.villager.world_depth.energizer_smith": "Energizer Smith",
 
-  "creativetab.test_tab": "World depth",
+  "creativetab.main_tab": "World depth",
   "creativetab.ore_tab": "Ores"
 }

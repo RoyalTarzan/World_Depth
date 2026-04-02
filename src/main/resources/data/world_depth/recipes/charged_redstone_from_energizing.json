@@ -2,7 +2,7 @@
   "type": "world_depth:energizing",
   "ingredients": [
     {
-    "item": "minecraft:redstone"
+      "item": "minecraft:redstone"
     },
     {
       "item": "minecraft:redstone"

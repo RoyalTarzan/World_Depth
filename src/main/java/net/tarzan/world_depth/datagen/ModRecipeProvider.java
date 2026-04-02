@@ -11,9 +11,12 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.ModBlocks;
+import net.tarzan.world_depth.datagen.recipe_builders.EnergizedRecipeBuilder;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.recipe.ModRecipes;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
@@ -200,6 +203,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(input), has(input))
                 .save(consumer);
     }
+
     protected static void oreSmelting(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTIme, @NotNull String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
@@ -213,8 +217,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         while(var9.hasNext()) {
             ItemLike itemlike = (ItemLike)var9.next();
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(new ItemLike[]{itemlike}), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike)).save(pFinishedRecipeConsumer, World_Depth.MODID+":" +getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike)).save(pFinishedRecipeConsumer, World_Depth.MODID+":" +getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
 
+    }
+
+    protected static void energizing(Item result, List<Ingredient> ingredients, int redstoneNeeded, int chargedRedstoneNeeded){
+        new EnergizedRecipeBuilder(RecipeCategory.MISC,result,ingredients,ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded);
     }
 }

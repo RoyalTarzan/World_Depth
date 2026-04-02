@@ -9,16 +9,17 @@ import net.tarzan.world_depth.World_Depth;
 
 import java.util.function.Supplier;
 
-public enum ModArmorMaterials implements ArmorMaterial {
-    TITANIUM("titanium",30,new int[]{6,8,8,5},10,
+public class ModArmorMaterials implements ArmorMaterial {
+    public static final ModArmorMaterials
+    TITANIUM=new ModArmorMaterials("titanium",30,new int[]{6,8,8,5},10,
             SoundEvents.ARMOR_EQUIP_IRON, 2f, 1f,()->Ingredient.of(ModItems.TITANIUM.get())),
-    ENERGIZED_TITANIUM("titanium",30,new int[]{6,8,8,5},10,
+    ENERGIZED_TITANIUM=new ModArmorMaterials("titanium",30,new int[]{6,8,8,5},10,
             SoundEvents.ARMOR_EQUIP_IRON, 2f, 1f,()->Ingredient.of(ModItems.TITANIUM.get())),
-    ALUMINIUM("aluminium",20,new int[]{3,4,4,2},20,
+    ALUMINIUM=new ModArmorMaterials("aluminium",20,new int[]{3,4,4,2},20,
             SoundEvents.ARMOR_EQUIP_GOLD, 0f, 0f,()->Ingredient.of(ModItems.ALUMINIUM.get())),
-    ENERGIZED_ALUMINIUM("aluminium",20,new int[]{3,4,4,2},20,
+    ENERGIZED_ALUMINIUM=new ModArmorMaterials("aluminium",20,new int[]{3,4,4,2},20,
             SoundEvents.ARMOR_EQUIP_GOLD, 0f, 0f,()->Ingredient.of(ModItems.ALUMINIUM.get())),
-    TALIUM("talium",25,new int[]{4,6,6,3},15,
+    TALIUM=new ModArmorMaterials("talium",25,new int[]{4,6,6,3},15,
             SoundEvents.ARMOR_EQUIP_DIAMOND,1f,0.5f,()->Ingredient.of(ModItems.TALIUM.get()));
 
     private final String name;
@@ -32,7 +33,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
 
     private static final int[] BASE_DURABILITY={11,16,15,13};
 
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+    public ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;

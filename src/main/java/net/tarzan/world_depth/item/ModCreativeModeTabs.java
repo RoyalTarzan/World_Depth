@@ -14,7 +14,7 @@ import net.tarzan.world_depth.block.ModBlocks;
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS=
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, World_Depth.MODID);
-    public static final RegistryObject<CreativeModeTab> TEST_TAB=CREATIVE_MODE_TABS.register("test_tab",
+    public static final RegistryObject<CreativeModeTab> MAIN_TAB=CREATIVE_MODE_TABS.register("main_tab",
             ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.ALUMINIUM.get()))
                     .title(Component.translatable("creativetab.test_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
