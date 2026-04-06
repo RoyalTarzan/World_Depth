@@ -16,8 +16,6 @@ import net.tarzan.world_depth.item.ModItems;
 import net.tarzan.world_depth.recipe.ModRecipes;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -75,6 +73,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModItems.TITANIUM_AXE.get(),ModItems.TITANIUM_PICKAXE.get(),ModItems.TITANIUM_HOE.get(),consumer);
         toolSet(ModItems.ALUMINIUM.get(), ModItems.ALUMINIUM_SHOVEL.get(),ModItems.ALUMINIUM_SWORD.get(),
                 ModItems.ALUMINIUM_AXE.get(),ModItems.ALUMINIUM_PICKAXE.get(),ModItems.ALUMINIUM_HOE.get(),consumer);
+
+        Ingredient[] ingredients=new Ingredient[]{Ingredient.of(ModItems.CHARGED_REDSTONE.get()),Ingredient.of(Items.REDSTONE),Ingredient.of(ModItems.TALIUM.get()),Ingredient.of(ModItems.ALUMINIUM.get()),Ingredient.of(ModItems.TITANIUM.get())};
+        energizing(Items.GOLDEN_CARROT, ingredients,5,4,"golden_carrot",consumer,ModItems.CHARGED_REDSTONE.get());
     }
 
     protected static void toolSet(ItemLike material,ItemLike shovel,ItemLike sword,ItemLike axe,ItemLike pickaxe,ItemLike hoe, Consumer<FinishedRecipe> consumer){
@@ -213,16 +214,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void oreCooking(@NotNull Consumer<FinishedRecipe> pFinishedRecipeConsumer, @NotNull RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, @NotNull RecipeCategory pCategory, @NotNull ItemLike pResult, float pExperience, int pCookingTime, @NotNull String pGroup, String pRecipeName) {
-        Iterator var9 = pIngredients.iterator();
 
-        while(var9.hasNext()) {
-            ItemLike itemlike = (ItemLike)var9.next();
-            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike)).save(pFinishedRecipeConsumer, World_Depth.MODID+":" +getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
+        for (ItemLike itemlike : pIngredients) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), pCategory, pResult, pExperience, pCookingTime, pCookingSerializer).group(pGroup).unlockedBy(getHasName(itemlike), has(itemlike)).save(pFinishedRecipeConsumer, World_Depth.MODID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
 
     }
 
-    protected static void energizing(Item result, List<Ingredient> ingredients, int redstoneNeeded, int chargedRedstoneNeeded){
-        new EnergizedRecipeBuilder(RecipeCategory.MISC,result,ingredients,ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded);
+    protected static void energizing(Item result, Ingredient[] ingredients, int redstoneNeeded, int chargedRedstoneNeeded,String group,Consumer<FinishedRecipe> consumer,ItemLike unlockBy){
+        EnergizedRecipeBuilder.create(RecipeCategory.MISC, result, ingredients, ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded).group(group).unlockedBy(getHasName(unlockBy),has(unlockBy)).save(consumer,World_Depth.MODID+":"+getItemName(result)+"_from_energizing_"+getItemName(unlockBy));
     }
 }

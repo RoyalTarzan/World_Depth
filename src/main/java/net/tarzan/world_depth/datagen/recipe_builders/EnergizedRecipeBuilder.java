@@ -1,5 +1,6 @@
 package net.tarzan.world_depth.datagen.recipe_builders;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
@@ -17,21 +18,20 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.tarzan.world_depth.recipe.EnergizerRecipe;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 public class EnergizedRecipeBuilder implements RecipeBuilder {
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
     private final Item result;
-    private final List<Ingredient> ingredients;
+    private final Ingredient[] ingredients;
     private final RecipeCategory category;
     @Nullable
     private String group;
     private final RecipeSerializer<EnergizerRecipe> serializer;
-    private int redstoneNeeded;
-    private int chargedRedstoneNeeded;
+    private final int redstoneNeeded;
+    private final int chargedRedstoneNeeded;
 
-    public EnergizedRecipeBuilder(RecipeCategory pCategory, Item pResult, List<Ingredient> pIngredient, RecipeSerializer<EnergizerRecipe> pSerializer, int redstoneNeeded, int chargedRedstoneNeeded) {
+    public EnergizedRecipeBuilder(RecipeCategory pCategory, Item pResult, Ingredient[] pIngredient, RecipeSerializer<EnergizerRecipe> pSerializer, int redstoneNeeded, int chargedRedstoneNeeded) {
         this.category = pCategory;
         this.result = pResult.asItem();
         this.ingredients = pIngredient;
@@ -40,6 +40,9 @@ public class EnergizedRecipeBuilder implements RecipeBuilder {
         this.chargedRedstoneNeeded = chargedRedstoneNeeded;
     }
 
+    public static EnergizedRecipeBuilder create(RecipeCategory pCategory, Item pResult, Ingredient[] pIngredient, RecipeSerializer<EnergizerRecipe> pSerializer, int redstoneNeeded, int chargedRedstoneNeeded){
+        return new EnergizedRecipeBuilder( pCategory,  pResult,  pIngredient,  pSerializer,  redstoneNeeded,  chargedRedstoneNeeded);
+    }
 
     @Override
     public EnergizedRecipeBuilder unlockedBy(String criterion, CriterionTriggerInstance criterionTrigger) {
@@ -75,15 +78,15 @@ public class EnergizedRecipeBuilder implements RecipeBuilder {
     static class Result implements FinishedRecipe{
         private final ResourceLocation id;
         private final String group;
-        private final List<Ingredient> ingredients;
+        private final Ingredient[] ingredients;
         private final Item result;
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
         private final RecipeSerializer<EnergizerRecipe> serializer;
-        private int redstoneNeeded;
-        private int chargedRedstoneNeeded;
+        private final int redstoneNeeded;
+        private final int chargedRedstoneNeeded;
 
-        Result(ResourceLocation id, String group, List<Ingredient> ingredients, Item result, Advancement.Builder advancement, ResourceLocation advancementId, RecipeSerializer<EnergizerRecipe> serializer, int redstoneNeeded, int chargedRedstoneNeeded) {
+        Result(ResourceLocation id, String group, Ingredient[] ingredients, Item result, Advancement.Builder advancement, ResourceLocation advancementId, RecipeSerializer<EnergizerRecipe> serializer, int redstoneNeeded, int chargedRedstoneNeeded) {
             this.id = id;
             this.group = group;
             this.ingredients = ingredients;
@@ -100,36 +103,37 @@ public class EnergizedRecipeBuilder implements RecipeBuilder {
             if (this.group.isEmpty()){
                 pJson.addProperty("group",this.group);
             }
-
-            pJson.add("ingredients",this.ingredients.listIterator().next().toJson());
+            JsonArray ingredients=new JsonArray();
+            for (Ingredient ingredient:this.ingredients){
+                ingredients.add(ingredient.toJson());
+            }
+            pJson.add("ingredients", ingredients);
             pJson.addProperty("redstone_needed",this.redstoneNeeded);
             pJson.addProperty("charged_redstone_needed",this.chargedRedstoneNeeded);
-            pJson.addProperty("result", BuiltInRegistries.ITEM.getKey(this.result).toString());
-        }
-
-        @Override
-        public JsonObject serializeRecipe() {
-            return FinishedRecipe.super.serializeRecipe();
+            JsonObject output=new JsonObject();
+            output.addProperty("item",BuiltInRegistries.ITEM.getKey(this.result).toString());
+            output.addProperty("count",1);
+            pJson.add("output", output);
         }
 
         @Override
         public ResourceLocation getId() {
-            return null;
+            return this.id;
         }
 
         @Override
         public RecipeSerializer<?> getType() {
-            return null;
+            return this.serializer;
         }
 
         @Override
         public @Nullable JsonObject serializeAdvancement() {
-            return null;
+            return this.advancement.serializeToJson();
         }
 
         @Override
         public @Nullable ResourceLocation getAdvancementId() {
-            return null;
+            return this.advancementId;
         }
     }
 }
