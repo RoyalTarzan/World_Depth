@@ -17,23 +17,28 @@ import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.block.entity.ModBlockEntities;
 import net.tarzan.world_depth.item.ModCreativeModeTabs;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.materials.CustomMaterial;
+import net.tarzan.world_depth.materials.CustomMaterials;
 import net.tarzan.world_depth.recipe.ModRecipes;
 import net.tarzan.world_depth.screen.DeepLightScreen;
 import net.tarzan.world_depth.screen.EnergizerScreen;
 import net.tarzan.world_depth.screen.ModMenuTypes;
+import net.tarzan.world_depth.villager.ModVillagerTypes;
 import net.tarzan.world_depth.villager.ModVillagers;
 import net.tarzan.world_depth.worldgen.tree.ModFoliagePlacerTypes;
 import net.tarzan.world_depth.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
 @Mod(World_Depth.MODID)
-public class World_Depth
-{
+public class World_Depth {
     public static final String MODID = "world_depth";
     private static final Logger LOGGER = LogUtils.getLogger();
-    public World_Depth()
-    {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public static final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public World_Depth() {
+        CustomMaterials.registerAll();
+        for(CustomMaterial material:CustomMaterials.getAddedMaterials()){
+            material.registerBlockAndItem();
+        }
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -43,16 +48,14 @@ public class World_Depth
         ModFoliagePlacerTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModVillagers.register(modEventBus);
-
+        ModVillagerTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-
-    }
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
     private void addCreative(BuildCreativeModeTabContentsEvent event){
         if(event.getTabKey()== CreativeModeTabs.INGREDIENTS){
@@ -61,8 +64,7 @@ public class World_Depth
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
-    }
+    public void onServerStarting(ServerStartingEvent event) {}
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

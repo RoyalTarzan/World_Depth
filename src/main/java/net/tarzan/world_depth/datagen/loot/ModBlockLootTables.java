@@ -13,6 +13,8 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.materials.CustomMaterial;
+import net.tarzan.world_depth.materials.CustomMaterials;
 
 import java.util.Set;
 
@@ -139,6 +141,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.ANDESITE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.ANDESITE_TITANIUM_ORE.get()));
         this.add(ModBlocks.SOAP_STONE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.SOAP_STONE_TITANIUM_ORE.get()));
         this.add(ModBlocks.FERYL_STONE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.FERYL_STONE_TITANIUM_ORE.get()));
+
+        for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
+            this.dropSelf(material.Block.get());
+        }
     }
     protected LootTable.Builder createAlumiuniumOreDrops(Block pBlock) {
         return createSilkTouchDispatchTable(pBlock,

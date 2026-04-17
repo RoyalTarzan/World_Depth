@@ -289,7 +289,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEP_LIGHT=registerBlock("deep_light",
             ()-> new DeepLightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(0.3F).sound(SoundType.NETHERITE_BLOCK)));
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
+    public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn=BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;

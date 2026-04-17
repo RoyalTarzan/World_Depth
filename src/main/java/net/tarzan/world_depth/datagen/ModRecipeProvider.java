@@ -2,6 +2,7 @@ package net.tarzan.world_depth.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -13,6 +14,8 @@ import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.datagen.recipe_builders.EnergizedRecipeBuilder;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.materials.CustomMaterial;
+import net.tarzan.world_depth.materials.CustomMaterials;
 import net.tarzan.world_depth.recipe.ModRecipes;
 import org.jetbrains.annotations.NotNull;
 
@@ -76,9 +79,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         Ingredient[] ingredients=new Ingredient[]{Ingredient.of(ModItems.CHARGED_REDSTONE.get()),Ingredient.of(Items.REDSTONE),Ingredient.of(ModItems.TALIUM.get()),Ingredient.of(ModItems.ALUMINIUM.get()),Ingredient.of(ModItems.TITANIUM.get())};
         energizing(Items.GOLDEN_CARROT, ingredients,5,4,"golden_carrot",consumer,ModItems.CHARGED_REDSTONE.get());
+
+        for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
+            material.registerRecipes(consumer);
+        }
     }
 
-    protected static void toolSet(ItemLike material,ItemLike shovel,ItemLike sword,ItemLike axe,ItemLike pickaxe,ItemLike hoe, Consumer<FinishedRecipe> consumer){
+    public static void toolSet(ItemLike material,ItemLike shovel,ItemLike sword,ItemLike axe,ItemLike pickaxe,ItemLike hoe, Consumer<FinishedRecipe> consumer){
         shovel(material,shovel, consumer);
         axe(material,axe, consumer);
         pickaxe(material,pickaxe, consumer);
@@ -145,7 +152,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
     }
 
-    protected static void blockToSingleAndReverse(ItemLike item, ItemLike block, Consumer<FinishedRecipe> consumer){
+    public static void blockToSingleAndReverse(ItemLike item, ItemLike block, Consumer<FinishedRecipe> consumer){
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, block)
                 .pattern("SSS")
                 .pattern("SSS")
@@ -160,7 +167,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer);
     }
 
-    protected static void fullArmor(Item material, Item helmet, Item chestplate, Item leggings, Item boots, Consumer<FinishedRecipe> consumer){
+    public static void fullArmor(Item material, Item helmet, Item chestplate, Item leggings, Item boots, Consumer<FinishedRecipe> consumer){
         armorBoots(material,boots,consumer);
         armorChestplate(material,chestplate,consumer);
         armorHelmet(material,helmet,consumer);
@@ -221,7 +228,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
-    protected static void energizing(Item result, Ingredient[] ingredients, int redstoneNeeded, int chargedRedstoneNeeded,String group,Consumer<FinishedRecipe> consumer,ItemLike unlockBy){
-        EnergizedRecipeBuilder.create(RecipeCategory.MISC, result, ingredients, ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded).group(group).unlockedBy(getHasName(unlockBy),has(unlockBy)).save(consumer,World_Depth.MODID+":"+getItemName(result)+"_from_energizing_"+getItemName(unlockBy));
+    public static void energizing(Item result, Ingredient[] ingredients, int redstoneNeeded, int chargedRedstoneNeeded,String group,Consumer<FinishedRecipe> consumer,ItemLike unlockBy){
+        EnergizedRecipeBuilder.create(RecipeCategory.MISC,
+                result, ingredients, ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded).group(group).unlockedBy(getHasName(unlockBy),has(unlockBy))
+                .save(consumer, World_Depth.MODID+":"+getItemName(result)+"_from_energizing");
+    }
+    public static void energizing(CustomMaterial result, Ingredient[] ingredients, int redstoneNeeded, int chargedRedstoneNeeded,String group,Consumer<FinishedRecipe> consumer,ItemLike unlockBy){
+        EnergizedRecipeBuilder.create(RecipeCategory.MISC,
+                result, ingredients, ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded).group(group).unlockedBy(getHasName(unlockBy),has(unlockBy))
+                .save(consumer, new ResourceLocation(World_Depth.MODID+":"+result.getName()+"_from_energizing"));
+    }
+    public static void energizing(Item result, CustomMaterial[] ingredients, int redstoneNeeded, int chargedRedstoneNeeded,String group,Consumer<FinishedRecipe> consumer,ItemLike unlockBy){
+        EnergizedRecipeBuilder.create(RecipeCategory.MISC,
+                result, ingredients, ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded).group(group).unlockedBy(getHasName(unlockBy),has(unlockBy))
+                .save(consumer, World_Depth.MODID+":"+getItemName(result)+"_from_energizing");
+    }
+    public static void energizing(CustomMaterial result, CustomMaterial[] ingredients, int redstoneNeeded, int chargedRedstoneNeeded,String group,Consumer<FinishedRecipe> consumer,ItemLike unlockBy){
+        EnergizedRecipeBuilder.create(RecipeCategory.MISC,
+                result, ingredients, ModRecipes.ENERGIZER_SERIALIZER.get(), redstoneNeeded, chargedRedstoneNeeded).group(group).unlockedBy(getHasName(unlockBy),has(unlockBy))
+                .save(consumer, new ResourceLocation(World_Depth.MODID+":"+result.getName()+"_from_energizing"));
     }
 }

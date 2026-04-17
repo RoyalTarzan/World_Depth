@@ -16,7 +16,7 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, World_Depth.MODID);
     public static final RegistryObject<CreativeModeTab> MAIN_TAB=CREATIVE_MODE_TABS.register("main_tab",
             ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.ALUMINIUM.get()))
-                    .title(Component.translatable("creativetab.test_tab"))
+                    .title(Component.translatable("creativetab.main_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ALUMINIUM.get());
                         output.accept(ModItems.RAW_ALUMINIUM.get());

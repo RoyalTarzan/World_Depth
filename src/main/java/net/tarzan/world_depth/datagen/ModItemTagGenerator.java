@@ -4,10 +4,14 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.item.ModItems;
+import net.tarzan.world_depth.materials.CustomMaterial;
+import net.tarzan.world_depth.materials.CustomMaterials;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -40,5 +44,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.TALIUM_CHESTPLATE.get(),
                         ModItems.TALIUM_LEGGINGS.get(),
                         ModItems.TALIUM_BOOTS.get());
+        for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
+            for (RegistryObject<Item> item: material.Armour){
+                this.tag(ItemTags.TRIMMABLE_ARMOR).add(item.get());
+            }
+        }
     }
 }

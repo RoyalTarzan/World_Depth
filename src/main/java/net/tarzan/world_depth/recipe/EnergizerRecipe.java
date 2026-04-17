@@ -101,7 +101,7 @@ public class EnergizerRecipe implements Recipe<SimpleContainer> {
             JsonArray ingredients=GsonHelper.getAsJsonArray(jsonObject, "ingredients");
             NonNullList<Ingredient> inputs=NonNullList.withSize(5,Ingredient.EMPTY);
 
-            for (int i=0;i<inputs.size();i++){
+            for (int i=0;i<ingredients.size();i++){
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
