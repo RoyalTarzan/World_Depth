@@ -68,10 +68,12 @@ public class CustomMaterials {
     }
 
     public static void registerAll(){
-        addedMaterials.add( new CustomMaterial("Energized Iron",7,100,5,8,8,new MobEffect[]{MobEffects.MOVEMENT_SPEED,MobEffects.DAMAGE_RESISTANCE},new Integer[]{2,4},1f,1f,1,null,new Item[]{Items.IRON_INGOT,Items.IRON_INGOT},new Color(155,155,155)));
-        addedMaterials.add( new CustomMaterial("Energized Gold",6,100,6,20,6,new MobEffect[]{MobEffects.LUCK,MobEffects.SATURATION,MobEffects.REGENERATION,MobEffects.GLOWING},new Integer[]{10,4,4,2},1f,1f,1,null,new Item[]{Items.GOLD_INGOT,Items.GOLD_INGOT},new Color(237, 244, 134)));
-        addedMaterials.add(new CustomMaterial("Energized Copper",4,100,4,10,7,new MobEffect[]{MobEffects.NIGHT_VISION,MobEffects.FIRE_RESISTANCE,MobEffects.CONFUSION},new Integer[]{10,10,10},1f,1f,1,null,new Item[]{Items.COPPER_INGOT, Items.COPPER_INGOT},new Color(234, 122, 77)));
-        addedMaterials.add(new CustomMaterial("Energized Netherite",10,100,10,10,10,new MobEffect[]{MobEffects.FIRE_RESISTANCE,MobEffects.DAMAGE_RESISTANCE,MobEffects.ABSORPTION},new Integer[]{4,5,15},1f,1f,1,null,new Item[]{Items.NETHERITE_INGOT, Items.NETHERITE_INGOT},new Color(82, 67, 82)));
+        addedMaterials.add( new CustomMaterial("Energized Iron",6,28,5,8,8,new MobEffect[]{MobEffects.MOVEMENT_SPEED,MobEffects.DAMAGE_RESISTANCE},new Integer[]{2,4},1f,1f,1,null,new Item[]{Items.IRON_INGOT,Items.IRON_INGOT},new Color(155,155,155),true));
+        addedMaterials.add( new CustomMaterial("Energized Gold",5,15,6,20,6,new MobEffect[]{MobEffects.LUCK,MobEffects.SATURATION,MobEffects.REGENERATION,MobEffects.GLOWING},new Integer[]{10,4,4,2},1f,1f,1,null,new Item[]{Items.GOLD_INGOT,Items.GOLD_INGOT},new Color(237, 244, 134),true));
+        addedMaterials.add(new CustomMaterial("Energized Copper",4,20,4,10,7,new MobEffect[]{MobEffects.NIGHT_VISION,MobEffects.FIRE_RESISTANCE,MobEffects.CONFUSION},new Integer[]{10,10,10},1f,1f,1,null,new Item[]{Items.COPPER_INGOT, Items.COPPER_INGOT},new Color(234, 122, 77),true));
+        addedMaterials.add(new CustomMaterial("Energized Netherite",8,35,11,10,10,new MobEffect[]{MobEffects.FIRE_RESISTANCE,MobEffects.DAMAGE_RESISTANCE,MobEffects.ABSORPTION},new Integer[]{4,5,15},1f,1f,1,null,new Item[]{Items.NETHERITE_INGOT, Items.NETHERITE_INGOT},new Color(82, 67, 82),true));
+        addedMaterials.add(new CustomMaterial("Energized Aluminium",3,20,1,10,10,new MobEffect[]{MobEffects.MOVEMENT_SPEED,MobEffects.JUMP},new Integer[]{3,4},1f,1f,1,null,new Item[]{null, null},new Color(194, 186, 186),false));
+        addedMaterials.add(new CustomMaterial("Energized Titanium",6,30,10,10,10,new MobEffect[]{MobEffects.DAMAGE_BOOST,MobEffects.DAMAGE_RESISTANCE},new Integer[]{3,2},1f,1f,1,null,new Item[]{Items.NETHERITE_INGOT, Items.NETHERITE_INGOT},new Color(107, 101, 101),false));
         int combinedIndex=0;
         for (int i=0;i<2;i++){
             ArrayList<CustomMaterial[]> newlyAddedMaterialCombinations=new ArrayList<>();
