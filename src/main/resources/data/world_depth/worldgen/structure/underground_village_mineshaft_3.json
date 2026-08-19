@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "#minecraft:has_structure/mineshaft",
+  "terrain_adaptation": "bury",
+  "spawn_overrides": {
+    "ambient": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "axolotls": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "creature": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "misc": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "monster": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "underground_water_creature": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "water_ambient": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "water_creature": {
+      "bounding_box": "full",
+      "spawns": []
+    }
+  },
+  "step": "underground_structures",
+  "start_pool": "world_depth:underground_village/mineshaft_start",
+  "size": 7,
+  "start_height": {
+    "above_bottom": 205
+  },
+  "max_distance_from_center": 116,
+  "use_expansion_hack": true
+}

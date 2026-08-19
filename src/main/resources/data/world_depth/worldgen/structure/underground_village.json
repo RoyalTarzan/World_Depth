@@ -2,7 +2,40 @@
   "type": "minecraft:jigsaw",
   "biomes": "#minecraft:has_structure/mineshaft",
   "terrain_adaptation": "beard_box",
-  "spawn_overrides": {},
+  "spawn_overrides": {
+    "ambient": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "axolotls": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "creature": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "misc": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "monster": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "underground_water_creature": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "water_ambient": {
+      "bounding_box": "full",
+      "spawns": []
+    },
+    "water_creature": {
+      "bounding_box": "full",
+      "spawns": []
+    }
+  },
   "step": "underground_structures",
   "start_pool": "world_depth:underground_village/village_centers",
   "size": 7,

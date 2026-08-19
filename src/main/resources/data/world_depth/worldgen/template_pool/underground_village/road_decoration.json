@@ -1,10 +1,26 @@
 {
-  "name": "world_depth:underground_village/roads",
+  "name": "world_depth:underground_village/road_decoration",
   "fallback": "minecraft:empty",
   "elements": [{
-    "weight": 1,
+    "weight": 50,
     "element": {
-      "location": "world_depth:underground_village/roads/straight_road",
+      "location": "world_depth:underground_village/roads/decoration/flower_pot",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 50,
+    "element": {
+      "location": "world_depth:underground_village/roads/decoration/hay_bales",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 49,
+    "element": {
+      "location": "world_depth:underground_village/roads/decoration/lamppost",
       "processors": "minecraft:empty",
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"
@@ -12,31 +28,7 @@
   },{
     "weight": 1,
     "element": {
-      "location": "world_depth:underground_village/roads/t_joint",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/roads/corner",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/roads/cross",
-      "processors": "minecraft:empty",
-      "projection": "rigid",
-      "element_type": "minecraft:single_pool_element"
-    }
-  },{
-    "weight": 1,
-    "element": {
-      "location": "world_depth:underground_village/roads/church_road",
+      "location": "world_depth:underground_village/roads/decoration/lamppost_deep_light",
       "processors": "minecraft:empty",
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"

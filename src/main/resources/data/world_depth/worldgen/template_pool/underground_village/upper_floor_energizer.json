@@ -2,7 +2,7 @@
   "name": "world_depth:underground_village/upper_floors",
   "fallback": "world_depth:underground_village/fallback/upper_floor",
   "elements": [{
-    "weight": 1,
+    "weight": 5,
     "element": {
       "location": "world_depth:underground_village/energizer_house/upper_floor_1",
       "processors": "minecraft:empty",
@@ -29,6 +29,22 @@
     "weight": 1,
     "element": {
       "location": "world_depth:underground_village/energizer_house/upper_floor_3",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/energizer_house/upper_floor_4",
+      "processors": "minecraft:empty",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/energizer_house/upper_floor_4_2",
       "processors": "minecraft:empty",
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"

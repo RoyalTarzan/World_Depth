@@ -4,7 +4,28 @@
     "weight": 1,
     "element": {
       "location": "world_depth:underground_village/mineshaft/mineshaft_end_medium_1",
-      "processors": "minecraft:empty",
+      "processors": {
+        "processors": [
+          {
+            "processor_type": "minecraft:rule",
+            "rules": [
+              {
+                "location_predicate": {
+                  "predicate_type": "minecraft:always_true"
+                },
+                "input_predicate": {
+                  "predicate_type": "minecraft:random_block_match",
+                  "block": "minecraft:chest",
+                  "probability": 0.8
+                },
+                "output_state": {
+                  "Name": "minecraft:air"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"
     }
@@ -12,7 +33,28 @@
     "weight": 1,
     "element": {
       "location": "world_depth:underground_village/mineshaft/mineshaft_end_medium_3",
-      "processors": "minecraft:empty",
+      "processors":{
+        "processors": [
+          {
+            "processor_type": "minecraft:rule",
+            "rules": [
+              {
+                "location_predicate": {
+                  "predicate_type": "minecraft:always_true"
+                },
+                "input_predicate": {
+                  "predicate_type": "minecraft:random_block_match",
+                  "block": "minecraft:chest",
+                  "probability": 0.8
+                },
+                "output_state": {
+                  "Name": "minecraft:air"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"
     }
@@ -20,7 +62,28 @@
     "weight": 1,
     "element": {
       "location": "world_depth:underground_village/mineshaft/mineshaft_end_medium_2",
-      "processors": "minecraft:empty",
+      "processors":{
+        "processors": [
+          {
+            "processor_type": "minecraft:rule",
+            "rules": [
+              {
+                "location_predicate": {
+                  "predicate_type": "minecraft:always_true"
+                },
+                "input_predicate": {
+                  "predicate_type": "minecraft:random_block_match",
+                  "block": "minecraft:chest",
+                  "probability": 0.8
+                },
+                "output_state": {
+                  "Name": "minecraft:air"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"
     }
@@ -28,7 +91,28 @@
     "weight": 1,
     "element": {
       "location": "world_depth:underground_village/mineshaft/mineshaft_end_small",
-      "processors": "minecraft:empty",
+      "processors": {
+        "processors": [
+          {
+            "processor_type": "minecraft:rule",
+            "rules": [
+              {
+                "location_predicate": {
+                  "predicate_type": "minecraft:always_true"
+                },
+                "input_predicate": {
+                  "predicate_type": "minecraft:random_block_match",
+                  "block": "minecraft:chest",
+                  "probability": 0.8
+                },
+                "output_state": {
+                  "Name": "minecraft:air"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "projection": "rigid",
       "element_type": "minecraft:single_pool_element"
     }

@@ -25,7 +25,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "world_depth:energized_redstone",
+          "name": "world_depth:charged_redstone",
           "weight": 15,
           "functions": [
             {

@@ -1,0 +1,40 @@
+{
+  "name": "world_depth:underground_village/mineshaft",
+  "fallback": "world_depth:underground_village/fallback/mineshaft",
+  "elements": [{
+    "weight": 1,
+    "element": {
+      "location": "world_depth:underground_village/mineshaft/mineshaft_start",
+      "processors": {
+        "processors": [
+          {
+            "processor_type": "minecraft:rule",
+            "rules": [
+              {
+                "location_predicate": {
+                  "predicate_type": "minecraft:always_true"
+                },
+                "input_predicate": {
+                  "predicate_type": "minecraft:random_block_match",
+                  "block": "minecraft:chest",
+                  "probability": 0.8
+                },
+                "output_state": {
+                  "Name": "minecraft:air"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+  },
+    {
+      "weight": 4,
+      "element": {
+        "element_type":"minecraft:empty_pool_element"
+      }
+    }]
+}

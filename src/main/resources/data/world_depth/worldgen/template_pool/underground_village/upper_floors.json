@@ -2,7 +2,7 @@
   "name": "world_depth:underground_village/upper_floors",
   "fallback": "world_depth:underground_village/fallback/upper_floor",
   "elements": [{
-    "weight": 1,
+    "weight": 4,
     "element": {
       "location": "world_depth:underground_village/house/upper_floor_1",
       "processors": "minecraft:empty",
@@ -10,7 +10,7 @@
       "element_type": "minecraft:single_pool_element"
     }
   },{
-    "weight": 1,
+    "weight": 5,
     "element": {
       "location": "world_depth:underground_village/house/upper_floor_2",
       "processors": "minecraft:empty",

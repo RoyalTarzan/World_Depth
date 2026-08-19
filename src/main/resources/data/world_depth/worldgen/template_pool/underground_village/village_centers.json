@@ -10,7 +10,7 @@
       "element_type": "minecraft:single_pool_element"
     }
   },{
-    "weight": 3,
+    "weight": 99,
     "element": {
       "location": "world_depth:underground_village/village_centers/shaft_entrance",
       "processors": "minecraft:empty",
