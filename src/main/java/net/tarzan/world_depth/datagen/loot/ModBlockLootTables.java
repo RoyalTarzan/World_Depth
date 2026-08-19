@@ -143,6 +143,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.FERYL_STONE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.FERYL_STONE_TITANIUM_ORE.get()));
 
         for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
+            if (!material.create){continue;}
             this.dropSelf(material.Block.get());
         }
     }

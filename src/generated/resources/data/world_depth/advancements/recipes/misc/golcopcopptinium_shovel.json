@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_golcopcopptinium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:golcopcopptinium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:golcopcopptinium_shovel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_golcopcopptinium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:golcopcopptinium_shovel"
+    ]
+  },
+  "sends_telemetry_event": false
+}

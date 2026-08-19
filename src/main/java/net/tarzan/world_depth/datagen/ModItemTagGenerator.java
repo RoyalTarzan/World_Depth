@@ -45,6 +45,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.TALIUM_LEGGINGS.get(),
                         ModItems.TALIUM_BOOTS.get());
         for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
+            if (!material.create){continue;}
             for (RegistryObject<Item> item: material.Armour){
                 this.tag(ItemTags.TRIMMABLE_ARMOR).add(item.get());
             }

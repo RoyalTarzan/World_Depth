@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "world_depth:iroalugolalunium"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SS",
+    "T ",
+    "T "
+  ],
+  "result": {
+    "item": "world_depth:iroalugolalunium_hoe"
+  },
+  "show_notification": true
+}

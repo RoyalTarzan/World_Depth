@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_golgolcopnium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:golgolcopnium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:golgolcopnium_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_golgolcopnium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:golgolcopnium_hoe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

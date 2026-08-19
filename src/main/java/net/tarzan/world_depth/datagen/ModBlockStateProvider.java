@@ -155,6 +155,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.ENERGIZER.get(),new ModelFile.UncheckedModelFile(modLoc("block/energizer")));
 
         for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
+            if (!material.create){continue;}
             String srcBlockDir = "C:\\Users\\royal\\zelf gemaakte mods\\forge-test mod\\src\\main\\resources\\assets\\world_depth\\textures\\block";
             ColorConvertOp rgb=new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_sRGB),null);
             BufferedImage block;

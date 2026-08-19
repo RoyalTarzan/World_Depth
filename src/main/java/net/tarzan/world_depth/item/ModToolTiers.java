@@ -1,9 +1,12 @@
 package net.tarzan.world_depth.item;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.common.TierSortingRegistry;
 import net.tarzan.world_depth.World_Depth;
@@ -15,12 +18,15 @@ public class ModToolTiers {
     public static final Tier ALUMINIUM= TierSortingRegistry.registerTier(
             new ForgeTier(2,300,9f,2f,16,
                     ModTags.Blocks.NEEDS_ALUMINIUM_TOOL,()-> Ingredient.of(ModItems.ALUMINIUM.get())),
-                    new ResourceLocation(World_Depth.MODID,"aluminium"), List.of(Tiers.STONE),List.of(Tiers.DIAMOND)
-    );
+                    new ResourceLocation(World_Depth.MODID,"aluminium"), List.of(Tiers.STONE),List.of(Tiers.DIAMOND));
 
     public static final Tier TITANIUM= TierSortingRegistry.registerTier(
             new ForgeTier(5,2500,15f,5f,6,
                     ModTags.Blocks.NEEDS_TITANIUM_TOOL,()-> Ingredient.of(ModItems.TITANIUM.get())),
-            new ResourceLocation(World_Depth.MODID,"titanium"), List.of(Tiers.NETHERITE),List.of()
-    );
+            new ResourceLocation(World_Depth.MODID,"titanium"), List.of(Tiers.NETHERITE),List.of());
+
+    public ModToolTiers(int level, int uses, float speed, float attackDamageBonus, int enchantmentValue, TagKey<Block> tag, Item repairIngredient,String name,Tier tierBelow,Tier tierAbove){
+        TierSortingRegistry.registerTier(new ForgeTier(level,uses,speed,attackDamageBonus,enchantmentValue,tag,()->Ingredient.of(repairIngredient)),
+                new ResourceLocation(World_Depth.MODID,name),List.of(tierBelow), List.of(tierAbove));
+    }
 }

@@ -197,12 +197,13 @@ public class EnergizedRecipeBuilder implements RecipeBuilder {
                 }
                 pJson.add("ingredients", ingredients);
             }else {
-                for (CustomMaterial material:ingredientsMaterial){
-                    JsonObject jsonobject = new JsonObject();
-                    jsonobject.addProperty("item","world_depth:"+material.getName());
-                    ingredients.add(jsonobject);
-                }
+                ingredients.add(Ingredient.of(ModItems.CHARGED_REDSTONE.get()).toJson());
+                JsonObject jsonobject = new JsonObject();
+                jsonobject.addProperty("item","world_depth:"+ingredientsMaterial[0].getName());
+                ingredients.add(jsonobject);
                 ingredients.add(Ingredient.of(ModItems.WORLD_GEM.get()).toJson());
+                jsonobject.addProperty("item","world_depth:"+ingredientsMaterial[1].getName());
+                ingredients.add(jsonobject);
                 for (int i=0;ingredients.size()<5;i++){
                     ingredients.add(Ingredient.of(ModItems.CHARGED_REDSTONE.get()).toJson());
                 }

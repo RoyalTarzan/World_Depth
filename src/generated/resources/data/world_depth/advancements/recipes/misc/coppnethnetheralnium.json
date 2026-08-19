@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coppnethnetheralnium_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:coppnethnetheralnium_block"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:coppnethnetheralnium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coppnethnetheralnium_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:coppnethnetheralnium"
+    ]
+  },
+  "sends_telemetry_event": false
+}

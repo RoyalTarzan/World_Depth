@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "world_depth:coppalumnium"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SS",
+    "T ",
+    "T "
+  ],
+  "result": {
+    "item": "world_depth:coppalumnium_hoe"
+  },
+  "show_notification": true
+}

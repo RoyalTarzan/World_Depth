@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:titgolcopnium_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titgolcopnium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:titgolcopnium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_titgolcopnium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:titgolcopnium_chestplate"
+    ]
+  },
+  "sends_telemetry_event": false
+}

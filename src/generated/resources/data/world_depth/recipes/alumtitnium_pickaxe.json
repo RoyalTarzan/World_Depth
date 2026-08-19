@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "world_depth:alumtitnium"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " T ",
+    " T "
+  ],
+  "result": {
+    "item": "world_depth:alumtitnium_pickaxe"
+  },
+  "show_notification": true
+}

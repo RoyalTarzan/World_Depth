@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "world_depth:coppnethcoppalnium"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "S S"
+  ],
+  "result": {
+    "item": "world_depth:coppnethcoppalnium_helmet"
+  },
+  "show_notification": true
+}

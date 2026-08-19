@@ -9,9 +9,12 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.biome.MobSpawnSettings;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.tarzan.world_depth.World_Depth;
 
 public class ModBiomes {
+    public static final ResourceKey<ConfiguredWorldCarver<?>> GIANT_CAVES= ResourceKey.create(Registries.CONFIGURED_CARVER,new ResourceLocation(World_Depth.MODID,"giant_caves"));
     public static final ResourceKey<Biome> DEEP_PLAINS= ResourceKey.create(Registries.BIOME,
             new ResourceLocation(World_Depth.MODID,"deep_plains"));
 
@@ -36,6 +39,7 @@ public class ModBiomes {
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
 
+        biomeBuilder.addCarver(GenerationStep.Carving.AIR, GIANT_CAVES);
         globalOverworldGeneration(biomeBuilder);
 
         return new Biome.BiomeBuilder()

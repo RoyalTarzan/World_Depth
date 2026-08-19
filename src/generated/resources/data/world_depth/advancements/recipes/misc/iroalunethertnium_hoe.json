@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iroalunethertnium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:iroalunethertnium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:iroalunethertnium_hoe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_iroalunethertnium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:iroalunethertnium_hoe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

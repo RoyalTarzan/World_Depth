@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_irogoalumtinium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:irogoalumtinium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:irogoalumtinium_pickaxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_irogoalumtinium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:irogoalumtinium_pickaxe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

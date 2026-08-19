@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_irotigolnethnium": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "world_depth:irotigolnethnium"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "world_depth:irotigolnethnium_leggings"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_irotigolnethnium",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "world_depth:irotigolnethnium_leggings"
+    ]
+  },
+  "sends_telemetry_event": false
+}

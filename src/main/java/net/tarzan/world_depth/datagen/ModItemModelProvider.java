@@ -122,6 +122,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.STOOK_SAPLING);
 
         for (CustomMaterial material: CustomMaterials.getAddedMaterials()) {
+            if (!material.create){continue;}
             customMaterialTextureGeneration(material.getName(),material.getColor());
             simpleItem(material.Item);
             evenSimplerBlockItem(material.Block);

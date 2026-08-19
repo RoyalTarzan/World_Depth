@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 8,
+    "targets": [
+      {
+        "state": {
+          "Name": "world_depth:granite_diamond_ore"
+        },
+        "target": {
+          "block": "minecraft:granite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:diorite_diamond_ore"
+        },
+        "target": {
+          "block": "minecraft:diorite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:tuff_diamond_ore"
+        },
+        "target": {
+          "block": "minecraft:tuff",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:andesite_diamond_ore"
+        },
+        "target": {
+          "block": "minecraft:andesite",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:soap_stone_diamond_ore"
+        },
+        "target": {
+          "block": "world_depth:soap_stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "world_depth:feryl_stone_diamond_ore"
+        },
+        "target": {
+          "block": "world_depth:feryl_stone",
+          "predicate_type": "minecraft:block_match"
+        }
+      }
+    ]
+  }
+}

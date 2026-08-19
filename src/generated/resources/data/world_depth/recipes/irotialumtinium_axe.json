@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "world_depth:irotialumtinium"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SS",
+    "TS",
+    "T "
+  ],
+  "result": {
+    "item": "world_depth:irotialumtinium_axe"
+  },
+  "show_notification": true
+}

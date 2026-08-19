@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "world_depth:alumgolnethnium"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SS",
+    "T ",
+    "T "
+  ],
+  "result": {
+    "item": "world_depth:alumgolnethnium_hoe"
+  },
+  "show_notification": true
+}

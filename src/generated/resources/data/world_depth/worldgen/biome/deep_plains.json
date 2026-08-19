@@ -1,6 +1,7 @@
 {
   "carvers": {
     "air": [
+      "world_depth:giant_caves",
       "minecraft:cave",
       "minecraft:cave_extra_underground",
       "minecraft:canyon"
@@ -31,22 +32,15 @@
     [],
     [],
     [
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_iron_small",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_lower",
-      "minecraft:ore_redstone",
-      "minecraft:ore_redstone_lower",
-      "minecraft:ore_diamond",
-      "minecraft:ore_diamond_large",
-      "minecraft:ore_diamond_buried",
-      "minecraft:ore_lapis",
-      "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper_large",
-      "minecraft:underwater_magma"
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff"
     ],
     [],
     [
@@ -54,11 +48,11 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal"
+      "minecraft:glow_lichen"
     ],
-    []
+    [
+      "minecraft:freeze_top_layer"
+    ]
   ],
   "has_precipitation": true,
   "spawn_costs": {},

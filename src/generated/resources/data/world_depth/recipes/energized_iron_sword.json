@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "world_depth:energized_iron"
+    },
+    "T": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "S",
+    "S",
+    "T"
+  ],
+  "result": {
+    "item": "world_depth:energized_iron_sword"
+  },
+  "show_notification": true
+}
