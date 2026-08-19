@@ -1,5 +1,5 @@
 {
-  "feature": "world_depth:ore_aluminium",
+  "feature": "world_depth:aluminium_ore",
   "placement": [
     {
       "type": "minecraft:count",

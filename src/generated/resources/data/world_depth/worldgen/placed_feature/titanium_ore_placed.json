@@ -1,5 +1,5 @@
 {
-  "feature": "world_depth:ore_titanium",
+  "feature": "world_depth:titanium_ore",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
@@ -11,9 +11,9 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:trapezoid",
+        "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 0
+          "absolute": 70
         },
         "min_inclusive": {
           "absolute": -512
