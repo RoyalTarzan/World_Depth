@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "world_depth:item/aluminium_sword",
+    "layer1": "world_depth:item/sword_base"
+  }
+}

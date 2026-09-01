@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.item.custom.ChargedFoods;
+import net.tarzan.world_depth.item.custom.Material;
 import net.tarzan.world_depth.item.custom.ModArmorItem;
 
 import java.util.function.Supplier;
@@ -92,6 +93,26 @@ public class ModItems {
     public static final RegistryObject<Item> TALIUM_BOOTS =ITEMS.register("talium_boots",
             ()->new ModArmorItem(ModArmorMaterials.TALIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> CUSTOM_MATERIAL =ITEMS.register("custom_material_base",
+            ()->new Material(new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_PICKAXE =ITEMS.register("custom_material_pickaxe_base",
+            ()->new Material.PickaxeMaterial(Tiers.IRON,1,1,new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_AXE =ITEMS.register("custom_material_axe_base",
+            ()->new Material.AxeMaterial(Tiers.IRON,1,1,new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_SWORD =ITEMS.register("custom_material_sword_base",
+            ()->new Material.SwordMaterial(Tiers.IRON,1,1,new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_HOE =ITEMS.register("custom_material_hoe_base",
+            ()->new Material.HoeMaterial(Tiers.IRON,1,1,new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_SHOVEL =ITEMS.register("custom_material_shovel_base",
+            ()->new Material.ShovelMaterial(Tiers.IRON,1,1,new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_HELMET =ITEMS.register("custom_material_helmet",
+            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_CHESTPLATE=ITEMS.register("custom_material_chestplate",
+            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_LEGGINGS =ITEMS.register("custom_material_leggings",
+            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> CUSTOM_MATERIAL_BOOTS =ITEMS.register("custom_material_boots",
+            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static RegistryObject<Item> register(String name, Supplier<? extends Item> itemProperties){
         return ITEMS.register(name,itemProperties);
@@ -109,11 +130,11 @@ public class ModItems {
                 ITEMS.register(name + "_boots", () -> new ModArmorItem(armorMaterial, ArmorItem.Type.BOOTS, new Item.Properties()))};
     }
 
-    public static RegistryObject<Item>[] registerToolSet(String name,Tier toolTier,int attackDamageModifier,int attackSpeedModifier){
-        return new RegistryObject[]{ITEMS.register(name + "_hoe", () -> new HoeItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties())),
-                ITEMS.register(name + "_axe", () -> new AxeItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties())),
-                ITEMS.register(name + "_pickaxe", () -> new PickaxeItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties())),
-                ITEMS.register(name + "_shovel", () -> new ShovelItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties())),
-                ITEMS.register(name + "_sword", () -> new SwordItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties()))};
+    public static void registerToolSet(String name, Tier toolTier, int attackDamageModifier, int attackSpeedModifier){
+        ITEMS.register(name + "_hoe", () -> new HoeItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name + "_axe", () -> new AxeItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name + "_pickaxe", () -> new PickaxeItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name + "_shovel", () -> new ShovelItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties()));
+        ITEMS.register(name + "_sword", () -> new SwordItem(toolTier, attackDamageModifier, attackSpeedModifier, new Item.Properties()));
     }
 }

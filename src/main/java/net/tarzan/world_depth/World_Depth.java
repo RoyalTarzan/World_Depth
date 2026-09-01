@@ -17,11 +17,11 @@ import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.block.entity.ModBlockEntities;
 import net.tarzan.world_depth.item.ModCreativeModeTabs;
 import net.tarzan.world_depth.item.ModItems;
-import net.tarzan.world_depth.materials.CustomMaterials;
 import net.tarzan.world_depth.recipe.ModRecipes;
 import net.tarzan.world_depth.screen.DeepLightScreen;
 import net.tarzan.world_depth.screen.EnergizerScreen;
 import net.tarzan.world_depth.screen.ModMenuTypes;
+import net.tarzan.world_depth.screen.ToolStationScreen;
 import net.tarzan.world_depth.villager.ModVillagers;
 import net.tarzan.world_depth.worldgen.tree.ModFoliagePlacerTypes;
 import net.tarzan.world_depth.worldgen.tree.ModTrunkPlacerTypes;
@@ -33,7 +33,6 @@ public class World_Depth {
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     public World_Depth() {
-        CustomMaterials.registerAll();
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -66,6 +65,7 @@ public class World_Depth {
         public static void onClientSetup(FMLClientSetupEvent event){
             MenuScreens.register(ModMenuTypes.ENERGIZER_MENU.get(), EnergizerScreen::new);
             MenuScreens.register(ModMenuTypes.DEEP_LIGHT_MENU.get(), DeepLightScreen::new);
+            MenuScreens.register(ModMenuTypes.TOOL_STATION_MENU.get(), ToolStationScreen::new);
         }
     }
 }

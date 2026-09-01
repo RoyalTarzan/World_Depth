@@ -18,17 +18,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.item.ModItems;
-import net.tarzan.world_depth.materials.CustomMaterial;
-import net.tarzan.world_depth.materials.CustomMaterials;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.color.ColorSpace;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorConvertOp;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class ModItemModelProvider extends ItemModelProvider {
@@ -120,19 +110,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.TITANIUM_PICKAXE);
 
         saplingItem(ModBlocks.STOOK_SAPLING);
-
-        for (CustomMaterial material: CustomMaterials.getAddedMaterials()) {
-            if (!material.create){continue;}
-            customMaterialTextureGeneration(material.getName(),material.getColor());
-            simpleItem(material.Item);
-            evenSimplerBlockItem(material.Block);
-            for (RegistryObject<Item> item:material.Tools){
-                handheldItem(item);
-            }
-            for (RegistryObject<Item> item: material.Armour){
-                trimmedArmorItem(item);
-            }
-        }
     }
 
     public void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
@@ -221,69 +198,4 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(World_Depth.MODID,"item/" + item.getId().getPath()));
     }
 
-    private void customMaterialTextureGeneration(String name, Color colour){
-        try {
-            String srcItemDir = "C:\\Users\\royal\\zelf gemaakte mods\\forge-test mod\\src\\main\\resources\\assets\\world_depth\\textures\\item", srcBlockDir = "C:\\Users\\royal\\zelf gemaakte mods\\forge-test mod\\src\\main\\resources\\assets\\world_depth\\textures\\block",
-                    srcArmourDir="C:\\Users\\royal\\zelf gemaakte mods\\forge-test mod\\src\\main\\resources\\assets\\world_depth\\textures\\models\\armor";
-
-            BufferedImage ingot =ImageIO.read(new File(srcItemDir,"aluminium.png")),
-                    block =ImageIO.read(new File(srcBlockDir, "aluminium_block.png")),
-                    sword =ImageIO.read(new File(srcItemDir, "aluminium_sword.png")),
-                    axe =ImageIO.read(new File(srcItemDir, "aluminium_axe.png")),
-                    pickaxe =ImageIO.read(new File(srcItemDir, "aluminium_pickaxe.png")),
-                    hoe = ImageIO.read(new File(srcItemDir, "aluminium_hoe.png")),
-                    shovel =ImageIO.read(new File(srcItemDir, "aluminium_shovel.png")),
-                    helmet = ImageIO.read(new File(srcItemDir, "aluminium_helmet.png")),
-                    chestplate = ImageIO.read(new File(srcItemDir, "aluminium_chestplate.png")),
-                    leggings = ImageIO.read(new File(srcItemDir, "aluminium_leggings.png")),
-                    boots = ImageIO.read(new File(srcItemDir, "aluminium_boots.png")),
-                    armourLayer1=ImageIO.read(new File(srcArmourDir, "aluminium_layer_1.png")),
-                    armourLayer2=ImageIO.read(new File(srcArmourDir, "aluminium_layer_2.png"));
-            ArrayList< BufferedImage> imga=new ArrayList<>();
-            if (!new File(srcItemDir,name+".png").exists()){imga.add(ingot);}else {imga.add(null);}
-            if (!new File(srcBlockDir,name+"_block.png").exists()){imga.add(block);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_sword.png").exists()){imga.add(sword);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_axe.png").exists()){imga.add(axe);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_pickaxe.png").exists()){imga.add(pickaxe);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_hoe.png").exists()){imga.add(hoe);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_shovel.png").exists()){imga.add(shovel);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_helmet.png").exists()){imga.add(helmet);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_chestplate.png").exists()){imga.add(chestplate);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_leggings.png").exists()){imga.add(leggings);}else {imga.add(null);}
-            if (!new File(srcItemDir,name+"_boots.png").exists()){imga.add(boots);}else {imga.add(null);}
-            if (!new File(srcArmourDir,name+"_layer_1.png").exists()){imga.add(armourLayer1);}else {imga.add(null);}
-            if (!new File(srcArmourDir,name+"_layer_2.png").exists()){imga.add(armourLayer2);}else {imga.add(null);}
-
-            ColorConvertOp rgb=new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_sRGB),null);
-            for (int i=0;i<imga.size();i++){
-                if (imga.get(i)==null){continue;}
-                int[] pixels= imga.get(i).getRGB(0,0, imga.get(i).getWidth(), imga.get(i).getHeight(), (int[]) null,0, imga.get(i).getWidth());
-                imga.set(i, rgb.filter(imga.get(i), null));
-                for (int j=0;j<pixels.length;j++){
-                    if (pixels[j]==0){continue;}
-                    Color pixelrgb=new Color(pixels[j]);
-                    int red=pixelrgb.getRed()*colour.getRed()/255;
-                    int green=pixelrgb.getGreen()*colour.getGreen()/255;
-                    int blue=pixelrgb.getBlue()*colour.getBlue()/255;
-                    pixelrgb=new Color(red,green,blue);
-                    pixels[j]=pixelrgb.getRGB();
-                }
-                imga.get(i).setRGB(0,0, imga.get(i).getWidth(), imga.get(i).getHeight(),pixels,0, imga.get(i).getWidth());
-            }
-
-            if(imga.get(0)!=null){ImageIO.write(imga.get(0), "png", new File(srcItemDir, name+".png"));}
-            if(imga.get(1)!=null){ImageIO.write(imga.get(1), "png", new File(srcBlockDir, name + "_block.png"));}
-            if(imga.get(2)!=null){ImageIO.write(imga.get(2), "png", new File(srcItemDir, name + "_sword.png"));}
-            if(imga.get(3)!=null){ImageIO.write(imga.get(3), "png", new File(srcItemDir, name + "_axe.png"));}
-            if(imga.get(4)!=null){ImageIO.write(imga.get(4), "png", new File(srcItemDir, name + "_pickaxe.png"));}
-            if(imga.get(5)!=null){ImageIO.write(imga.get(5), "png", new File(srcItemDir, name + "_hoe.png"));}
-            if(imga.get(6)!=null){ImageIO.write(imga.get(6), "png", new File(srcItemDir, name + "_shovel.png"));}
-            if(imga.get(7)!=null){ImageIO.write(imga.get(7), "png", new File(srcItemDir, name + "_helmet.png"));}
-            if(imga.get(8)!=null){ImageIO.write(imga.get(8), "png", new File(srcItemDir, name + "_chestplate.png"));}
-            if(imga.get(9)!=null){ImageIO.write(imga.get(9), "png", new File(srcItemDir, name + "_leggings.png"));}
-            if(imga.get(10)!=null){ImageIO.write(imga.get(10), "png", new File(srcItemDir, name + "_boots.png"));}
-            if(imga.get(11)!=null){ImageIO.write(imga.get(11), "png", new File(srcArmourDir, name + "_layer_1.png"));}
-            if(imga.get(12)!=null){ImageIO.write(imga.get(12), "png", new File(srcArmourDir, name + "_layer_2.png"));}
-            }catch (IOException ignored){}
-    }
 }

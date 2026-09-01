@@ -13,8 +13,7 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.block.ModBlocks;
 import net.tarzan.world_depth.item.ModItems;
-import net.tarzan.world_depth.materials.CustomMaterial;
-import net.tarzan.world_depth.materials.CustomMaterials;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
@@ -32,6 +31,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RAW_ALUMINIUM_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_TITANIUM_BLOCK.get());
         this.dropSelf(ModBlocks.ENERGIZER.get());
+        this.dropSelf(ModBlocks.TOOL_STATION.get());
         this.dropSelf(ModBlocks.CHARGED_REDSTONE_BLOCK.get());
         this.dropSelf(ModBlocks.COBBLED_SOAP_STONE.get());
         this.dropSelf(ModBlocks.COBBLED_FERYL_STONE.get());
@@ -68,14 +68,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.COBBLED_SOAP_STONE_STAIRS.get());
         this.add(ModBlocks.COBBLED_SOAP_STONE_SLAB.get(), block -> createSlabItemTable(ModBlocks.COBBLED_SOAP_STONE_SLAB.get()));
 
-        this.add(ModBlocks.ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.ALUMINIUM_ORE.get()));
-        this.add(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get()));
-        this.add(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get()));
-        this.add(ModBlocks.GRANITE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.GRANITE_ALUMINIUM_ORE  .get()));
-        this.add(ModBlocks.DIORITE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.DIORITE_ALUMINIUM_ORE.get()));
-        this.add(ModBlocks.ANDESITE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.ANDESITE_ALUMINIUM_ORE.get()));
-        this.add(ModBlocks.TUFF_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.TUFF_ALUMINIUM_ORE.get()));
-        this.add(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), block -> createAlumiuniumOreDrops(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.DEEPSLATE_ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.SOAP_STONE_ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.GRANITE_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.GRANITE_ALUMINIUM_ORE  .get()));
+        this.add(ModBlocks.DIORITE_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.DIORITE_ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.ANDESITE_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.ANDESITE_ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.TUFF_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.TUFF_ALUMINIUM_ORE.get()));
+        this.add(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get(), block -> createAluminiumOreDrops(ModBlocks.FERYL_STONE_ALUMINIUM_ORE.get()));
 
         this.add(ModBlocks.GRANITE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.GRANITE_COAL_ORE.get(), Items.COAL));
         this.add(ModBlocks.DIORITE_COAL_ORE.get(), block -> createOreDrop(ModBlocks.DIORITE_COAL_ORE.get(), Items.COAL));
@@ -141,13 +141,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.ANDESITE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.ANDESITE_TITANIUM_ORE.get()));
         this.add(ModBlocks.SOAP_STONE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.SOAP_STONE_TITANIUM_ORE.get()));
         this.add(ModBlocks.FERYL_STONE_TITANIUM_ORE.get(), block -> createTitaniumOreDrops(ModBlocks.FERYL_STONE_TITANIUM_ORE.get()));
-
-        for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
-            if (!material.create){continue;}
-            this.dropSelf(material.Block.get());
-        }
     }
-    protected LootTable.Builder createAlumiuniumOreDrops(Block pBlock) {
+    protected LootTable.Builder createAluminiumOreDrops(Block pBlock) {
         return createSilkTouchDispatchTable(pBlock,
                 this.applyExplosionDecay(pBlock,
                         LootItem.lootTableItem(ModItems.RAW_ALUMINIUM.get())
@@ -163,7 +158,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     @Override
-    protected Iterable<Block> getKnownBlocks(){
+    protected @NotNull Iterable<Block> getKnownBlocks(){
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 }

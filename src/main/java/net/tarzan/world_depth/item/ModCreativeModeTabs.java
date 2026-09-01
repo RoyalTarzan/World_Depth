@@ -60,6 +60,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.DEEP_LIGHT.get());
 
                         output.accept(ModBlocks.ENERGIZER.get());
+                        output.accept(ModBlocks.TOOL_STATION.get());
                         output.accept(ModItems.WORLD_GEM.get());
                         output.accept(ModItems.LIGHT_GEM.get());
 

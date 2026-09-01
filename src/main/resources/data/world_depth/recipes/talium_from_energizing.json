@@ -2,7 +2,7 @@
   "type": "world_depth:energizing",
   "ingredients": [
     {
-    "item": "world_depth:charged_redstone"
+      "item": "world_depth:charged_redstone"
     },
     {
       "item": "world_depth:aluminium"

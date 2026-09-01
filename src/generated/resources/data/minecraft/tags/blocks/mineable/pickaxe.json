@@ -26,6 +26,7 @@
     "world_depth:cobbled_feryl_pressure_plate",
     "world_depth:cobbled_feryl_stairs",
     "world_depth:energizer",
+    "world_depth:tool_station",
     "#world_depth:added_ores",
     "#minecraft:walls"
   ]

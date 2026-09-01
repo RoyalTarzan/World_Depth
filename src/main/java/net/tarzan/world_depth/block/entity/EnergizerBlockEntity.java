@@ -60,6 +60,7 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
     private int maxRedstone=500;
     private int chargedRedstoneAmount=0;
     private int maxChargedRedstone=500;
+    private final int redstoneAndChargedRedstone=125;
 
     public EnergizerBlockEntity( BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.ENERGIZER_BE.get(),pPos, pBlockState);
@@ -121,17 +122,18 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i,itemHandler.getStackInSlot(i));
         }
 
+        assert this.level != null;
         Containers.dropContents(this.level,this.worldPosition,inventory);
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NotNull Component getDisplayName() {
         return Component.translatable("block.world_depth.energizer");
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory inventory, Player player) {
+    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory inventory, @NotNull Player player) {
         return new EnergizerMenu(pContainerId, inventory, this, this.data);
     }
 
@@ -146,7 +148,7 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public void load(CompoundTag pTag) {
+    public void load(@NotNull CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
         progress=pTag.getInt("energizer.progress");
@@ -157,7 +159,7 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
     public void tick(Level pLevel, BlockPos blockPos, BlockState pState) {
         redstoneIncrease();
         chargedRedstoneIncrease();
-        if(hasRecipe()){
+        if(hasRecipe()||containsCustomMaterialsIngredients()){
             increaseCraftingProgress();
             setChanged(pLevel, blockPos, pState);
 
@@ -192,8 +194,8 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
 
     private void craftItem() {
         Optional<EnergizerRecipe> recipe= getCurrentRecipe();
-        ItemStack result=recipe.get().getResultItem(null);
-        if(redstoneAmount >= recipe.get().getRedstoneNeeded() && chargedRedstoneAmount>=recipe.get().getChargedRedstoneNeeded()){
+        if(recipe.isPresent() && redstoneAmount >= recipe.get().getRedstoneNeeded() && chargedRedstoneAmount>=recipe.get().getChargedRedstoneNeeded()){
+            ItemStack result=recipe.get().getResultItem(null);
 
             this.itemHandler.extractItem(INPUT_SLOT_1,1,false);
             this.itemHandler.extractItem(INPUT_SLOT_2,1,false);
@@ -206,7 +208,57 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
 
             this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                     this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount()+result.getCount()));
+        } else if (redstoneAmount >= redstoneAndChargedRedstone && chargedRedstoneAmount >= redstoneAndChargedRedstone&& containsCustomMaterialsIngredients()) {
+
+            ItemStack result=new ItemStack(ModItems.CUSTOM_MATERIAL.get(),
+                    this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount()+1);
+            CompoundTag nbt=result.getOrCreateTag();
+            CompoundTag nbtParent1=this.itemHandler.getStackInSlot(INPUT_SLOT_2).getOrCreateTag();
+            CompoundTag nbtParent2=this.itemHandler.getStackInSlot(INPUT_SLOT_4).getOrCreateTag();
+            String[] nbtTags=new String[]{"speed","swim_speed","damage","dig_speed","move_speed","health","armor","knockback_res","durability"};
+            for (String nbtTag : nbtTags) {
+                if (nbtParent1.contains(nbtTag)&&nbtParent2.contains(nbtTag)) nbt.putInt(nbtTag, (int) ((nbtParent1.getInt(nbtTag)+nbtParent2.getInt(nbtTag))/1.5));
+                else if (nbtParent1.contains(nbtTag)) {
+                    nbt.putInt(nbtTag, (int) ((nbtParent1.getInt(nbtTag)+1)/0.75));
+                } else if (nbtParent2.contains(nbtTag)) {
+                    nbt.putInt(nbtTag, (int) ((nbtParent2.getInt(nbtTag)+1)/0.75));
+                }else {
+                    nbt.putInt(nbtTag,1);
+                }
+            }
+            if (nbtParent1.contains("color")&&nbtParent2.contains("color")) nbt.putInt("color",blendColors(nbtParent1.getInt("color"),nbtParent2.getInt("color")));
+            result.setTag(nbt);
+            if (this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(ModItems.CUSTOM_MATERIAL.get())){
+                CompoundTag nbtOutput=this.itemHandler.getStackInSlot(OUTPUT_SLOT).getOrCreateTag();
+                var ref = new Object() {
+                    boolean equals = true;
+                };
+                nbt.getAllKeys().forEach((key)->{
+                    if(nbtOutput.contains(key)){
+                        if(nbtOutput.get(key)!=nbt.get(key)){
+                            ref.equals=false;
+                        }
+                    }else {
+                        ref.equals =false;
+                    }
+                });
+                if (!ref.equals){return;}
+            }
+            redstoneAmount-=redstoneAndChargedRedstone;
+            chargedRedstoneAmount-=redstoneAndChargedRedstone;
+
+            this.itemHandler.extractItem(INPUT_SLOT_1,1,false);
+            this.itemHandler.extractItem(INPUT_SLOT_2,1,false);
+            this.itemHandler.extractItem(INPUT_SLOT_3,1,false);
+            this.itemHandler.extractItem(INPUT_SLOT_4,1,false);
+            this.itemHandler.extractItem(INPUT_SLOT_5,1,false);
+
+            this.itemHandler.setStackInSlot(OUTPUT_SLOT,result);
         }
+    }
+
+    private boolean containsCustomMaterialsIngredients() {
+        return this.itemHandler.getStackInSlot(INPUT_SLOT_3).getItem() == ModItems.WORLD_GEM.get() && this.itemHandler.getStackInSlot(INPUT_SLOT_1).getItem() == ModItems.CHARGED_REDSTONE.get() && this.itemHandler.getStackInSlot(INPUT_SLOT_5).getItem() == ModItems.CHARGED_REDSTONE.get() && this.itemHandler.getStackInSlot(INPUT_SLOT_4).is(ModItems.CUSTOM_MATERIAL.get()) && this.itemHandler.getStackInSlot(INPUT_SLOT_2).is(ModItems.CUSTOM_MATERIAL.get());
     }
 
     private void resetProgress() {
@@ -218,7 +270,10 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     private void increaseCraftingProgress() {
-        if(redstoneAmount >= getCurrentRecipe().get().getRedstoneNeeded() && chargedRedstoneAmount>=getCurrentRecipe().get().getChargedRedstoneNeeded()) {
+        Optional<EnergizerRecipe> recipe=getCurrentRecipe();
+        if(recipe.isPresent()&& redstoneAmount >= recipe.get().getRedstoneNeeded() && chargedRedstoneAmount>=recipe.get().getChargedRedstoneNeeded()) {
+            progress++;
+        }else if(redstoneAmount >= redstoneAndChargedRedstone && chargedRedstoneAmount >= redstoneAndChargedRedstone&& containsCustomMaterialsIngredients()){
             progress++;
         }
     }
@@ -231,7 +286,7 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
         }
         ItemStack result=recipe.get().getResultItem(null);
 
-        return recipe.isPresent() && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
     }
 
     private Optional<EnergizerRecipe> getCurrentRecipe() {
@@ -240,6 +295,7 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i,this.itemHandler.getStackInSlot(i));
         }
 
+        assert this.level != null;
         return this.level.getRecipeManager().getRecipeFor(EnergizerRecipe.Type.INSTANCE, inventory, level);
     }
 
@@ -251,5 +307,10 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
         return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount()+count<=this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
 
-
+    private int blendColors(int color1,int color2){
+        int r= (((color1>>16)&0xFF)+((color2>>16)&0xFF))/2;
+        int g= (((color1>>8)&0xFF)+((color2>>8)&0xFF))/2;
+        int b= (((color1)&0xFF)+((color2)&0xFF))/2;
+        return (r<<8|g)<<8|b;
+    }
 }

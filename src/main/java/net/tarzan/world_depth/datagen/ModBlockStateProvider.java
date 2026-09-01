@@ -10,16 +10,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.ModBlocks;
-import net.tarzan.world_depth.materials.CustomMaterial;
-import net.tarzan.world_depth.materials.CustomMaterials;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.color.ColorSpace;
-import java.awt.image.BufferedImage;
-import java.awt.image.ColorConvertOp;
-import java.io.File;
-import java.io.IOException;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -153,42 +145,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STOOK_WOOD);
 
         simpleBlockWithItem(ModBlocks.ENERGIZER.get(),new ModelFile.UncheckedModelFile(modLoc("block/energizer")));
-
-        for (CustomMaterial material: CustomMaterials.getAddedMaterials()){
-            if (!material.create){continue;}
-            String srcBlockDir = "C:\\Users\\royal\\zelf gemaakte mods\\forge-test mod\\src\\main\\resources\\assets\\world_depth\\textures\\block";
-            ColorConvertOp rgb=new ColorConvertOp(ColorSpace.getInstance(ColorSpace.CS_sRGB),null);
-            BufferedImage block;
-            try {
-                block = ImageIO.read(new File(srcBlockDir, "aluminium_block.png"));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            if (!new File(srcBlockDir, material.getName()+"_block.png").exists()) {
-                int[] pixels = block.getRGB(0, 0, block.getWidth(), block.getHeight(), (int[]) null, 0, block.getWidth());
-                block = rgb.filter(block, null);
-                int c = 0;
-                for (int j = 0; j < pixels.length; j++) {
-                    if (pixels[j] == 0) {
-                        continue;
-                    }
-                    Color pixelrgb = new Color(pixels[j]);
-                    int red = pixelrgb.getRed() * material.getColor().getRed() / 255;
-                    int green = pixelrgb.getGreen() * material.getColor().getGreen() / 255;
-                    int blue = pixelrgb.getBlue() * material.getColor().getBlue() / 255;
-                    pixelrgb = new Color(red, green, blue);
-                    pixels[j] = pixelrgb.getRGB();
-                }
-                block.setRGB(0, 0, block.getWidth(), block.getHeight(), pixels, 0, block.getWidth());
-
-                try {
-                    ImageIO.write(block, "png", new File(srcBlockDir, material.getName() + "_block.png"));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-            blockWithItem(material.Block);
-        }
+        simpleBlockWithItem(ModBlocks.TOOL_STATION.get(),new ModelFile.UncheckedModelFile(modLoc("block/tool_station")));
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

@@ -18,6 +18,9 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<DeepLightBlockEntity>> DEEP_LIGHT_BE=
             BLOCK_ENTITIES.register("deep_light_be",()->
                     BlockEntityType.Builder.of(DeepLightBlockEntity::new, ModBlocks.DEEP_LIGHT.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ToolStationBlockEntity>> TOOL_STATION_BE=
+            BLOCK_ENTITIES.register("tool_station_be",()->
+                    BlockEntityType.Builder.of(ToolStationBlockEntity::new, ModBlocks.TOOL_STATION.get()).build(null));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);

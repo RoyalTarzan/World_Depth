@@ -19,6 +19,7 @@ import net.tarzan.world_depth.World_Depth;
 import net.tarzan.world_depth.block.custom.DeepLightBlock;
 import net.tarzan.world_depth.block.custom.EnergizerBlock;
 import net.tarzan.world_depth.block.custom.ModFlammableRotatedPillarBlock;
+import net.tarzan.world_depth.block.custom.ToolStationBlock;
 import net.tarzan.world_depth.item.ModItems;
 import net.tarzan.world_depth.worldgen.tree.StookTreeGrower;
 
@@ -288,6 +289,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DEEP_LIGHT=registerBlock("deep_light",
             ()-> new DeepLightBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).strength(0.3F).sound(SoundType.NETHERITE_BLOCK)));
+    public static final RegistryObject<Block> TOOL_STATION = registerBlock("tool_station",
+            ()-> new ToolStationBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(1f).sound(SoundType.AMETHYST)));
 
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn=BLOCKS.register(name, block);
