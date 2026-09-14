@@ -97,6 +97,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.TALIUM_LEGGINGS);
         trimmedArmorItem(ModItems.TALIUM_BOOTS);
 
+        trimmedArmorItem(ModItems.CUSTOM_MATERIAL_HELMET);
+        trimmedArmorItem(ModItems.CUSTOM_MATERIAL_CHESTPLATE);
+        trimmedArmorItem(ModItems.CUSTOM_MATERIAL_LEGGINGS);
+        trimmedArmorItem(ModItems.CUSTOM_MATERIAL_BOOTS);
+
         handheldItem(ModItems.ALUMINIUM_AXE);
         handheldItem(ModItems.ALUMINIUM_HOE);
         handheldItem(ModItems.ALUMINIUM_SWORD);

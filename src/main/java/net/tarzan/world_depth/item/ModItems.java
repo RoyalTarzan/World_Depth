@@ -106,13 +106,13 @@ public class ModItems {
     public static final RegistryObject<Item> CUSTOM_MATERIAL_SHOVEL =ITEMS.register("custom_material_shovel_base",
             ()->new Material.ShovelMaterial(Tiers.IRON,1,1,new Item.Properties()));
     public static final RegistryObject<Item> CUSTOM_MATERIAL_HELMET =ITEMS.register("custom_material_helmet",
-            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.HELMET, new Item.Properties()));
+            ()->new Material.ArmorMaterial(ModArmorMaterials.ALUMINIUM, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<Item> CUSTOM_MATERIAL_CHESTPLATE=ITEMS.register("custom_material_chestplate",
-            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            ()->new Material.ArmorMaterial(ModArmorMaterials.ALUMINIUM, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<Item> CUSTOM_MATERIAL_LEGGINGS =ITEMS.register("custom_material_leggings",
-            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            ()->new Material.ArmorMaterial(ModArmorMaterials.ALUMINIUM, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> CUSTOM_MATERIAL_BOOTS =ITEMS.register("custom_material_boots",
-            ()->new Material.ArmorMaterial(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
+            ()->new Material.ArmorMaterial(ModArmorMaterials.ALUMINIUM, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static RegistryObject<Item> register(String name, Supplier<? extends Item> itemProperties){
         return ITEMS.register(name,itemProperties);

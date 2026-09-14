@@ -29,6 +29,8 @@ import net.tarzan.world_depth.screen.EnergizerMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
@@ -209,40 +211,15 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
             this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                     this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount()+result.getCount()));
         } else if (redstoneAmount >= redstoneAndChargedRedstone && chargedRedstoneAmount >= redstoneAndChargedRedstone&& containsCustomMaterialsIngredients()) {
-
+            ItemStack parent1=this.itemHandler.getStackInSlot(INPUT_SLOT_2);
+            ItemStack parent2=this.itemHandler.getStackInSlot(INPUT_SLOT_4);
             ItemStack result=new ItemStack(ModItems.CUSTOM_MATERIAL.get(),
                     this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount()+1);
-            CompoundTag nbt=result.getOrCreateTag();
-            CompoundTag nbtParent1=this.itemHandler.getStackInSlot(INPUT_SLOT_2).getOrCreateTag();
-            CompoundTag nbtParent2=this.itemHandler.getStackInSlot(INPUT_SLOT_4).getOrCreateTag();
-            String[] nbtTags=new String[]{"speed","swim_speed","damage","dig_speed","move_speed","health","armor","knockback_res","durability"};
-            for (String nbtTag : nbtTags) {
-                if (nbtParent1.contains(nbtTag)&&nbtParent2.contains(nbtTag)) nbt.putInt(nbtTag, (int) ((nbtParent1.getInt(nbtTag)+nbtParent2.getInt(nbtTag))/1.5));
-                else if (nbtParent1.contains(nbtTag)) {
-                    nbt.putInt(nbtTag, (int) ((nbtParent1.getInt(nbtTag)+1)/0.75));
-                } else if (nbtParent2.contains(nbtTag)) {
-                    nbt.putInt(nbtTag, (int) ((nbtParent2.getInt(nbtTag)+1)/0.75));
-                }else {
-                    nbt.putInt(nbtTag,1);
-                }
-            }
-            if (nbtParent1.contains("color")&&nbtParent2.contains("color")) nbt.putInt("color",blendColors(nbtParent1.getInt("color"),nbtParent2.getInt("color")));
+            CompoundTag nbt = getNbt(result, parent1, parent2);
             result.setTag(nbt);
             if (this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(ModItems.CUSTOM_MATERIAL.get())){
                 CompoundTag nbtOutput=this.itemHandler.getStackInSlot(OUTPUT_SLOT).getOrCreateTag();
-                var ref = new Object() {
-                    boolean equals = true;
-                };
-                nbt.getAllKeys().forEach((key)->{
-                    if(nbtOutput.contains(key)){
-                        if(nbtOutput.get(key)!=nbt.get(key)){
-                            ref.equals=false;
-                        }
-                    }else {
-                        ref.equals =false;
-                    }
-                });
-                if (!ref.equals){return;}
+                if (!nbt.equals(nbtOutput))return;
             }
             redstoneAmount-=redstoneAndChargedRedstone;
             chargedRedstoneAmount-=redstoneAndChargedRedstone;
@@ -257,8 +234,119 @@ public class EnergizerBlockEntity extends BlockEntity implements MenuProvider {
         }
     }
 
+    private @NotNull CompoundTag getNbt(ItemStack result, ItemStack parent1, ItemStack parent2) {
+        String[] nbtTags=new String[]{"speed","swim_speed","damage","dig_speed","move_speed","health","armor","knockback_res","durability"};
+        CompoundTag nbt= result.getOrCreateTag();
+        CompoundTag nbtParent1= putNbt(parent1);
+        CompoundTag nbtParent2= putNbt(parent2);
+        for (String nbtTag : nbtTags) {
+            if (nbtParent1.contains(nbtTag)&&nbtParent2.contains(nbtTag)) nbt.putInt(nbtTag, (int) Math.ceil((nbtParent1.getInt(nbtTag)+nbtParent2.getInt(nbtTag))/1.5));
+            else if (nbtParent1.contains(nbtTag)) {
+                nbt.putInt(nbtTag, (int) Math.ceil((nbtParent1.getInt(nbtTag)+1)/0.75));
+            } else if (nbtParent2.contains(nbtTag)) {
+                nbt.putInt(nbtTag, (int) Math.ceil((nbtParent2.getInt(nbtTag)+1)/0.75));
+            }else {
+                nbt.putInt(nbtTag,1);
+            }
+        }
+        if (nbtParent1.contains("color")&&nbtParent2.contains("color")) nbt.putInt("color",blendColors(nbtParent1.getInt("color"),nbtParent2.getInt("color")));
+        if (nbtParent1.contains("name")&&nbtParent2.contains("name")){
+            String name1=nbtParent1.getString("name");
+            String name2=nbtParent1.getString("name");
+            String name;
+            if (name1.equals(name2)){
+                name="Energized "+name1;
+            }else {
+                name1=name1.replace("Energized ","");
+                name2=name2.replace("Energized ","");
+                if (name1.equals(name2)){
+                    name="Half Energized "+name1;
+                }else{
+                    name=name1.substring(0,name1.length()/2+1)+name2.toLowerCase().substring(name2.length()/2+1);
+                }
+            }
+            nbt.putString("name",name);
+            CompoundTag nbt1=new CompoundTag();
+            nbt1.putString("Name","{\"text\":\""+name+" Ingot\",\"italic\":false}");
+            nbt.put("display",nbt1);
+        }
+        return nbt;
+    }
+
+
+    public CompoundTag putNbt(ItemStack item){
+        CompoundTag nbt1= item.getTag();
+        if (nbt1==null){
+            nbt1=new CompoundTag();
+        }
+        if (item.is(Items.COPPER_INGOT)){
+            nbt1.putString("name","Copper");
+            nbt1.putInt("color", Color.ORANGE.getRGB());
+            nbt1.putInt("swim_speed",0);
+            nbt1.putInt("durability",2031);
+            nbt1.putInt("speed",1);
+            nbt1.putInt("damage",1);
+            nbt1.putInt("dig_speed",1);
+            nbt1.putInt("health",2);
+            nbt1.putInt("armor",3);
+            nbt1.putInt("knockback_res",0);
+            nbt1.putDouble("move_speed",0.6);
+        } else if (item.is(Items.IRON_INGOT)) {
+            nbt1.putString("name","Iron");
+            nbt1.putInt("color", Color.LIGHT_GRAY.getRGB());
+            nbt1.putInt("swim_speed",0);
+            nbt1.putInt("durability",191);
+            nbt1.putInt("speed",1);
+            nbt1.putInt("damage",2);
+            nbt1.putInt("dig_speed",1);
+            nbt1.putInt("health",1);
+            nbt1.putInt("armor",4);
+            nbt1.putInt("knockback_res",0);
+            nbt1.putDouble("move_speed",0.5);
+        } else if (item.is(Items.GOLD_INGOT)) {
+            nbt1.putString("name","Gold");
+            nbt1.putInt("color", Color.YELLOW.getRGB());
+            nbt1.putInt("swim_speed",0);
+            nbt1.putInt("durability",32);
+            nbt1.putInt("speed",1);
+            nbt1.putInt("damage",1);
+            nbt1.putInt("dig_speed",3);
+            nbt1.putInt("health",4);
+            nbt1.putInt("armor",3);
+            nbt1.putInt("knockback_res",0);
+            nbt1.putDouble("move_speed",1.1);
+        } else if (item.is(Items.NETHERITE_INGOT)) {
+            nbt1.putString("name","Netherite");
+            nbt1.putInt("color", Color.BLACK.getRGB());
+            nbt1.putInt("swim_speed",0);
+            nbt1.putInt("durability",2031);
+            nbt1.putInt("speed",1);
+            nbt1.putInt("damage",3);
+            nbt1.putInt("dig_speed",2);
+            nbt1.putInt("health",3);
+            nbt1.putInt("armor",5);
+            nbt1.putInt("knockback_res",4);
+            nbt1.putDouble("move_speed",0.2);
+        }else {
+            return nbt1;
+        }
+        return nbt1;
+    }
+
     private boolean containsCustomMaterialsIngredients() {
-        return this.itemHandler.getStackInSlot(INPUT_SLOT_3).getItem() == ModItems.WORLD_GEM.get() && this.itemHandler.getStackInSlot(INPUT_SLOT_1).getItem() == ModItems.CHARGED_REDSTONE.get() && this.itemHandler.getStackInSlot(INPUT_SLOT_5).getItem() == ModItems.CHARGED_REDSTONE.get() && this.itemHandler.getStackInSlot(INPUT_SLOT_4).is(ModItems.CUSTOM_MATERIAL.get()) && this.itemHandler.getStackInSlot(INPUT_SLOT_2).is(ModItems.CUSTOM_MATERIAL.get());
+        ItemStack stack1=this.itemHandler.getStackInSlot(INPUT_SLOT_1);
+        ItemStack stack2=this.itemHandler.getStackInSlot(INPUT_SLOT_2);
+        ItemStack stack3=this.itemHandler.getStackInSlot(INPUT_SLOT_3);
+        ItemStack stack4=this.itemHandler.getStackInSlot(INPUT_SLOT_4);
+        ItemStack stack5=this.itemHandler.getStackInSlot(INPUT_SLOT_5);
+        ArrayList<Item> ingots=new ArrayList<>();
+        ingots.add(Items.IRON_INGOT);ingots.add(Items.NETHERITE_INGOT);ingots.add(Items.GOLD_INGOT);ingots.add(Items.COPPER_INGOT);ingots.add(ModItems.CUSTOM_MATERIAL.get());
+
+        return stack3.is(ModItems.WORLD_GEM.get()) &&
+                stack1.is(ModItems.CHARGED_REDSTONE.get()) &&
+                stack5.is(ModItems.CHARGED_REDSTONE.get()) &&
+                (ingots.contains(stack4.getItem()))&&
+                ingots.contains(stack2.getItem());
     }
 
     private void resetProgress() {

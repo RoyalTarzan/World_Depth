@@ -96,7 +96,7 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
         pTag.put("inventory",itemHandler.serializeNBT());
         pTag.putInt("tool_station.progress",progress);
         pTag.putInt("tool_station.charged_redstone",chargedRedstone);
-        pTag.putInt("tool_station.craft_type",CraftType.getAsInt(this.craftType));
+        pTag.putInt("tool_station.craft_type",this.craftType==null? 9:CraftType.getAsInt(this.craftType));
     }
 
     @Override
@@ -177,6 +177,9 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
+                if (materialStack.getTag().contains("name")){
+                    nbt.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Pickaxe\",\"italic\":false}");
+                }
                 if (materialStack.getTag().contains("damage"))nbt.putInt("damage",materialStack.getTag().getInt("damage"));else nbt.putInt("damage",1);
                 if (materialStack.getTag().contains("speed"))nbt.putInt("speed",materialStack.getTag().getInt("speed"));else nbt.putInt("speed",1);
                 if (materialStack.getTag().contains("durability"))nbt.putInt("durability",materialStack.getTag().getInt("durability"));else nbt.putInt("durability",100);
@@ -195,6 +198,9 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
+                if (materialStack.getTag().contains("name")){
+                    nbt.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Axe\",\"italic\":false}");
+                }
                 if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
                 if (materialStack.getTag().contains("damage"))nbt.putInt("damage",materialStack.getTag().getInt("damage"));else nbt.putInt("damage",1);
                 if (materialStack.getTag().contains("speed"))nbt.putInt("speed",materialStack.getTag().getInt("speed"));else nbt.putInt("speed",1);
@@ -213,6 +219,9 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
+                if (materialStack.getTag().contains("name")){
+                    nbt.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Sword\",\"italic\":false}");
+                }
                 if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
                 if (materialStack.getTag().contains("damage"))nbt.putInt("damage",materialStack.getTag().getInt("damage"));else nbt.putInt("damage",1);
                 if (materialStack.getTag().contains("speed"))nbt.putInt("speed",materialStack.getTag().getInt("speed"));else nbt.putInt("speed",1);
@@ -230,6 +239,9 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
+                if (materialStack.getTag().contains("name")){
+                    nbt.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Hoe\",\"italic\":false}");
+                }
                 if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
                 if (materialStack.getTag().contains("damage"))nbt.putInt("damage",materialStack.getTag().getInt("damage"));else nbt.putInt("damage",1);
                 if (materialStack.getTag().contains("speed"))nbt.putInt("speed",materialStack.getTag().getInt("speed"));else nbt.putInt("speed",1);
@@ -248,6 +260,9 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
+                if (materialStack.getTag().contains("name")){
+                    nbt.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Shovel\",\"italic\":false}");
+                }
                 if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
                 if (materialStack.getTag().contains("damage"))nbt.putInt("damage",materialStack.getTag().getInt("damage"));else nbt.putInt("damage",1);
                 if (materialStack.getTag().contains("speed"))nbt.putInt("speed",materialStack.getTag().getInt("speed"));else nbt.putInt("speed",1);
@@ -266,7 +281,17 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
-                if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
+                if (materialStack.getTag().contains("color")) {
+                    nbt.putInt("color", materialStack.getTag().getInt("color"));
+                    CompoundTag nbt1=new CompoundTag();
+                    nbt1.putInt("color", materialStack.getTag().getInt("color"));
+                    if (materialStack.getTag().contains("name")){
+                        if (materialStack.getTag().contains("name")){
+                            nbt1.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Chestplate\",\"italic\":false}");
+                        }
+                    }
+                    nbt.put("display",nbt1);
+                }
                 if (materialStack.getTag().contains("durability"))nbt.putInt("durability",materialStack.getTag().getInt("durability"));else nbt.putInt("durability",100);
                 if (materialStack.getTag().contains("knockback_res"))nbt.putInt("knockback_res",materialStack.getTag().getInt("knockback_res"));else nbt.putInt("knockback_res",0);
                 if (materialStack.getTag().contains("armor"))nbt.putInt("armor",materialStack.getTag().getInt("armor"));else nbt.putInt("armor",1);
@@ -283,7 +308,15 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
-                if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
+                if (materialStack.getTag().contains("color")) {
+                    nbt.putInt("color", materialStack.getTag().getInt("color"));
+                    CompoundTag nbt1=new CompoundTag();
+                    nbt1.putInt("color", materialStack.getTag().getInt("color"));
+                    if (materialStack.getTag().contains("name")){
+                        nbt1.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Chestplate\",\"italic\":false}");
+                    }
+                    nbt.put("display",nbt1);
+                }
                 if (materialStack.getTag().contains("durability"))nbt.putInt("durability",materialStack.getTag().getInt("durability"));else nbt.putInt("durability",100);
                 if (materialStack.getTag().contains("knockback_res"))nbt.putInt("knockback_res",materialStack.getTag().getInt("knockback_res"));else nbt.putInt("knockback_res",0);
                 if (materialStack.getTag().contains("armor"))nbt.putInt("armor",materialStack.getTag().getInt("armor"));else nbt.putInt("armor",1);
@@ -300,7 +333,15 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
-                if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
+                if (materialStack.getTag().contains("color")) {
+                    nbt.putInt("color", materialStack.getTag().getInt("color"));
+                    CompoundTag nbt1=new CompoundTag();
+                    nbt1.putInt("color", materialStack.getTag().getInt("color"));
+                    if (materialStack.getTag().contains("name")){
+                        nbt1.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Chestplate\",\"italic\":false}");
+                    }
+                    nbt.put("display",nbt1);
+                }
                 if (materialStack.getTag().contains("durability"))nbt.putInt("durability",materialStack.getTag().getInt("durability"));else nbt.putInt("durability",100);
                 if (materialStack.getTag().contains("knockback_res"))nbt.putInt("knockback_res",materialStack.getTag().getInt("knockback_res"));else nbt.putInt("knockback_res",0);
                 if (materialStack.getTag().contains("armor"))nbt.putInt("armor",materialStack.getTag().getInt("armor"));else nbt.putInt("armor",1);
@@ -318,7 +359,15 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 CompoundTag nbt=new CompoundTag();
 
                 if(materialStack.getTag()==null){return;}
-                if (materialStack.getTag().contains("color")) nbt.putInt("color",materialStack.getTag().getInt("color"));
+                if (materialStack.getTag().contains("color")) {
+                    nbt.putInt("color", materialStack.getTag().getInt("color"));
+                    CompoundTag nbt1=new CompoundTag();
+                    nbt1.putInt("color", materialStack.getTag().getInt("color"));
+                    if (materialStack.getTag().contains("name")){
+                        nbt1.putString("Name","{\"text\":\""+materialStack.getTag().getString("name")+" Chestplate\",\"italic\":false}");
+                    }
+                    nbt.put("display",nbt1);
+                }
                 if (materialStack.getTag().contains("durability"))nbt.putInt("durability",materialStack.getTag().getInt("durability"));else nbt.putInt("durability",100);
                 if (materialStack.getTag().contains("knockback_res"))nbt.putInt("knockback_res",materialStack.getTag().getInt("knockback_res"));else nbt.putInt("knockback_res",0);
                 if (materialStack.getTag().contains("armor"))nbt.putInt("armor",materialStack.getTag().getInt("armor"));else nbt.putInt("armor",1);
@@ -443,6 +492,7 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                 case 6 -> BOOTS;
                 case 7 -> CHESTPLATE;
                 case 8 -> LEGGINGS;
+                case 9 -> null;
                 default -> throw new IllegalStateException("Unexpected value: " + number);
             };
         }

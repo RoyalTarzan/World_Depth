@@ -47,8 +47,8 @@ public class Material extends Item {
             result.putAll(super.getAttributeModifiers(slot, stack));
             if (slot.getName().equals(EquipmentSlot.MAINHAND.getName())){
                 assert stack.getTag() != null;
-                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage"), AttributeModifier.Operation.ADDITION));
-                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed"), AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage")*1.33333, AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed")*1.2, AttributeModifier.Operation.ADDITION));
             }
             return result;
         }
@@ -81,8 +81,8 @@ public class Material extends Item {
             result.putAll(super.getAttributeModifiers(slot, stack));
             if (slot.getName().equals(EquipmentSlot.MAINHAND.getName())){
                 assert stack.getTag() != null;
-                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage"), AttributeModifier.Operation.ADDITION));
-                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed"), AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage")*3, AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed")*0.9, AttributeModifier.Operation.ADDITION));
             }
             return result;
         }
@@ -116,8 +116,8 @@ public class Material extends Item {
             result.putAll(super.getAttributeModifiers(slot, stack));
             if (slot.getName().equals(EquipmentSlot.MAINHAND.getName())){
                 assert stack.getTag() != null;
-                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage"), AttributeModifier.Operation.ADDITION));
-                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed"), AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage")*2, AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed")*1.6, AttributeModifier.Operation.ADDITION));
             }
             return result;
         }
@@ -155,7 +155,7 @@ public class Material extends Item {
             result.putAll(super.getAttributeModifiers(slot, stack));
             if (slot.getName().equals(EquipmentSlot.MAINHAND.getName())){
                 assert stack.getTag() != null;
-                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage"), AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage")*1.5, AttributeModifier.Operation.ADDITION));
                 result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed"), AttributeModifier.Operation.ADDITION));
             }
             return result;
@@ -191,8 +191,8 @@ public class Material extends Item {
             result.putAll(super.getAttributeModifiers(slot, stack));
             if (slot.getName().equals(EquipmentSlot.MAINHAND.getName())){
                 assert stack.getTag() != null;
-                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage"), AttributeModifier.Operation.ADDITION));
-                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed"), AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_DAMAGE,new AttributeModifier(BASE_ATTACK_DAMAGE_UUID,"attack_damage",stack.getTag().getDouble("damage")*0.333333, AttributeModifier.Operation.ADDITION));
+                result.put(Attributes.ATTACK_SPEED,new AttributeModifier(BASE_ATTACK_SPEED_UUID,"attack_speed",stack.getTag().getDouble("speed")*2, AttributeModifier.Operation.ADDITION));
             }
             return result;
         }
@@ -215,7 +215,7 @@ public class Material extends Item {
         }
     }
 
-    public static class ArmorMaterial extends ArmorItem{
+    public static class ArmorMaterial extends DyeableArmorItem implements DyeableLeatherItem{
         private static final EnumMap<Type, UUID> ARMOR_MODIFIER_UUID_PER_TYPE = Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266744_) -> {
             p_266744_.put(ArmorItem.Type.BOOTS, UUID.fromString("845DB27C-C624-495F-8C9F-6020A9A58B6B"));
             p_266744_.put(ArmorItem.Type.LEGGINGS, UUID.fromString("D8499B04-0E66-4726-AB29-64469D734E0D"));
@@ -238,7 +238,7 @@ public class Material extends Item {
             if (slot.getName().equals(EquipmentSlot.HEAD.getName())&& stack.is(ModItems.CUSTOM_MATERIAL_HELMET.get())){
                 result.put(Attributes.ARMOR,new AttributeModifier(uuid,"armor",stack.getTag().getDouble("armor"), AttributeModifier.Operation.ADDITION));
                 result.put(Attributes.KNOCKBACK_RESISTANCE,new AttributeModifier(uuid,"knockback_res",stack.getTag().getDouble("knockback_res"), AttributeModifier.Operation.ADDITION));
-                result.put(ForgeMod.SWIM_SPEED.get(),new AttributeModifier(uuid,"swim_speed",stack.getTag().getDouble("swim_speed"), AttributeModifier.Operation.ADDITION));
+                result.put(ForgeMod.SWIM_SPEED.get(),new AttributeModifier(uuid,"swim_speed",stack.getTag().getDouble("swim_speed"), AttributeModifier.Operation.MULTIPLY_BASE));
             } else if (slot.getName().equals(EquipmentSlot.CHEST.getName())&& stack.is(ModItems.CUSTOM_MATERIAL_CHESTPLATE.get())) {
                 result.put(Attributes.MAX_HEALTH,new AttributeModifier(uuid,"max_health",stack.getTag().getDouble("health"), AttributeModifier.Operation.ADDITION));
                 result.put(Attributes.ARMOR,new AttributeModifier(uuid,"armor",stack.getTag().getDouble("armor"), AttributeModifier.Operation.ADDITION));
