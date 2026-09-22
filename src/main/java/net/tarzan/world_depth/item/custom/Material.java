@@ -251,6 +251,7 @@ public class Material extends Item {
             } else if (slot.getName().equals(EquipmentSlot.FEET.getName())&& stack.is(ModItems.CUSTOM_MATERIAL_BOOTS.get())) {
                 result.put(Attributes.ARMOR,new AttributeModifier(uuid,"armor",stack.getTag().getDouble("armor"), AttributeModifier.Operation.ADDITION));
                 result.put(Attributes.MOVEMENT_SPEED,new AttributeModifier(uuid,"move_speed",stack.getTag().getDouble("move_speed"), AttributeModifier.Operation.MULTIPLY_BASE));
+                result.put(ForgeMod.STEP_HEIGHT_ADDITION.get(),new AttributeModifier(uuid,"step_height",stack.getTag().getDouble("move_speed")/10, AttributeModifier.Operation.ADDITION));
                 result.put(Attributes.KNOCKBACK_RESISTANCE,new AttributeModifier(uuid,"knockback_res",stack.getTag().getDouble("knockback_res"), AttributeModifier.Operation.ADDITION));
             }
             return result;

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "world_depth:golden_carrot_from_energizing"
+        "recipe": "world_depth:world_gem_from_energizing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "world_depth:golden_carrot_from_energizing"
+      "world_depth:world_gem_from_energizing"
     ]
   },
   "sends_telemetry_event": false

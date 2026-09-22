@@ -74,8 +74,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         toolSet(ModItems.ALUMINIUM.get(), ModItems.ALUMINIUM_SHOVEL.get(),ModItems.ALUMINIUM_SWORD.get(),
                 ModItems.ALUMINIUM_AXE.get(),ModItems.ALUMINIUM_PICKAXE.get(),ModItems.ALUMINIUM_HOE.get(),consumer);
 
-        Ingredient[] ingredients=new Ingredient[]{Ingredient.of(ModItems.CHARGED_REDSTONE.get()),Ingredient.of(Items.REDSTONE),Ingredient.of(ModItems.TALIUM.get()),Ingredient.of(ModItems.ALUMINIUM.get()),Ingredient.of(ModItems.TITANIUM.get())};
-        energizing(Items.GOLDEN_CARROT, ingredients,5,4,"golden_carrot",consumer,ModItems.CHARGED_REDSTONE.get());
+        Ingredient[] ingredients=new Ingredient[]{Ingredient.of(ModItems.CHARGED_REDSTONE.get()),Ingredient.of(Items.REDSTONE),Ingredient.of(Items.GOLD_BLOCK),Ingredient.of(Items.DIRT),Ingredient.of(Items.STONE)};
+        energizing(ModItems.WORLD_GEM.get(), ingredients,250,500,"energizing",consumer,ModItems.CHARGED_REDSTONE.get());
     }
 
     public static void toolSet(ItemLike material,ItemLike shovel,ItemLike sword,ItemLike axe,ItemLike pickaxe,ItemLike hoe, Consumer<FinishedRecipe> consumer){

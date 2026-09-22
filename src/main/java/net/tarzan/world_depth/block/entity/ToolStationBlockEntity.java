@@ -27,6 +27,8 @@ import net.tarzan.world_depth.screen.ToolStationMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+
 public class ToolStationBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler=new ItemStackHandler(5) {
         @Override
@@ -36,6 +38,23 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
             if(!level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            if (slot==MATERIAL_SLOT){
+                return stack.is(ModItems.CUSTOM_MATERIAL.get());
+            } else if (slot==STICK_SLOT) {
+                return stack.is(Items.STICK);
+            } else if (slot==CHARGED_REDSTONE_SLOT) {
+                return stack.is(ModItems.CHARGED_REDSTONE.get()) || stack.is(ModBlocks.CHARGED_REDSTONE_BLOCK.get().asItem());
+            } else if (slot==CRAFT_TYPE_SLOT) {
+                return stack.getItem() instanceof ArmorItem||stack.getItem() instanceof TieredItem;
+            } else if (slot==OUTPUT_SLOT) {
+                return false;
+            }
+
+            return super.isItemValid(slot, stack);
         }
     };
     private LazyOptional<IItemHandler> lazyItemHandler=LazyOptional.empty();
@@ -61,6 +80,7 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
                     case 0->progress;
                     case 1->chargedRedstone;
                     case 2->maxProgress;
+                    case 3->maxChargedRedstone;
                     default -> throw new IllegalStateException("Unexpected value: " + pIndex);
                 };
             }
@@ -75,7 +95,7 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
 
             @Override
             public int getCount() {
-                return 3;
+                return 4;
             }
         };
     }
@@ -111,6 +131,9 @@ public class ToolStationBlockEntity extends BlockEntity implements MenuProvider 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap,@Nullable Direction side) {
         if(cap== ForgeCapabilities.ITEM_HANDLER){
+            if(side==Direction.DOWN){
+                return LazyOptional.of(()->new ItemHandlerWrapper(itemHandler,false,true,OUTPUT_SLOT,new ArrayList<>())).cast();
+            }
             return lazyItemHandler.cast();
         }
         return super.getCapability(cap, side);

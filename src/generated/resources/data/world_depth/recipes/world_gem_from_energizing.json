@@ -1,6 +1,6 @@
 {
   "type": "world_depth:energizing",
-  "charged_redstone_needed": 4,
+  "charged_redstone_needed": 500,
   "ingredients": [
     {
       "item": "world_depth:charged_redstone"
@@ -9,18 +9,18 @@
       "item": "minecraft:redstone"
     },
     {
-      "item": "world_depth:talium"
+      "item": "minecraft:gold_block"
     },
     {
-      "item": "world_depth:aluminium"
+      "item": "minecraft:dirt"
     },
     {
-      "item": "world_depth:titanium"
+      "item": "minecraft:stone"
     }
   ],
   "output": {
     "count": 1,
-    "item": "minecraft:golden_carrot"
+    "item": "world_depth:world_gem"
   },
-  "redstone_needed": 5
+  "redstone_needed": 250
 }

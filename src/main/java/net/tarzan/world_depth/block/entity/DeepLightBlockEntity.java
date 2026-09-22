@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -30,9 +31,14 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if(!level.isClientSide()) {
+            if(level!=null&& !level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
+        }
+
+        @Override
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+            return stack.is(ModItems.LIGHT_GEM.get());
         }
     };
 
@@ -55,6 +61,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
                     case 0 ->DeepLightBlockEntity.this.currentAmount;
                     case 1 ->DeepLightBlockEntity.this.previousAmount;
                     case 2 ->DeepLightBlockEntity.this.wait;
+                    case 3 ->DeepLightBlockEntity.this.wait_time;
                     default -> 1;
                 };
             }
@@ -70,7 +77,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
 
             @Override
             public int getCount() {
-                return 3;
+                return 4;
             }
         };
     }
@@ -84,7 +91,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public Component getDisplayName() {
+    public @NotNull Component getDisplayName() {
         return Component.translatable("block.world_depth.deep_light");
     }
 
@@ -94,6 +101,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
             inventory.setItem(i,itemHandler.getStackInSlot(i));
         }
 
+        assert this.level != null;
         Containers.dropContents(this.level,this.worldPosition,inventory);
     }
 
@@ -111,7 +119,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory inventory, Player player) {
+    public AbstractContainerMenu createMenu(int pContainerId, @NotNull Inventory inventory, @NotNull Player player) {
         return new DeepLightMenu(pContainerId, inventory,this, null);
     }
 
@@ -123,7 +131,7 @@ public class DeepLightBlockEntity extends BlockEntity implements MenuProvider {
     }
 
     @Override
-    public void load(CompoundTag pTag) {
+    public void load(@NotNull CompoundTag pTag) {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
     }

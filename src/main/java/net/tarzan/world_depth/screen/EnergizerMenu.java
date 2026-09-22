@@ -15,13 +15,17 @@ import net.tarzan.world_depth.block.entity.EnergizerBlockEntity;
 import net.tarzan.world_depth.item.ModItems;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+
+import static net.tarzan.world_depth.block.entity.EnergizerBlockEntity.*;
+
 public class EnergizerMenu extends AbstractContainerMenu {
     public final EnergizerBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
     public EnergizerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData){
-        this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(8));
+        this(pContainerId,inv,inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(9));
     }
 
     public EnergizerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data){
@@ -43,6 +47,7 @@ public class EnergizerMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(iItemHandler,5,80,59));
             this.addSlot(new SlotItemHandler(iItemHandler,6,29,59));
             this.addSlot(new SlotItemHandler(iItemHandler,7,124,59));
+            this.addSlot(new SlotItemHandler(iItemHandler,8,7,7));
         });
 
         addDataSlots(data);
@@ -85,7 +90,7 @@ public class EnergizerMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 8;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 9;  // must be the number of slots you have!
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -95,14 +100,22 @@ public class EnergizerMenu extends AbstractContainerMenu {
 
         if (pIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
             if (sourceStack.is(Items.REDSTONE)||sourceStack.is(Items.REDSTONE_BLOCK)){
-                if (!moveItemStackTo(sourceStack, VANILLA_SLOT_COUNT+6,VANILLA_SLOT_COUNT+7, false)) {
+                if (!moveItemStackTo(sourceStack, VANILLA_SLOT_COUNT+REDSTONE_SLOT,VANILLA_SLOT_COUNT+7, false)) {
                     return ItemStack.EMPTY;
                 }
             } else if (sourceStack.is(ModItems.CHARGED_REDSTONE.get())||sourceStack.is(ModBlocks.CHARGED_REDSTONE_BLOCK.get().asItem())) {
-                if (!moveItemStackTo(sourceStack, VANILLA_SLOT_COUNT+7,VANILLA_SLOT_COUNT+8, false)) {
+                if (!moveItemStackTo(sourceStack, VANILLA_SLOT_COUNT+CHARGED_REDSTONE_SLOT,VANILLA_SLOT_COUNT+8, false)) {
                     return ItemStack.EMPTY;
                 }
-            }else {
+            } else if (Arrays.asList(blockEntity.lockedIngredients).contains(sourceStack.getItem())) {
+                if (!moveItemStackTo(sourceStack,TE_INVENTORY_FIRST_SLOT_INDEX+ Arrays.asList(blockEntity.lockedIngredients).indexOf(sourceStack.getItem())+EnergizerBlockEntity.INPUT_SLOT_1,TE_INVENTORY_FIRST_SLOT_INDEX+TE_INVENTORY_SLOT_COUNT,false)){
+                    return ItemStack.EMPTY;
+                }
+            } else if (sourceStack.is(Items.NETHER_STAR)) {
+                if (!moveItemStackTo(sourceStack, VANILLA_SLOT_COUNT+LOCK_RECIPE_SLOT,VANILLA_SLOT_COUNT+8, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else {
                 if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX + 5, false)) {
                     return ItemStack.EMPTY;
                 }
